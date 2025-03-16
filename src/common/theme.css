@@ -1,0 +1,16 @@
+:root {
+  /* 글자크기 */
+  --text-11: 0.6875rem; /* 29magazine 버튼 안, 날짜 텍스트 */
+  --text-12: 0.75rem; /* main 작은 텍스트 footer 개인정보처리...메뉴 */
+  --text-13: 0.8125rem; /* footer Notice,AboutAu 등 메뉴 */
+  --text-14: 0.875rem; /* 29magazine 기본(p) 텍스트 */
+  --text-15: 0.9375rem; /* main, special order, showcase 기본(p) 및 기간 텍스트 */
+  --text-16: 1rem; /* pt메뉴, 29magazine 기간(날짜) 텍스트 */
+  --text-22: 1.375rem; /* main 제목, showcase 하단 카드 제목 */
+  --text-23: 1.4375rem; /* 29magazine 제목 */
+  --text-26: 1.625rem; /* special order 제목 */
+  --text-30: 1.875rem; /* header special-order....메뉴 */
+  --text-34: 2.125rem; /* showcase 상단 카드 제목 */
+  --text-60: 3.75rem; /* 29magazine 숫자 텍스트 */
+  --text-80: 5rem; /* pt coming soon 텍스트 */
+}
