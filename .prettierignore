@@ -1,0 +1,21 @@
+# Node.js 관련
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 빌드 결과물
+dist
+build
+.out
+
+# 환경 변수 및 설정 파일
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# 특정 파일 형식 제외
+*.min.js
+*.log
