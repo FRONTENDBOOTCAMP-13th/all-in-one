@@ -1,0 +1,243 @@
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/best-reset.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 0px 50px 100px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+  height: 212px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.magazine-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+  margin-bottom: 60px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  transition: transform 0.3s;
+  padding: 0px 28px 82px;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.grid-item .caption {
+  padding: 15px 0;
+}
+
+.grid-item h3 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.grid-item p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0px 0px;
+  line-height: 1.7;
+}
+
+.grid-item .category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #000000;
+  margin: 3px 3px 0px 0px;
+  padding: 0px 9px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  height: 25px;
+}
+
+.grid-item .day-area {
+  position: absolute;
+  bottom: 0px;
+  left: 28px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 1;
+  color: #000000;
+}
+
+/* 마지막 열을 제외한 아이템에만 border-right 추가 */
+.grid-item:not(:nth-child(5n)) {
+  border-right: 1px solid #d4d4d4; /* 갭 중앙에 선 추가 */
+}
+
+@media (min-width: 541px) {
+  .grid-item {
+    margin-top: 48px;
+  }
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(524px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.featured-item {
+  position: relative;
+}
+
+.featured-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.featured-caption {
+  margin: 14px;
+}
+
+.featured-caption h3 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.featured-caption p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+  line-height: 1.7;
+}
+
+.featured-caption .date {
+  display: inline-block;
+  font-size: 12px;
+  color: #999;
+}
+
+.featured-caption .category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #000000;
+  margin: 3px 3px 0px 0px;
+  padding: 0px 9px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  height: 25px;
+}
+
+.section-title {
+  font-size: var(--text-26);
+  font-weight: 600;
+  margin: 0px 0px 20px;
+  padding: 0px 0px 10px;
+  border-bottom: 4px solid #000000;
+}
+
+.section-title.month {
+  border: none;
+  font-size: var(--text-26);
+  font-weight: 600;
+  margin: 0px 0px 20px;
+  padding: 0px 0px 10px;
+  border-top: 4px solid #000000;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 0 5px;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #eee;
+}
+
+.pagination a.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+footer {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #999;
+}
