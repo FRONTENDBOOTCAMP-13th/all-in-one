@@ -12,7 +12,7 @@ a {
 }
 
 /* 로고 */
-img {
+.logo {
   width: 90px;
   height: 25px;
 }
@@ -73,6 +73,7 @@ img {
   column-gap: 20px;
   list-style-type: none;
   font-weight: 600;
+  padding-bottom: 30px;
 }
 
 .top-menu:hover {
@@ -135,10 +136,13 @@ a {
 .header-31cm {
   display: flex;
   flex-direction: column;
+  position: sticky;
   gap: 30px;
-
   padding-inline: 50px;
   padding-top: 30px;
+  z-index: 1;
+  inset-block-start: 0;
+  background: #fff;
 }
 
 /* 해당 페이지 주석 풀기 */
