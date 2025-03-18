@@ -40,69 +40,71 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+/*고객센터*/
 .top-section-inform {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-10);
+
+  /*고객센터의 하위요소들*/
+  .customer-service {
+    line-height: 150%;
+    font-size: var(--text-15);
+    font-weight: 700;
+  }
+
+  .service-hours {
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: var(--text-12);
+  }
+
+  .button-group {
+    display: flex;
+    gap: var(--spacing-10);
+  }
+
+  .button {
+    box-sizing: border-box;
+    width: 94px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: set-bewteen;
+    padding: var(--spacing-8) var(--spacing-12);
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: var(--text-15);
+    white-space: nowrap;
+  }
+
+  .button i {
+    margin-left: auto;
+    color: #999;
+  }
 }
 
+/*소셜 아이콘*/
 .top-section-social {
   display: flex;
   margin-top: auto;
-}
 
-/*고객센터의 하위요소들*/
-.customer-service {
-  line-height: 150%;
-  font-size: var(--text-15);
-  font-weight: 700;
-}
+  /*소셜 아이콘의 하위요소들*/
+  .social-icons {
+    display: flex;
+    gap: var(--spacing-10);
+  }
 
-.service-hours {
-  color: #a0a0a0;
-  font-weight: 500;
-  font-size: var(--text-12);
-}
-
-.button-group {
-  display: flex;
-  gap: var(--spacing-10);
-}
-
-.button {
-  box-sizing: border-box;
-  width: 94px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: set-bewteen;
-  padding: var(--spacing-8) var(--spacing-12);
-  background-color: #000;
-  color: #fff;
-  text-decoration: none;
-  font-size: var(--text-15);
-  white-space: nowrap;
-}
-
-.button i {
-  margin-left: auto;
-  color: #999;
-}
-
-/*소셜 아이콘의 하위요소들*/
-.social-icons {
-  display: flex;
-  gap: var(--spacing-10);
-}
-
-.social-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /*notice, about us, my order, my account, help*/
@@ -144,18 +146,16 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
 
-.footer-links a,
-.notice-content ul li a {
-  color: #666;
-  text-decoration: none;
-  font-size: var(--text-13);
-}
+  a {
+    color: #666;
+    text-decoration: none;
+    font-size: var(--text-13);
+  }
 
-.footer-links a:hover,
-.notice-content ul li a:hover {
-  text-decoration: underline;
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 /*회사 정보 */
@@ -169,27 +169,27 @@ body {
 .bottom-nav {
   display: block;
   margin: var(--spacing-12) 0 var(--spacing-4);
-}
 
-.bottom-nav a {
-  display: inline-block;
-  color: #333;
-  text-decoration: none;
-  font-size: var(--text-12);
-  font-weight: bolder;
-  position: relative;
-  margin-right: var(--spacing-15);
-}
+  a {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: var(--text-12);
+    font-weight: bolder;
+    position: relative;
+    margin-right: var(--spacing-15);
+  }
 
-.bottom-nav a:not(:last-child):after {
-  content: '';
-  position: absolute;
-  right: calc(-1 * var(--spacing-8));
-  top: 50%;
-  transform: translateY(-50%);
-  height: 12px;
-  width: 1px;
-  background-color: #ddd;
+  a:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: calc(-1 * var(--spacing-8));
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: 1px;
+    background-color: #ddd;
+  }
 }
 
 /*회사정보 하위요소*/
@@ -198,15 +198,15 @@ body {
   color: #888;
   font-size: var(--text-11);
   line-height: 24px;
-}
 
-.company-info p {
-  margin-bottom: var(--spacing-5);
-}
+  p {
+    margin-bottom: var(--spacing-5);
+  }
 
-.company-info span {
-  display: inline-block;
-  margin-right: var(--spacing-10);
+  span {
+    display: inline-block;
+    margin-right: var(--spacing-10);
+  }
 }
 
 /*사업자 정보확인 박스*/
