@@ -1,0 +1,18 @@
+@import '/src/components/styles/header.css';
+@import '/src/components/styles/ptComponent.css';
+
+.pt-bold {
+  font-weight: 900;
+}
+
+.pt-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-inline: 50px;
+  gap: 20px;
+}
+
+.pt-button-wrap {
+  text-align: center;
+  padding-block: 40px;
+}
