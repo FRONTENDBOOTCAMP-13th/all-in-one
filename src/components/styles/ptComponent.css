@@ -1,0 +1,92 @@
+@import '/src/common/best-reset.css';
+li,
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 틀 */
+fieldset {
+  padding: 30px;
+  margin: 40px;
+}
+legend {
+  text-align: center;
+}
+
+/* 컴포넌트 */
+
+/* nav */
+.pt-nav-comp {
+  border: 1px solid blue;
+  width: 400px;
+  .pt-nav {
+    justify-content: left;
+  }
+}
+
+.pt-nav {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  font-size: 22px;
+  a {
+    text-align: center;
+    min-width: 110px;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+
+  a:target {
+    font-weight: bold;
+  }
+
+  a:focus {
+    font-weight: bold;
+  }
+}
+
+.virtual {
+  border-inline: 1px solid #c4c4c4;
+  padding-inline: 45px;
+  margin-inline: 20px;
+}
+
+/* comming soon comp */
+.future {
+  font-size: 80px;
+  font-weight: 500;
+  border: 1px solid blue;
+  width: 450px;
+}
+
+/* 더보기 */
+.button-more {
+  display: inline-flex;
+  font-size: 30px;
+  border: 1px solid blue;
+  width: 150px;
+}
+
+.button-more::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  margin-left: 15px;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  transform: rotate(45deg);
+}
+
+.pt-future {
+  font-size: 80px;
+  font-weight: 500;
+  padding: 160px 50px 474px 50px;
+  text-align: center;
+}
