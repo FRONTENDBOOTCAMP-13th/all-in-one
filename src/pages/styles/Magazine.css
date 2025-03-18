@@ -111,12 +111,18 @@ header {
   height: 25px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* Magazine Grid - 5 Column in Web, Responsive Adaptation */
 .magazine-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 40px; /* 행 간 여백 추가 */
   margin-bottom: 60px;
+  row-gap: 40px;
 }
 
 @media (max-width: 1024px) {
@@ -146,6 +152,7 @@ header {
     flex-direction: column;
     justify-content: center;
     order: 1;
+    margin-top: 48px;
   }
   .grid-content h3 {
     font-size: 20px;
@@ -181,7 +188,8 @@ header {
   display: grid;
   grid-template-rows: auto 1fr;
   padding: 0px 28px 82px;
-  height: 100%;
+
+  margin-top: 48px;
 }
 
 .grid-item img {
