@@ -1,3 +1,18 @@
+@import '/src/common/theme.css';
+
+:root {
+  /* 여백 (Spacing) */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-15: 15px;
+  --spacing-20: 20px;
+  --spacing-30: 30px;
+  --spacing-50: 50px;
+  --spacing-200: 200px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,63 +23,79 @@
 }
 
 body {
-  font-size: 14px;
+  font-size: var(--text-14);
   line-height: 1.5;
   color: #333;
 }
 
 .container {
   display: block;
-  padding: 0 50px;
+  padding: 0 var(--spacing-50);
 }
 
 .top-section {
-  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-20) 0;
   border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.top-section-inform {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  align-items: flex-start;
+}
+
+.top-section-social {
+  display: flex;
+  margin-top: auto;
 }
 
 .customer-service {
   display: inline-block;
   line-height: 150%;
-  font-size: 15px;
+  font-size: var(--text-15);
   font-weight: 700;
 }
 
 .service-hours {
   color: #a0a0a0;
   font-weight: 500;
-  font-size: 12px;
-  margin-bottom: 15px;
+  font-size: var(--text-12);
 }
 
 .button-group {
   display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: var(--spacing-10);
 }
 
 .button {
   box-sizing: border-box;
   width: 94px;
+  height: 36px; /* 고정 높이 설정 */
   display: inline-flex;
-  justify-content: space-between;
-  padding: 8px 15px;
+  align-items: center;
+  justify-content: set-bewteen;
+  padding: var(--spacing-8) var(--spacing-12);
   background-color: #000;
   color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--text-15);
+  white-space: nowrap;
 }
 
 .button i {
-  margin-left: 5px;
+  margin-left: auto;
   color: #999;
 }
 
 .social-icons {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  margin-top: -40px;
+  gap: var(--spacing-10);
+  margin-top: calc(-1 * var(--spacing-40));
 }
 
 .social-icon {
@@ -80,7 +111,7 @@ body {
 .main-footer {
   display: flex;
   justify-content: space-between;
-  padding: 30px 0;
+  padding: var(--spacing-30) 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -95,8 +126,8 @@ body {
 
 .footer-title {
   font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 14px;
+  margin-bottom: var(--spacing-15);
+  font-size: var(--text-14);
 }
 
 .footer-links {
@@ -105,12 +136,12 @@ body {
 
 .notice-content {
   display: block;
-  padding: 0px 20px 0px 0px;
+  padding: 0 var(--spacing-20) 0 0;
 }
 
 .footer-links li,
 .notice-content ul li {
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-8);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -120,7 +151,7 @@ body {
 .notice-content ul li a {
   color: #666;
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--text-13);
 }
 
 .footer-links a:hover,
@@ -134,29 +165,29 @@ body {
 
 .bottom-footer {
   display: block;
-  padding: 0 200px 50px 0;
+  padding: 0 var(--spacing-200) var(--spacing-50) 0;
   flex-wrap: wrap;
 }
 
 .bottom-nav {
   display: block;
-  margin: 12px 0 4px;
+  margin: var(--spacing-12) 0 var(--spacing-4);
 }
 
 .bottom-nav a {
   display: inline-block;
   color: #333;
   text-decoration: none;
-  font-size: 12px;
+  font-size: var(--text-12);
   font-weight: bolder;
   position: relative;
-  margin-right: 15px;
+  margin-right: var(--spacing-15);
 }
 
 .bottom-nav a:not(:last-child):after {
   content: '';
   position: absolute;
-  right: -8px;
+  right: calc(-1 * var(--spacing-8));
   top: 50%;
   transform: translateY(-50%);
   height: 12px;
@@ -165,35 +196,41 @@ body {
 }
 
 .company-info {
-  dipaly: block;
+  display: block;
   color: #888;
-  font-size: 10px;
-  line-height: 1.6;
+  font-size: var(--text-11);
+  line-height: 24px;
 }
 
 .company-info p {
-  margin-bottom: 5px;
+  margin-bottom: var(--spacing-5);
 }
 
 .company-info span {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: var(--spacing-10);
 }
 
 .certifications {
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  gap: var(--spacing-10);
+  margin-top: var(--spacing-20);
   align-items: center;
 }
 
 .disclaimer {
-  margin-top: 15px;
-  font-size: 11px;
+  padding: var(--spacing-4) 0;
+  font-size: var(--text-11);
   color: #888;
 }
 
 .business-info {
-  text-decoration: underline;
+  dispaly: inline-block;
+  magin-left: var(--spacing-8);
+  padding: 0 7px;
+  color: #fff;
+  background-color: #a4a4a4;
+  line-height: 20px;
+  text-decoration: none;
   cursor: pointer;
 }
