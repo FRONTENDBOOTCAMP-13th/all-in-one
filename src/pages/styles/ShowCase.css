@@ -1,0 +1,16 @@
+@import '/src/components/styles/showCaseComponent.css';
+
+/* 본문의 내용이 두줄이상 넘어가면 말줄임표로 처리 */
+/* 말줄임표가 발생한 것들은 마우스를 올리면 전체 내용들 볼수 있도록 html파일에서 title태그로 툴팁처리 하였습니다. */
+.head,
+.event {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 최대 표시할 줄 수 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 말줄임표 처리 */
+}
+
+.d-day-badge {
+  color: red;
+}
