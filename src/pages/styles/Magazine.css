@@ -1,0 +1,261 @@
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/best-reset.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 0px 50px 100px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+  height: 212px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.magazine-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Featured Grid - 2 Column in Web, 1 Column in Mobile */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-item {
+  position: relative;
+}
+
+.featured-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.featured-caption {
+  margin: 14px;
+}
+
+.featured-caption h3 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.featured-caption p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+  line-height: 1.7;
+}
+
+.featured-caption .date {
+  display: inline-block;
+  font-size: 12px;
+  color: #999;
+}
+
+.featured-caption .category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #000000;
+  margin: 3px 3px 0px 0px;
+  padding: 0px 9px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  height: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Magazine Grid - 5 Column in Web, Responsive Adaptation */
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 60px;
+  row-gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .magazine-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .magazine-grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  .grid-item img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    order: 2;
+  }
+  .grid-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 1;
+    margin-top: 48px;
+  }
+  .grid-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    align-self: flex-start;
+  }
+  .grid-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+  }
+  .grid-content .category {
+    align-self: flex-start;
+  }
+}
+
+.grid-item {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  transition: transform 0.3s;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.grid-content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 0px 28px 82px;
+
+  margin-top: 48px;
+}
+
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.grid-item .caption {
+  padding: 15px 0;
+}
+
+.grid-item h3 {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.grid-item p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0px 0px;
+  line-height: 1.7;
+}
+
+.grid-item .category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #000000;
+  margin: 3px 3px 0px 0px;
+  padding: 0px 9px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  height: 25px;
+}
+
+.grid-item .day-area {
+  position: absolute;
+  bottom: 0px;
+  left: 28px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 1;
+  color: #000000;
+}
+
+/* 마지막 열을 제외한 아이템에만 border-right 추가 */
+.grid-item:not(:nth-child(5n)) {
+  border-right: 1px solid #d4d4d4; /* 갭 중앙에 선 추가 */
+}
+
+.section-title {
+  font-size: var(--text-26);
+  font-weight: 600;
+  margin: 0px 0px 20px;
+  padding: 0px 0px 10px;
+  border-bottom: 4px solid #000000;
+}
+
+.section-title.month {
+  border: none;
+  font-size: var(--text-26);
+  font-weight: 600;
+  margin: 0px 0px 20px;
+  padding: 0px 0px 10px;
+  border-top: 4px solid #000000;
+}
