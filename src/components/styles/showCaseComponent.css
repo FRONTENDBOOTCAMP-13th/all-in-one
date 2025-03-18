@@ -20,8 +20,13 @@
 
 body {
   --font-color: var(--real-black);
-
   color: var(--font-color);
+  list-style: none;
+
+  a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 글자색 상속 */
+  }
 }
 
 .card {
@@ -45,7 +50,6 @@ body {
 .head-container {
   --background-color: var(--real-white);
 
-  list-style: none;
   background: var(--background-color);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -53,6 +57,10 @@ body {
   padding-block-start: var(--spacing-56);
   padding-block-end: var(--spacing-80);
   gap: 0 var(--spacing-20);
+
+  .card-link {
+    display: contents;
+  }
 
   .card-container {
     display: grid;
@@ -86,19 +94,21 @@ body {
 .body-container {
   --background-color: var(--pretty-white);
 
-  list-style: none;
   background: var(--background-color);
   padding-inline: var(--spacing-50);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0 var(--spacing-20);
 
+  .card-link {
+    display: contents;
+  }
+
   .card-container {
     padding-block-start: var(--spacing-56);
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 4;
-    /* gap: 16px; */
 
     .card {
       display: contents;
