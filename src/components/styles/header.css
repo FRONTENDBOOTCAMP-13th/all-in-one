@@ -74,6 +74,7 @@ a {
   list-style-type: none;
   font-weight: 600;
   padding-bottom: 30px;
+  font-size: 17px;
 }
 
 .top-menu:hover {
@@ -128,7 +129,7 @@ a {
 }
 
 .padding-222 {
-  margin-top: 700px;
+  margin-top: 400px;
 }
 
 /* 최종 */
