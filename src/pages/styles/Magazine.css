@@ -27,7 +27,8 @@ body {
 }
 
 .container {
-  padding: 0px 50px 100px;
+  max-width: 1200px; /* 전체 레이아웃이 너무 늘어나지 않도록 제한 */
+  padding: 0 24px 80px;
   margin: 0 auto;
 }
 
@@ -35,13 +36,16 @@ header {
   padding: 20px 0;
   border-bottom: 1px solid #eee;
   margin-bottom: 30px;
-  height: 212px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .logo {
   font-size: 24px;
   font-weight: 700;
-  text-align: center;
 }
 
 .magazine-title {
@@ -55,69 +59,84 @@ header {
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 24px 30px;
   margin-bottom: 60px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 541px) {
   .featured-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 24px 30px;
+    margin-bottom: 60px;
   }
 }
 
+/*Latest Post 부분*/
 .featured-item {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
 }
 
 .featured-item img {
   width: 100%;
-  aspect-ratio: 16 / 9;
   object-fit: cover;
+  aspect-ratio: 16 / 9;
 }
 
 .featured-caption {
-  margin: 14px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
 }
 
-.featured-caption h3 {
-  font-size: 23px;
+.featured-caption-title h3 {
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
 }
 
-.featured-caption p {
+.featured-caption-title p {
   font-size: 14px;
   color: #666;
   margin-top: 5px;
   line-height: 1.7;
 }
 
-.featured-caption .date {
-  display: inline-block;
-  font-size: 12px;
-  color: #999;
+.featured-caption-desc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  margin-top: auto;
 }
 
-.featured-caption .category {
+.category {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  color: #000000;
-  margin: 3px 3px 0px 0px;
-  padding: 0px 9px;
+  color: #000;
+  padding: 4px 9px;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
   height: 25px;
 }
 
+.date {
+  font-size: 12px;
+  color: #999;
+}
+
 a {
   text-decoration: none;
   color: inherit;
-  display: block;
 }
 
-/* Magazine Grid - 5 Column in Web, Responsive Adaptation */
+/* Month Magazine Grid - 5 Column in Web, Responsive Adaptation */
 .magazine-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -125,58 +144,12 @@ a {
   row-gap: 40px;
 }
 
-@media (max-width: 1024px) {
-  .magazine-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .magazine-grid {
-    grid-template-columns: 1fr;
-  }
-  .grid-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-  }
-  .grid-item img {
-    width: 40%;
-    height: auto;
-    object-fit: cover;
-    order: 2;
-  }
-  .grid-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    order: 1;
-    margin-top: 48px;
-  }
-  .grid-content h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    align-self: flex-start;
-  }
-  .grid-content p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 6px;
-  }
-  .grid-content .category {
-    align-self: flex-start;
-  }
-}
-
 .grid-item {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 1;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 4px;
   transition: transform 0.3s;
 }
 
@@ -184,26 +157,58 @@ a {
   transform: translateY(-5px);
 }
 
-.grid-content {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  padding: 0px 28px 82px;
-
-  margin-top: 48px;
-}
-
 .grid-item img {
   width: 100%;
-  aspect-ratio: 16 / 9;
   object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.grid-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  flex-grow: 1;
+  padding: 0px 28px 82px;
+}
+
+.grid-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.grid-content p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.grid-content .category {
+  align-self: flex-start;
+}
+
+.grid-item {
+  position: relative;
+  transition: transform 0.3s;
 }
 
 .grid-item .caption {
   padding: 15px 0;
 }
 
+.caption p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 최대 3줄 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  line-height: 1.6;
+  max-height: calc(1.6em * 3); /* 줄 간격 * 3줄 */
+}
+
 .grid-item h3 {
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -216,16 +221,12 @@ a {
 }
 
 .grid-item .category {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   font-size: 11px;
-  color: #000000;
-  margin: 3px 3px 0px 0px;
-  padding: 0px 9px;
+  padding: 4px 9px;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
   height: 25px;
+  margin: 10px 10px 0px 0px;
 }
 
 .grid-item .day-area {
@@ -243,19 +244,91 @@ a {
   border-right: 1px solid #d4d4d4; /* 갭 중앙에 선 추가 */
 }
 
+@media (max-width: 1024px) {
+  .magazine-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*모바일 반응형*/
+@media (max-width: 541px) {
+  .magazine-grid {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    border-right: none !important;
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 20px;
+    /* transform: none !important; hover 효과 제거 */
+  }
+
+  .grid-item:hover {
+    transform: none;
+  }
+
+  .grid-content {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .grid-item img {
+    width: 120px;
+    height: 120px;
+    margin-right: 16px;
+  }
+
+  .caption {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 15px 0 !important;
+  }
+
+  .grid-item h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+  }
+
+  .grid-item p {
+    font-size: 13px;
+    margin: 0;
+    -webkit-line-clamp: 2;
+  }
+
+  .grid-item .category {
+    font-size: 10px;
+    padding: 3px 7px;
+    margin: 8px 0 0 0;
+    display: inline-block;
+  }
+
+  .grid-item .day-area {
+    display: none;
+  }
+}
+
+/* Section Titles */
 .section-title {
-  font-size: var(--text-26);
+  font-size: 24px;
   font-weight: 600;
-  margin: 0px 0px 20px;
-  padding: 0px 0px 10px;
-  border-bottom: 4px solid #000000;
+  margin: 0 0 20px;
+  padding: 0 0 10px;
+  border-bottom: 4px solid #000;
 }
 
 .section-title.month {
   border: none;
-  font-size: var(--text-26);
-  font-weight: 600;
-  margin: 0px 0px 20px;
-  padding: 0px 0px 10px;
-  border-top: 4px solid #000000;
+  border-top: 4px solid #000;
 }
