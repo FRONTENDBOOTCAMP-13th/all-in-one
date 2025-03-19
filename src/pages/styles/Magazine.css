@@ -135,7 +135,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
-/* Magazine Grid - 5 Column in Web, Responsive Adaptation */
+
+/* Month Magazine Grid - 5 Column in Web, Responsive Adaptation */
 .magazine-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -186,59 +187,6 @@ a {
   align-self: flex-start;
 }
 
-@media (max-width: 1024px) {
-  .magazine-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 541px) {
-  .magazine-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .grid-item img {
-    width: 40%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    order: 2;
-  }
-
-  .grid-content {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    order: 1;
-    margin-top: 0;
-  }
-
-  .grid-content h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    align-self: flex-start;
-  }
-
-  .grid-content p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 6px;
-  }
-
-  .grid-content .category {
-    align-self: flex-start;
-  }
-}
-
-/* Month Post */
 .grid-item {
   position: relative;
   transition: transform 0.3s;
@@ -255,7 +203,7 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
-  line-height: 1.6; /* 줄 간격 조절 */
+  line-height: 1.6;
   max-height: calc(1.6em * 3); /* 줄 간격 * 3줄 */
 }
 
@@ -294,6 +242,81 @@ a {
 /* 마지막 열을 제외한 아이템에만 border-right 추가 */
 .grid-item:not(:nth-child(5n)) {
   border-right: 1px solid #d4d4d4; /* 갭 중앙에 선 추가 */
+}
+
+@media (max-width: 1024px) {
+  .magazine-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*모바일 반응형*/
+@media (max-width: 541px) {
+  .magazine-grid {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    border-right: none !important;
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 20px;
+    /* transform: none !important; hover 효과 제거 */
+  }
+
+  .grid-item:hover {
+    transform: none;
+  }
+
+  .grid-content {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .grid-item img {
+    width: 120px;
+    height: 120px;
+    margin-right: 16px;
+  }
+
+  .caption {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 15px 0 !important;
+  }
+
+  .grid-item h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+  }
+
+  .grid-item p {
+    font-size: 13px;
+    margin: 0;
+    -webkit-line-clamp: 2;
+  }
+
+  .grid-item .category {
+    font-size: 10px;
+    padding: 3px 7px;
+    margin: 8px 0 0 0;
+    display: inline-block;
+  }
+
+  .grid-item .day-area {
+    display: none;
+  }
 }
 
 /* Section Titles */
