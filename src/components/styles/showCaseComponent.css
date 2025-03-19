@@ -47,6 +47,7 @@ body {
 }
 
 /* 위쪽 카드 영역 스타일링 */
+
 .head-container {
   --background-color: var(--real-white);
 
@@ -58,34 +59,64 @@ body {
   padding-block-end: var(--spacing-80);
   gap: 0 var(--spacing-20);
 
+  @media (max-width: 541px) {
+    grid-template-columns: 1fr;
+    padding-inline: var(--spacing-20);
+    padding-block: 0px;
+    .card-container {
+      padding-block-start: var(--spacing-56);
+    }
+
+    .head {
+      font-size: var(--text-22);
+      font-weight: var(--weight-600);
+    }
+  }
+
+  .card-container {
+    position: relative; /* 포지션 상대값 추가 */
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    transition: transform 0.3s ease; /* 부드러운 전환 효과 */
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* 호버 영역을 확장하기 위한 가상 요소 */
+  .card-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
   .card-link {
     display: contents;
   }
 
-  .card-container {
-    display: grid;
-    grid-template-rows: subgrid;
+  .card {
+    display: contents;
+  }
 
-    grid-row: span 4;
+  .card-text {
+    display: contents;
 
-    .card {
-      display: contents;
+    .head {
+      margin-block-start: var(--spacing-20);
     }
 
-    .card-text {
-      display: contents;
-
-      .head {
-        margin-block-start: var(--spacing-20);
-      }
-
-      .event {
-        margin-block-start: var(--spacing-4);
-      }
-      .time-frame {
-        margin-block-start: var(--spacing-16);
-        font-weight: var(--weight-600);
-      }
+    .event {
+      margin-block-start: var(--spacing-4);
+    }
+    .time-frame {
+      margin-block-start: var(--spacing-16);
+      font-weight: var(--weight-600);
     }
   }
 }
@@ -100,39 +131,63 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0 var(--spacing-20);
 
-  .card-link {
-    display: contents;
+  @media (max-width: 541px) {
+    --background-color: var(--real-white);
+    grid-template-columns: 1fr;
+    background: var(--real-white);
+    padding-inline: var(--spacing-20);
   }
 
   .card-container {
+    position: relative; /* 포지션 상대값 추가 */
     padding-block-start: var(--spacing-56);
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 4;
+    transition: transform 0.3s ease; /* 부드러운 전환 효과 */
 
-    .card {
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* 호버 영역을 확장하기 위한 가상 요소 */
+  .card-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .card-link {
+    display: contents;
+  }
+
+  .card {
+    display: contents;
+
+    .card-text {
       display: contents;
 
-      .card-text {
-        display: contents;
+      .head {
+        font-size: var(--text-22);
+        font-weight: var(--weight-600);
+        margin-block-start: var(--spacing-16);
+      }
 
-        .head {
-          font-size: var(--text-22);
-          font-weight: var(--weight-600);
-          margin-block-start: var(--spacing-16);
-        }
+      .event {
+        font-size: var(--text-15);
+        font-weight: normal;
+        margin-block-start: var(--spacing-4);
+      }
 
-        .event {
-          font-size: var(--text-15);
-          font-weight: normal;
-          margin-block-start: var(--spacing-4);
-        }
-
-        .time-frame {
-          font-size: var(--text-15);
-          font-weight: var(--weight-600);
-          margin-block-start: var(--spacing-16);
-        }
+      .time-frame {
+        font-size: var(--text-15);
+        font-weight: var(--weight-600);
+        margin-block-start: var(--spacing-16);
       }
     }
   }
