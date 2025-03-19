@@ -67,54 +67,69 @@ header {
 
 .featured-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 위, 아래 정렬 */
+  width: 100%; /* grid에서 자동 크기 조정 */
+  height: 450px; /* 일정한 높이 설정 */
+  padding: 10px;
 }
 
 .featured-item img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .featured-caption {
-  margin: 14px;
+  flex-grow: 1; /* 제목과 설명이 균일한 높이 차지 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 14px;
 }
 
-.featured-caption h3 {
-  font-size: 23px;
+.featured-caption-title h3 {
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
 }
 
-.featured-caption p {
+.featured-caption-title p {
   font-size: 14px;
   color: #666;
   margin-top: 5px;
   line-height: 1.7;
 }
 
-.featured-caption .date {
-  display: inline-block;
-  font-size: 12px;
-  color: #999;
+.featured-caption-desc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto; /* 항상 아래 정렬 */
 }
 
-.featured-caption .category {
+.featured-caption-desc .category {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  color: #000000;
-  margin: 3px 3px 0px 0px;
+  color: #000;
   padding: 0px 9px;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
   height: 25px;
 }
 
+.featured-caption-desc .date {
+  font-size: 12px;
+  color: #999;
+}
+
 a {
   text-decoration: none;
   color: inherit;
-  display: block;
 }
 
 /* Magazine Grid - 5 Column in Web, Responsive Adaptation */
