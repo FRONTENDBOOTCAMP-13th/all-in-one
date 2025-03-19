@@ -1,5 +1,10 @@
 @import url('/src/components/styles/indexCardComponent.css');
 
+:root {
+  --max-height: 450vh;
+  --mobile-max-height: 800vh;
+}
+
 main {
   position: relative;
   overflow: hidden;
@@ -9,43 +14,99 @@ main {
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
-  max-height: 400vh;
   overflow: hidden;
+  max-height: var(--mobile-max-height);
 
   @media (min-width: 33.8125rem) {
+    max-height: var(--max-height);
     flex-flow: row nowrap;
   }
 
   .brand-ad-section {
     width: 100%;
+    position: relative;
+
+    .next-btn-wrap {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 3.75rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @media (max-width: 23.375rem) {
+        padding-inline: 1.875rem;
+      }
+    }
+
+    @media (max-width: 33.75rem) {
+      .poster-wrap {
+        padding-left: 1.25rem;
+        display: flex;
+        gap: 10px;
+      }
+
+      .poster {
+        width: 95%;
+        flex: 0 0 auto;
+
+        img {
+          border-radius: 0.3125rem;
+        }
+      }
+    }
 
     @media (min-width: 33.8125rem) {
       padding-right: 1.9vw;
       width: 44%;
+
+      .poster.mobile {
+        display: none;
+
+        .next-btn-wrap {
+          display: none;
+        }
+      }
     }
   }
 
   .products-section {
     width: 100%;
     display: flex;
-    flex-flow: row wrap;
-    align-content: start;
-    align-items: start;
+    flex-flow: column nowrap;
 
     @media (min-width: 33.8125rem) {
       width: 56%;
     }
 
-    .card-poster-wrap {
+    .product-card-wrap {
       display: flex;
-      flex-flow: row nowrap;
-    }
-    .card-poster {
-      width: 100%;
-      font-size: 0;
+      flex-flow: column wrap;
+      align-items: start;
+      align-content: start;
+      max-height: var(--mobile-max-height);
 
       @media (min-width: 33.8125rem) {
-        width: 50%;
+        max-height: var(--max-height);
+      }
+    }
+
+    .card-poster-wrap {
+      display: none;
+      @media (min-width: 33.8125rem) {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+
+      .card-poster {
+        width: 100%;
+        font-size: 0;
+
+        @media (min-width: 33.8125rem) {
+          width: 50%;
+        }
       }
     }
   }
