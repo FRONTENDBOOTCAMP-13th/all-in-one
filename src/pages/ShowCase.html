@@ -13,72 +13,83 @@
     <!-- 헤더가 들어올 영역 -->
 
     <!-- 상단의 이미지 카드 두개 -->
-    <ul class="head-container">
-      <li class="card-container">
-        <a
-          href="/"
-          class="card-link"
-          aria-label="당신의 행복한 토요일 세터 쇼케이스 상세보기"
-        >
-          <figure class="card">
-            <img
-              src="/src/assets/images/showcase-images/satur.webp"
-              alt="세터 쇼케이스"
-            />
-            <figcaption class="card-text">
-              <h3 class="head">당신의 행복한 토요일 세터</h3>
-              <p class="event">~46%할인, 사진 후기 이벤트</p>
-              <p class="time-frame">
-                <time datetime="2025-03-14">2025.03.14.</time> ~
-                <time datetime="2025-03-27"
-                  ><span class="sr-only">2025.</span>03.27.</time
-                >
-              </p>
-            </figcaption>
-          </figure>
-        </a>
-      </li>
-
-      <li class="card-container">
-        <a
-          href="/"
-          class="card-link"
-          aria-label="서로 다른 바코드처럼, 다이닛 쇼케이스 상세보기"
-        >
-          <figure class="card">
-            <img
-              src="/src/assets/images/showcase-images/deinet.webp"
-              alt="다이닛 쇼케이스"
-            />
-            <figcaption class="card-text">
-              <h3 class="head">서로 다른 바코드처럼, 다이닛</h3>
-              <p class="event">저마다의 고유한 아이덴티티가 궁금한 우리들</p>
-              <p class="time-frame">
-                <time datetime="2025-03-14">2025.03.14.</time> ~
-                <time datetime="2025-03-27"
-                  ><span class="sr-only">2025.</span>03.27.</time
-                >
-              </p>
-            </figcaption>
-          </figure>
-        </a>
-      </li>
-    </ul>
-
-    <!-- 아래의 카드 영역  -->
     <main>
+      <ul class="head-container">
+        <li class="card-container">
+          <a href="/" class="card-link" aria-label="세터 쇼케이스 상세보기">
+            <figure class="card">
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/satur-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/satur.webp"
+                  alt="세터 쇼케이스 제품이미지"
+                />
+              </picture>
+              <figcaption class="card-text">
+                <h3 class="head">당신의 행복한 토요일 세터</h3>
+                <p class="event">~46%할인, 사진 후기 이벤트</p>
+                <p class="time-frame">
+                  <time datetime="2025-03-14">2025.03.14.</time> ~
+                  <time datetime="2025-03-27"
+                    ><span class="sr-only">2025.</span>03.27.</time
+                  >
+                </p>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="card-container">
+          <a href="/" class="card-link" aria-label="다이닛 쇼케이스 상세보기">
+            <figure class="card">
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/deinet-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/deinet.webp"
+                  alt="다이닛 쇼케이스 제품이미지"
+                />
+              </picture>
+              <figcaption class="card-text">
+                <h3 class="head">서로 다른 바코드처럼, 다이닛</h3>
+                <p class="event">저마다의 고유한 아이덴티티가 궁금한 우리들</p>
+                <p class="time-frame">
+                  <time datetime="2025-03-14">2025.03.14.</time> ~
+                  <time datetime="2025-03-27"
+                    ><span class="sr-only">2025.</span>03.27.</time
+                  >
+                </p>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
+
+      <!-- 아래의 카드 영역  -->
+
       <ul class="body-container">
         <li class="card-container">
           <a
             href="/"
             class="card-link"
-            aria-label="봄에 찾아온 이야기 오이뮤 x 폭싹 속았수다 쇼케이스 상세보기"
+            aria-label="오이뮤 x 폭싹 속았수다 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/oimu.webp"
-                alt="오이뮤 x 폭싹 속았수다 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/oimu-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/oimu.webp"
+                  alt="오이뮤 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">봄에 찾아온 이야기 오이뮤 x 폭싹 속았수다</h3>
                 <p class="event">~46%할인, 사은품 증정 이벤트</p>
@@ -97,13 +108,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="산뜻한 색으로 채우는 봄 모머위켄드 쇼케이스 상세보기"
+            aria-label="모머위켄드 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/momur.webp"
-                alt="모머위켄드 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/momur-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/momur.webp"
+                  alt="모머위켄드 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">산뜻한 색으로 채우는 봄 모머위켄드</h3>
                 <p class="event">
@@ -124,13 +141,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="편안함을 더한 에센셜 24/7 시리즈 쇼케이스 상세보기"
+            aria-label="24/7 시리즈 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/247.webp"
-                alt="24/7 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/247-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/247.webp"
+                  alt="247 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">편안함을 더한 에센셜 24/7 시리즈</h3>
                 <p class="event">사진 후기 이벤트</p>
@@ -146,16 +169,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="일상 속 모든 순간에 함께 나일로라 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="나일로라 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/nylora.webp"
-                alt="나일로라 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/nylora-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/nylora.webp"
+                  alt="나일로라 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">일상 속 모든 순간에 함께 나일로라</h3>
                 <p class="event">
@@ -176,13 +201,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="바래진 것의 재발견 도프 제이슨 쇼케이스 상세보기"
+            aria-label="도프 제이슨 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/doffjason.webp"
-                alt="도프제이슨 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/doffjason-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/doffjason.webp"
+                  alt="도프제이슨 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">바래진 것의 재발견 도프 제이슨</h3>
                 <p class="event">~60%할인, 사진 후기 이벤트</p>
@@ -198,16 +229,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="예상 밖의 즐거움 테켓 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="테켓 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/tecket.webp"
-                alt="테켓 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/tecket-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/tecket.webp"
+                  alt="테켓 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">예상 밖의 즐거움 테켓</h3>
                 <p class="event">사진 후기 이벤트</p>
@@ -226,13 +259,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="시간을 함께하는 어나더오피스 쇼케이스 상세보기"
+            aria-label="어나더오피스 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/anotherOff.webp"
-                alt="어나더오피스 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/anotherOff-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/anotherOff.webp"
+                  alt="어나더 오피스 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">시간을 함께하는 어나더오피스</h3>
                 <p class="event">~24% 할인, 사진 후기 이벤트</p>
@@ -248,16 +287,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="만개하는 봄 러쉬 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="러쉬 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/lush.webp"
-                alt="러쉬 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/lush-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/lush.webp"
+                  alt="러쉬 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">만개하는 봄 러쉬</h3>
                 <p class="event">사진 후기 이벤트</p>
@@ -273,16 +314,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="시간을 거슬러 기억되는 문선 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="문선 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/moonsun.webp"
-                alt="문선 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/moonsun-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/moonsun.webp"
+                  alt="문선 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">시간을 거슬러 기억되는 문선</h3>
                 <p class="event">~43% 할인, 선착순 증정 이벤트</p>
@@ -298,16 +341,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="계절의 변화와 경험 홀리선 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="홀리선 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/horsun.webp"
-                alt="홀리선 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/horsun-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/horsun.webp"
+                  alt="홀리선 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">계절의 변화와 경험 홀리선</h3>
                 <p class="event">~24% 할인, 사진 후기 이벤트</p>
@@ -326,13 +371,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="설렘을 더하는 시간 스튜디오테이블 쇼케이스 상세보기"
+            aria-label="스튜디오테이블 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/studioTable.webp"
-                alt="스튜디오테이블 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/studioTable-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/studioTable.webp"
+                  alt="스튜디오테이블 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">설렘을 더하는 시간 스튜디오테이블</h3>
                 <p class="event">~36% 할인, 선착순 증정 이벤트</p>
@@ -351,13 +402,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="찬란한 실버 시에라 디자인x프로그레스 쇼케이스 상세보기"
+            aria-label="시에라 디자인x프로그레스 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/sierra.webp"
-                alt="시에라 디자인x프로그레스 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/sierra-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/sierra.webp"
+                  alt="시에라 디자인x프로그레스 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">찬란한 실버 시에라 디자인x프로그레스</h3>
                 <p class="event">~30% 할인, 기간 한정 혜택, 사진 후기 이벤트</p>
@@ -376,13 +433,21 @@
           <a
             href="/"
             class="card-link"
-            aria-label="옷의 본질 이스트로그 퍼머넌트 쇼케이스 상세보기"
+            aria-label="이스트로그 퍼머넌트 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/eastloguePer.webp"
-                alt="이스트로그 퍼머넌트 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="
+                    /src/assets/images/showcase-images/eastloguePer-s.webp
+                  "
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/eastloguePer.webp"
+                  alt="이스트로그 퍼머넌트 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">옷의 본질 이스트로그 퍼머넌트</h3>
                 <p class="event">~50% 할인, 사진 후기 이벤트</p>
@@ -398,16 +463,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="클래식하고 빈티지한 무드의 봄 블루민 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="블루민 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/blumin.webp"
-                alt="블루민 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/blumin-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/blumin.webp"
+                  alt="블루민 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">클래식하고 빈티지한 무드의 봄 블루민</h3>
                 <p class="event">~15% 할인, 사진 후기 이벤트</p>
@@ -423,16 +490,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="밤의 흐릿한 장미들 포그던 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="포그던 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/fogdawn.webp"
-                alt="포그던 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/fogdawn-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/fogdawn.webp"
+                  alt="포그던 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">밤의 흐릿한 장미들 포그던</h3>
                 <p class="event">~19% 할인, 사은품 증정 이벤트</p>
@@ -448,16 +517,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="몸과 마음에 힐링이 필요한 순간 아닐로 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="아닐로 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/anillo.webp"
-                alt="아닐로 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/anillo-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/anillo.webp"
+                  alt="아닐로 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">몸과 마음에 힐링이 필요한 순간 아닐로</h3>
                 <p class="event">
@@ -475,16 +546,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="빛나는 당신의 이야기 프리버07 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="프리버07 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/friver.webp"
-                alt="프리버07 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/friver-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/friver.webp"
+                  alt="프리버07 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">빛나는 당신의 이야기 프리버07</h3>
                 <p class="event">
@@ -502,16 +575,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="추억을 걷는 혼스비 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="혼스비 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/honsby.webp"
-                alt="혼스비 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/honsby-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/honsby.webp"
+                  alt="혼스비 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">추억을 걷는 혼스비</h3>
                 <p class="event">~10% 할인, 포토 후기 이벤트</p>
@@ -530,13 +605,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="일상과 여행을 담는 티알브이알 쇼케이스 상세보기"
+            aria-label="티알브이알 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/trvr.webp"
-                alt="티알브이알 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/trvr-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/trvr.webp"
+                  alt="티알브이알 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">일상과 여행을 담는 티알브이알</h3>
                 <p class="event">
@@ -554,16 +635,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="봄을 맞이한 순간 드파운드 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="드파운드 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/depound.webp"
-                alt="드파운드 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/depound-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/depound.webp"
+                  alt="드파운드 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">봄을 맞이한 순간 드파운드</h3>
                 <p class="event">~60% 할인, 사진 후기 이벤트</p>
@@ -579,16 +662,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="색을 찾아 떠나는 여정 시엔느 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="시엔느 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/sienne.webp"
-                alt="시엔느 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/sienne-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/sienne.webp"
+                  alt="시엔느 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">색을 찾아 떠나는 여정 시엔느</h3>
                 <p class="event">~5% 할인, 사진 후기 이벤트</p>
@@ -604,16 +689,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="내면의 아름다움 비슬로우 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="비슬로우 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/beslow.webp"
-                alt="비슬로우 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/beslow-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/beslow.webp"
+                  alt="비슬로우 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">내면의 아름다움 비슬로우</h3>
                 <p class="event">~53% 할인, 사진 후기 이벤트</p>
@@ -629,16 +716,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="봄 이야기 시눈 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="시눈 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/sinoon.webp"
-                alt="시눈 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/sinoon-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/sinoon.webp"
+                  alt="시눈 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">봄 이야기 시눈</h3>
                 <p class="event">~10% 할인, 사진 후기 이벤트</p>
@@ -657,19 +746,27 @@
           <a
             href="/"
             class="card-link"
-            aria-label="우아한 만찬, 프렌치 키친웨어 쇼케이스 상세보기"
+            aria-label="프렌치 키친웨어 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/frenchKitchen.webp"
-                alt="프렌치 키친웨어 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="
+                    /src/assets/images/showcase-images/frenchKitchen-s.webp
+                  "
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/frenchKitchen.webp"
+                  alt="프렌치 키친웨어 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">우아한 만찬, 프렌치 키친웨어</h3>
                 <p
                   class="event"
                   title="새로운 집에서의 첫 홈 파티! 특별한 순간을 완벽하게 빛낼
-                  사브르, 드부이에, 필리빗 키친웨어를 소개합니다."
+                    사브르, 드부이에, 필리빗 키친웨어를 소개합니다."
                 >
                   새로운 집에서의 첫 홈 파티! 특별한 순간을 완벽하게 빛낼
                   사브르, 드부이에, 필리빗 키친웨어를 소개합니다.
@@ -686,16 +783,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="사랑스러운 봄의 시작 이미스 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="이미스 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/emis.webp"
-                alt="이미스 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/emis-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/emis.webp"
+                  alt="이미스 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">사랑스러운 봄의 시작 이미스</h3>
                 <p class="event">~30% 할인, 사진 후기 이벤트</p>
@@ -714,16 +813,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="나에게 주는 선물 쿠론 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="쿠론 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/couronne.webp"
-                alt="쿠론 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/couronne-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/couronne.webp"
+                  alt="쿠론 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">나에게 주는 선물 쿠론</h3>
                 <p class="event">~30% 할인, 선착순 증정 이벤트</p>
@@ -745,13 +846,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="새로움을 향한 여정 이스트로그 쇼케이스 상세보기"
+            aria-label="이스트로그 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/eastLogue.webp"
-                alt="이스트로그 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/eastLogue-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/eastLogue.webp"
+                  alt="이스트로그 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">새로움을 향한 여정 이스트로그</h3>
                 <p class="event">~5% 할인, 사진 후기 이벤트</p>
@@ -771,13 +878,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="운동 열정을 더하는 에이치덱스 쇼케이스 상세보기"
+            aria-label="에이치덱스 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/hdex.webp"
-                alt="에이치덱스 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/hdex-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/hdex.webp"
+                  alt="에이치덱스 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">운동 열정을 더하는 에이치덱스</h3>
                 <p class="event">~40% 할인, 선착순 증정 이벤트</p>
@@ -794,16 +907,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="감각적인 봄 메종마레 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="메종마레 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/maisonMaris.webp"
-                alt="메종마레 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/maisonMaris-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/maisonMaris.webp"
+                  alt="메종마레 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">감각적인 봄 메종마레</h3>
                 <p class="event">~62% 할인, 사진 후기 이벤트</p>
@@ -823,13 +938,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="입는 순간 시작되는 웰니스 라이프 프론투라인 쇼케이스 상세보기"
+            aria-label="프론투라인 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/front2line.webp"
-                alt="프론투라인 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/front2line-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/front2line.webp"
+                  alt="프론투라인 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">
                   입는 순간 시작되는 웰니스 라이프 프론투라인
@@ -848,16 +969,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="우아한 아름다움 이아 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="이아 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/eaah.webp"
-                alt="이아 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/eaah-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/eaah.webp"
+                  alt="이아 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">우아한 아름다움 이아</h3>
                 <p class="event">~20% 할인, 사진 후기 이벤트</p>
@@ -874,16 +997,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="기교없는 담백함 블랭크룸 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="블랭크룸 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/brankroom.webp"
-                alt="블랭크룸 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/brankroom-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/brankroom.webp"
+                  alt="블랭크룸 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">기교없는 담백함 블랭크룸</h3>
                 <p class="event">~10% 할인, 사진 후기 이벤트</p>
@@ -900,16 +1025,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="다채로운 발레코어 슈즈 오찌 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="오찌 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/otz.webp"
-                alt="오찌 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/otz-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/otz.webp"
+                  alt="오찌 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">다채로운 발레코어 슈즈 오찌</h3>
                 <p class="event">~30% 할인, 사진 후기 이벤트</p>
@@ -926,16 +1053,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="두피 장벽도 튼튼하게 퍼셀 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="퍼셀 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/purcell.webp"
-                alt="퍼셀 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/purcell-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/purcell.webp"
+                  alt="퍼셀 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">두피 장벽도 튼튼하게 퍼셀</h3>
                 <p class="event">
@@ -957,13 +1086,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="진정한 봄의 서막을 여는 무쿠앤에보니 쇼케이스 상세보기"
+            aria-label="무쿠앤에보니 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/ebony.webp"
-                alt="무쿠앤에보니 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/ebony-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/ebony.webp"
+                  alt="무쿠앤에보니 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">진정한 봄의 서막을 여는 무쿠앤에보니</h3>
                 <p class="event">~19% 할인, 사진 후기 이벤트</p>
@@ -980,16 +1115,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="빛나는 우리의 일상 반로에 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="반로에 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/vanRohe.webp"
-                alt="반로에 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/vanRohe-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/vanRohe.webp"
+                  alt="반로에 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">빛나는 우리의 일상 반로에</h3>
                 <p class="event">~5% 할인, 사진 후기 이벤트</p>
@@ -1006,16 +1143,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="일상 속 특별한 여정 르아보네 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="르아보네 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/leAbonne.webp"
-                alt="르아보네 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/leAbonne-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/leAbonne.webp"
+                  alt="르아보네 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">일상 속 특별한 여정 르아보네</h3>
                 <p class="event">~35% 할인, 사진 후기 이벤트</p>
@@ -1032,16 +1171,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="언제 어디서든 우아하게 모헤 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="모헤 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/mohae.webp"
-                alt="모헤 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/mohae-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/mohae.webp"
+                  alt="모헤 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">언제 어디서든 우아하게 모헤</h3>
                 <p class="event">~40% 할인, 사진 후기 이벤트</p>
@@ -1061,13 +1202,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="새로운 시작을 준비하며 애프터 프레이 쇼케이스 상세보기"
+            aria-label="애프터 프레이 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/afterPray.webp"
-                alt="애프터프레이 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/afterPray-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/afterPray.webp"
+                  alt="애프터 프레이 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">새로운 시작을 준비하며 애프터 프레이</h3>
                 <p class="event">~37% 할인, 사진 후기 이벤트</p>
@@ -1087,13 +1234,19 @@
           <a
             href="/"
             class="card-link"
-            aria-label="본질적이고 편안한 조스라운지 쇼케이스 상세보기"
+            aria-label="조스라운지 쇼케이스 상세보기"
           >
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/josLounge.webp"
-                alt="조스라운지 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/josLounge-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/josLounge.webp"
+                  alt="조스라운지 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">본질적이고 편안한 조스라운지</h3>
                 <p class="event">~45% 할인, 사진 후기 이벤트</p>
@@ -1110,16 +1263,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="언제든 편안하게 오프아워 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="오프아워 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/offHour.webp"
-                alt="오프아워 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/offHour-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/offHour.webp"
+                  alt="오프아워 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">언제든 편안하게 오프아워</h3>
                 <p class="event">~59% 할인, 사진 후기 이벤트</p>
@@ -1136,16 +1291,18 @@
         </li>
 
         <li class="card-container">
-          <a
-            href="/"
-            class="card-link"
-            aria-label="햇살이 머무는 순간 뮤제드 쇼케이스 상세보기"
-          >
+          <a href="/" class="card-link" aria-label="뮤제드 쇼케이스 상세보기">
             <figure class="card">
-              <img
-                src="/src/assets/images/showcase-images/mused.webp"
-                alt="뮤제드 쇼케이스"
-              />
+              <picture>
+                <source
+                  srcset="/src/assets/images/showcase-images/mused-s.webp"
+                  media="(max-width: 561px)"
+                />
+                <img
+                  src="/src/assets/images/showcase-images/mused.webp"
+                  alt="뮤제드 쇼케이스 제품이미지"
+                />
+              </picture>
               <figcaption class="card-text">
                 <h3 class="head">햇살이 머무는 순간 뮤제드</h3>
                 <p class="event">~19% 할인, 사진 후기 이벤트</p>
