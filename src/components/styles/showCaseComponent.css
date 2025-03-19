@@ -59,7 +59,7 @@ body {
   padding-block-end: var(--spacing-80);
   gap: 0 var(--spacing-20);
 
-  @media (max-width: 561px) {
+  @media (max-width: 541px) {
     grid-template-columns: 1fr;
     padding-inline: var(--spacing-20);
     padding-block: 0px;
@@ -131,7 +131,7 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0 var(--spacing-20);
 
-  @media (max-width: 561px) {
+  @media (max-width: 541px) {
     --background-color: var(--real-white);
     grid-template-columns: 1fr;
     background: var(--real-white);
