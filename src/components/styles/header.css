@@ -50,7 +50,7 @@ a {
     column-gap: 4px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .header-1-nav {
       svg {
         width: 15px;
@@ -104,7 +104,7 @@ a {
   font-size: 17px;
   flex-wrap: wrap;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     column-gap: 10px;
     font-size: 12px;
   }
@@ -129,7 +129,7 @@ a {
   padding-block: 5px;
   padding-inline: 32px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     font-size: 10px;
   }
 }
@@ -144,7 +144,7 @@ a {
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     svg {
       width: 30px;
       height: 30px;
@@ -159,7 +159,7 @@ a {
     font-weight: 900;
     flex-flow: wrap;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       font-size: 25px;
       column-gap: 13px;
     }
@@ -168,7 +168,7 @@ a {
       &:hover {
         border-bottom: 5px solid black;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           border-bottom: 3px solid black;
         }
       }
@@ -199,14 +199,14 @@ a {
   inset-block-start: 0;
   background: #fff;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     gap: 10px;
     padding-top: 20px;
   }
 }
 
 .logo {
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     width: 65px;
     height: 20px;
   }
