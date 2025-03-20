@@ -29,20 +29,24 @@ legend {
 }
 
 .pt-nav {
+  text-transform: uppercase;
+  justify-content: center;
+  text-align: center;
+}
+
+.pt-pages {
   display: flex;
   justify-content: center;
   column-gap: 10px;
   font-size: 22px;
   margin: 62px 0px 50px 0px;
   a {
-    text-align: center;
     min-width: 110px;
     line-height: 40px;
-    text-transform: uppercase;
   }
 }
 
-.pt-virtual {
+.pt-virtual-border {
   border-inline: 1px solid #c4c4c4;
   padding-inline: 45px;
   margin-inline: 20px;

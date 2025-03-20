@@ -16,6 +16,7 @@
   <body>
     <main>
       <!-- poster 컴포넌트 -->
+      <h1>poster 컴포넌트</h1>
       <div class="components-container">
         <a href="/" class="poster">
           <img
@@ -24,11 +25,67 @@
           />
         </a>
       </div>
+
+      <!-- mobile poster 컴포넌트 -->
+      <h1>mobile poster 컴포넌트</h1>
+      <div class="components-container">
+        <a href="/" class="poster mobile">
+          <img
+            src="/src/assets/images/main-images/mobile-poster1.webp"
+            alt="스탠드 오일"
+          />
+          <div class="text-wrap">
+            <p class="title">낭만을 담은 가방</p>
+            <p class="description">스탠드오일 여기에만 있는 신상 혜택 ~5%</p>
+          </div>
+
+          <div class="poster-num-bar">
+            <div class="poster-num-wrap">
+              <p class="current-num">
+                <span class="sr-only">현재 보고 있는 광고 번호:</span> 01
+              </p>
+              <p class="total-num">
+                <span class="sr-only">전체 광고 개수:</span>
+                <span aria-hidden="true">·</span>70
+              </p>
+            </div>
+            <div class="bar-track">
+              <div class="bar-thumb"></div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- mobile poster 개수 정보 바 컴포넌트 -->
+      <h1>mobile poster 개수 정보 바 컴포넌트</h1>
+      <div class="components-container">
+        <div style="background: black; padding-block: 20px">
+          <div class="poster-num-bar">
+            <div class="poster-num-wrap">
+              <p class="current-num">
+                <span class="sr-only">현재 보고 있는 광고 번호:</span> 01
+              </p>
+              <p class="total-num">
+                <span class="sr-only">전체 광고 개수:</span>
+                <span aria-hidden="true">·</span>70
+              </p>
+            </div>
+            <div class="bar-track">
+              <div class="bar-thumb"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- card 컴포넌트 -->
+      <h1>card 컴포넌트</h1>
       <div class="components-container">
         <div class="product-card">
           <a class="brand" href="/">
-            <img src="../assets/images/main-images/brand1-main.webp" alt="" />
+            <img
+              src="../assets/images/main-images/brand1-main.webp"
+              alt="벤앤쿠"
+            />
             <h2 class="title">자정이면 종료되는 혜택</h2>
             <p class="description">
               벤앤쿠의 25SS 컬렉션은 섬세한 감성이 담긴 컬러와 디테일, 그리고
@@ -36,65 +93,346 @@
             </p>
           </a>
           <div class="products-container">
-            <div class="product">
+            <figure class="product">
               <a href="/">
                 <img
                   src="../assets/images/main-images/brand1-product1.webp"
                   alt="[29CM단독] Silk Organza Aura Scarf - Pink Tangerine"
                 />
-                <div class="introduction-container">
+                <figcaption class="introduction-container">
                   <p class="product-title">벤앤쿠</p>
                   <p class="product-description">
                     [29CM단독] Silk Organza Aura Scarf - Pink Tangerine
                   </p>
                   <p class="product-price">
-                    <span class="text-red">30%</span> 27,620
+                    <span class="sr-only">할인율</span>
+                    <span class="text-red">30%</span>
+                    <span class="sr-only">판매가</span>
+                    27,620
                   </p>
-                </div>
+                </figcaption>
               </a>
               <div class="button-container">
-                <button class="like-btn">
+                <button class="like-btn" aria-label="좋아요">
                   <img
                     src="../assets/images/main-images/like-btn.svg"
-                    alt="좋아요"
-                  />
-                </button>
-                <p class="like-num">352</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="/">
-                <img
-                  src="../assets/images/main-images/brand1-product1.webp"
-                  alt="[29CM단독] Silk Organza Aura Scarf - Pink Tangerine"
-                />
-                <div class="introduction-container">
-                  <p class="product-title">벤앤쿠</p>
-                  <p class="product-description">
-                    [29CM단독] Silk Organza Aura Scarf - Pink Tangerine
-                  </p>
-                  <p class="product-price">
-                    <span class="text-red">30%</span> 27,620
-                  </p>
-                </div>
-              </a>
-              <div class="button-container">
-                <button class="like-btn">
-                  <img
-                    src="../assets/images/main-images/like-btn.svg"
-                    alt="좋아요"
+                    alt=""
+                    aria-hidden="true"
                   />
                 </button>
                 <p class="like-num">
-                  <span class="sr-only">좋아요 개수</span>
-                  352
+                  <span class="sr-only">좋아요 개수</span>352
                 </p>
               </div>
-            </div>
+            </figure>
+            <figure class="product">
+              <a href="/">
+                <img
+                  src="../assets/images/main-images/brand1-product2.webp"
+                  alt="[29CM단독] Dome-Gold/White"
+                />
+                <figcaption class="introduction-container">
+                  <p class="product-title">벤앤쿠</p>
+                  <p class="product-description">[29CM단독] Dome-Gold/White</p>
+                  <p class="product-price">
+                    <span class="sr-only">할인율</span>
+                    <span class="text-red">10%</span>
+                    <span class="sr-only">판매가</span>
+                    199,452
+                  </p>
+                </figcaption>
+              </a>
+              <div class="button-container">
+                <button class="like-btn" aria-label="좋아요">
+                  <img
+                    src="../assets/images/main-images/like-btn.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+                <p class="like-num">
+                  <span class="sr-only">좋아요 개수</span>309
+                </p>
+              </div>
+            </figure>
           </div>
         </div>
       </div>
 
+      <!-- brand 컴포넌트 -->
+      <h1>brand 컴포넌트</h1>
+      <div class="components-container">
+        <figure class="brand-card">
+          <a class="brand" href="/">
+            <img
+              src="../assets/images/main-images/brand-card1.webp"
+              alt="벤앤쿠"
+            />
+            <figcaption>
+              <h2 class="title">자정이면 종료되는 혜택</h2>
+              <p class="description">
+                벤앤쿠의 25SS 컬렉션은 섬세한 감성이 담긴 컬러와 디테일, 그리고
+                부드러운 실루엣이 특징이에요.
+              </p>
+            </figcaption>
+          </a>
+        </figure>
+      </div>
+
+      <!-- carousel card 컴포넌트 -->
+      <h1>carousel card 컴포넌트</h1>
+      <div class="components-container">
+        <a href="/">
+          <article class="carousel-product-card">
+            <div class="img-wrap">
+              <img
+                src="/src/assets/images/main-images/carousel1-product1.webp"
+                alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+              />
+              <button class="like-btn" aria-label="좋아요">
+                <img
+                  src="/src/assets/images/main-images/like-btn-white.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+            <p class="brand">클로르</p>
+            <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+            <p class="product-price">
+              <span class="sr-only">판매가</span>
+              27,000
+            </p>
+            <div class="popularity-wrap">
+              <img
+                src="/src/assets/images/main-images/like-btn-fill.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <p class="like-num">
+                <span class="sr-only">좋아요 개수</span> 44
+              </p>
+              <img
+                src="/src/assets/images/main-images/star-btn.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <p class="star-num">
+                <span class="sr-only">별점 및 리뷰 개수</span> 0 (0)
+              </p>
+            </div>
+          </article>
+        </a>
+      </div>
+
+      <!-- carousel 컴포넌트  -->
+      <h1>carousel 컴포넌트</h1>
+      <div class="components-container">
+        <div class="products-carousel">
+          <div class="title-btn-wrap">
+            <h2 class="carousel-title">티징 이벤트 미리보기</h2>
+            <div class="button-wrap">
+              <button class="next-btn left">
+                <img
+                  src="/src/assets/images/main-images/left-next-btn.svg"
+                  alt="이전 버튼"
+                />
+              </button>
+              <button class="next-btn right">
+                <img
+                  src="/src/assets/images/main-images/right-next-btn.svg"
+                  alt="다음 버튼"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="carousel">
+            <a href="/" class="carousel-product-card show">
+              <article>
+                <div class="img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product1.webp"
+                    alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">판매가</span>
+                  27,000
+                </p>
+                <div class="popularity-wrap">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-fill.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="like-num">
+                    <span class="sr-only">좋아요 개수</span> 44
+                  </p>
+                  <img
+                    src="/src/assets/images/main-images/star-btn.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="star-num">
+                    <span class="sr-only">별점 및 리뷰 개수</span> 0 (0)
+                  </p>
+                </div>
+              </article>
+            </a>
+            <a href="/" class="carousel-product-card show-next">
+              <article>
+                <div class="img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product2.webp"
+                    alt="SQUARE SCRUNCHIE - 3 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">SQUARE SCRUNCHIE - 3 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">할인율</span>
+                  <span class="text-red">29%</span>
+                  <span class="sr-only">판매가</span>
+                  29,820
+                </p>
+                <div class="popularity-wrap">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-fill.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="like-num">
+                    <span class="sr-only">좋아요 개수</span> 32
+                  </p>
+                  <img
+                    src="/src/assets/images/main-images/star-btn.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="star-num">
+                    <span class="sr-only">별점 및 리뷰 개수</span> 4.4 (1)
+                  </p>
+                </div>
+              </article>
+            </a>
+            <a href="/" class="carousel-product-card hidden">
+              <article>
+                <div class="img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product3.webp"
+                    alt="WIDE HAIRBAND - 2 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">WIDE HAIRBAND - 2 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">할인율</span>
+                  <span class="text-red">29%</span>
+                  <span class="sr-only">판매가</span>
+                  23,430
+                </p>
+                <div class="popularity-wrap">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-fill.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="like-num">
+                    <span class="sr-only">좋아요 개수</span> 21
+                  </p>
+                  <img
+                    src="/src/assets/images/main-images/star-btn.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="star-num">
+                    <span class="sr-only">별점 및 리뷰 개수</span> 4 (3)
+                  </p>
+                </div>
+              </article>
+            </a>
+            <a href="/" class="carousel-product-card hidden">
+              <article>
+                <div class="img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product4.webp"
+                    alt="SLIM HAIRBAND - 2 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">SLIM HAIRBAND - 2 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">할인율</span>
+                  <span class="text-red">29%</span>
+                  <span class="sr-only">판매가</span>
+                  22,010
+                </p>
+                <div class="popularity-wrap">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-fill.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="like-num">
+                    <span class="sr-only">좋아요 개수</span> 44
+                  </p>
+                  <img
+                    src="/src/assets/images/main-images/star-btn.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <p class="star-num">
+                    <span class="sr-only">별점 및 리뷰 개수</span> 0 (0)
+                  </p>
+                </div>
+              </article>
+            </a>
+          </div>
+          <div class="page">
+            <p class="current-num">
+              <span class="sr-only">현재 보고 있는 상품 번호:</span> 1
+            </p>
+            <p class="total-num">
+              <span class="sr-only">전체 상품 개수:</span>
+              <span aria-hidden="true">/</span>10
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 300px"></div>
+
+      <h1>more-white-container 컴포넌트</h1>
       <div class="more-white-container">
         <div class="white-background">
           <div class="one-box"></div>
