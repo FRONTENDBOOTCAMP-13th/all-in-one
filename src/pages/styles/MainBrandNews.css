@@ -1,0 +1,18 @@
+@import url('/src/components/styles/indexBrandNewsComponents.css');
+
+.brand-news-sec,
+.product-sell-sec {
+  padding-inline: var(--padding-inline);
+  padding-block: var(--padding-block);
+
+  @media (min-width: 1024px) {
+    padding-inline: 18%;
+  }
+}
+
+.brand-news-sec {
+  background: #f0f0f0;
+  @media (max-width: 540px) {
+    padding: 0;
+  }
+}

@@ -18,8 +18,27 @@
   --padding-inline: 8%;
   --padding-block: 15%;
 
+  --text-10: 0.625rem;
   --text-18: 1.125rem;
+  --text-38: 2.375rem;
   --text-48: 3rem;
+}
+
+/* hover ***************** */
+.brand-home-a,
+.brand-home-a span,
+.brand-home-a path {
+  transition: all 0.4s ease;
+}
+.brand-home-a:hover {
+  background: #000;
+
+  span {
+    color: #fff;
+  }
+  path {
+    stroke: #fff;
+  }
 }
 
 /* 컴포넌트 컨테이너 디자인************** */
@@ -53,6 +72,10 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+p {
+  line-height: 1.5rem;
 }
 
 .text-red {
@@ -127,12 +150,53 @@ button {
 
 /* 브랜드 소개 카드 컴포넌트 ****************** */
 .brand-news-card {
-  background: #f0f0f0;
-  padding-inline: var(--padding-inline);
-  padding-block: var(--padding-block);
   display: flex;
   flex-flow: column nowrap;
   gap: var(--gap-50);
+
+  .mobile-sec-header {
+    display: none;
+  }
+
+  @media (max-width: 540px) {
+    position: relative;
+    height: 100vh;
+    color: #ffffff;
+
+    img {
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.85);
+    }
+
+    .brand-report-card {
+      display: none;
+    }
+    .mobile-sec-header,
+    .brand-text-wrap {
+      position: absolute;
+      padding: var(--gap-22);
+
+      z-index: 1;
+    }
+    .mobile-sec-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .brand-text-wrap {
+      bottom: 5%;
+
+      h1 {
+        font-size: var(--text-38);
+      }
+      p {
+        font-size: var(--text-18);
+      }
+    }
+  }
 }
 
 /* 브랜드 상품 컴포넌트 */
@@ -198,6 +262,63 @@ button {
     .like-wrap,
     .star-wrap {
       display: flex;
+      gap: var(--gap-5);
+      justify-content: center;
+      align-items: center;
     }
+  }
+}
+
+/* 상품 판매 카드************** */
+
+.product-sell-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-size: var(--text-30);
+  }
+
+  .bar {
+    padding-block: var(--gap-22);
+  }
+
+  .category-wrap {
+    font-size: var(--text-14);
+    padding-bottom: var(--gap-10);
+    width: 100%;
+
+    ul {
+      width: 100%;
+      display: flex;
+      gap: var(--gap-10);
+      float: left;
+
+      .category {
+        border: solid 1px var(--border-color);
+        border-radius: 30rem;
+        padding: var(--gap-5) var(--gap-10);
+      }
+    }
+  }
+
+  .products-wrap {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: var(--gap-22);
+
+    @media (min-width: 541px) {
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+    }
+  }
+
+  .brand-product-card {
+    width: 100%;
   }
 }
