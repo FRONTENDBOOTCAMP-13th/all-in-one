@@ -14,7 +14,7 @@
   .side-bar {
     flex: 0 0 var(--spacing-200);
     position: sticky;
-    top: 0; /* 여기에 top 값을 추가 */
+    top: var(--spacing-40); /* 여기에 top 값을 추가 */
     height: 100vh;
 
     @media (max-width: 561px) {
@@ -42,6 +42,7 @@
   }
 }
 
+/* 호버링 효과 구현 */
 .product-container {
   transition: all 0.3s ease;
   overflow: hidden;
@@ -62,3 +63,20 @@
 .product-container:hover .product-name a {
   color: #0066cc;
 }
+
+/* 이거 사용할지 말지 팀원들에게 물어보기 */
+/* .product-container {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
+  row-gap: 0;
+  figure {
+    display: contents;
+  }
+  .product-txt {
+    display: contents;
+    .brand {
+      margin-block-start: var(--spacing-12);
+    }
+  }
+} */
