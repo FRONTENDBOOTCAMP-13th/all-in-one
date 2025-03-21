@@ -2,21 +2,42 @@
 @import '/src/common/theme.css';
 @import '/src/common/a11y.css';
 
+:root {
+  --border-color: rgba(0, 0, 0, 0.17); /* card 옆 border 컬러 */
+  --like-btn-color: #5d5d5da3;
+  --text-title: var(--text-22);
+  --text-normal: var(--text-15);
+  --text-xs: var(--text-11);
+  --text-s: var(--text-12);
+}
+
+/* hover 이펙트 *************** */
+.poster img,
+.brand img,
+.product {
+  transition: all 0.4s;
+}
+.poster:hover {
+  img {
+    filter: brightness(0.75);
+  }
+}
+.brand:hover {
+  img {
+    filter: brightness(0.75);
+  }
+}
+.product:hover {
+  background: #ededed;
+}
+
+/* 컴포넌트 컨테이너 디자인************** */
 .components-container {
   /* margin: 100px; */
   margin-bottom: 100px;
   border: solid 2px black;
   border-radius: 5px;
   width: 100%;
-}
-
-:root {
-  --border-color: rgba(0, 0, 0, 0.17);
-  --like-btn-color: #5d5d5da3;
-  --text-title: var(--text-22);
-  --text-normal: var(--text-15);
-  --text-xs: var(--text-11);
-  --text-s: var(--text-12);
 }
 
 body {
@@ -41,8 +62,7 @@ button {
   color: #ff4800;
 }
 
-/* 
-      <!-- poster 컴포넌트 --> */
+/* poster 컴포넌트 디자인************** */
 .poster {
   width: 100%;
   position: relative;
@@ -52,46 +72,55 @@ button {
     width: 100%;
     display: block;
   }
+}
 
+/* mobile poster에서 보이는
+  텍스트, bar 컴포넌트  디자인************** */
+.mobile-text-num-wrap {
+  --margin-bottom-gap: 5%;
+
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 10%;
+  padding-inline: 3.75rem;
+
+  @media (max-width: 374px) {
+    padding-inline: 2rem;
+    padding-bottom: 5%;
+  }
+  @media (min-width: 541px) {
+    display: none;
+  }
+
+  /* mobile poster 텍스트 컴포넌트  디자인************** */
   .text-wrap {
-    position: absolute;
-    top: 68%;
-    translate: 50%, 50%;
-    padding-inline: 3.125rem;
     color: #fff;
 
-    @media (max-width: 23.375rem) {
-      top: 70%;
-      padding-inline: 1.25rem;
-    }
-
     .title {
-      font-size: 2rem;
+      font-size: 7.5vw;
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      margin-bottom: var(--margin-bottom-gap);
     }
     .description {
-      font-size: 1.125rem;
+      font-size: 3.8vw;
       font-weight: 500;
+      margin-bottom: var(--margin-bottom-gap);
     }
   }
 
+  /* mobile poster bar  디자인************** */
   .poster-num-bar {
-    --gap: 15px;
     --gray-color: #a9a9a9;
-    position: absolute;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--gap);
+    gap: 8%;
     width: 100%;
-    top: 88%;
-    translate: 50%, 50%;
-    padding-inline: 3.125rem;
 
     .poster-num-wrap {
-      font-size: var(--text-11);
+      font-size: 3vw;
       font-weight: 900;
       width: 10%;
       color: #fff;
@@ -121,8 +150,7 @@ button {
   }
 }
 
-/*    <!-- card 컴포넌트 -->,
-   <!-- brand 컴포넌트 --> */
+/* 상품 card(상품 포함), brand(상품 미포함) 카드 공통 디자인************** */
 .product-card,
 .brand-card {
   --padding-inline: 1.5rem;
@@ -137,7 +165,7 @@ button {
   padding-block: var(--padding-block);
   border-left: solid 1px var(--border-color);
 
-  @media (min-width: 33.8125rem) {
+  @media (min-width: 541px) {
     width: 50%;
   }
 
@@ -162,7 +190,8 @@ button {
   }
 }
 
-/*    <!-- product card 컴포넌트 --> */
+/* 상품 카드(상품 포함) 컴포넌트의
+  상품 콘텐츠 디자인************** */
 .product-card {
   .products-container {
     width: 100%;
@@ -235,7 +264,7 @@ button {
   }
 }
 
-/* <!-- carousel card 컴포넌트 --> */
+/* carousel card 컴포넌트 디자인************** */
 .products-carousel {
   --padding-inline: 1.5rem;
   --padding-block: 2.625rem;
@@ -248,7 +277,7 @@ button {
   padding-block: var(--padding-block);
   border-left: solid 1px var(--border-color);
 
-  @media (min-width: 33.8125rem) {
+  @media (min-width: 541px) {
     width: 50%;
   }
 
@@ -264,7 +293,7 @@ button {
     .carousel-title {
       font-size: 1.25rem;
 
-      @media (min-width: 33.8125rem) {
+      @media (min-width: 541px) {
         font-size: 1.5rem;
       }
     }
@@ -273,7 +302,7 @@ button {
       display: none;
       gap: 0.3125rem;
 
-      @media (min-width: 33.8125rem) {
+      @media (min-width: 541px) {
         display: flex;
       }
 
@@ -291,7 +320,7 @@ button {
     gap: 0.625rem;
     padding-bottom: 0.625rem;
 
-    @media (min-width: 33.8125rem) {
+    @media (min-width: 541px) {
       /* 스크롤바 숨기기 */
       scrollbar-width: none;
       &::-webkit-scrollbar {
@@ -318,48 +347,45 @@ button {
   }
 }
 
-/* 스크롤바 전체 */
+/* carousel 스크롤바 디자인************** */
 .carousel::-webkit-scrollbar {
   width: 8px; /* 세로 스크롤바 너비 */
   height: 8px; /* 가로 스크롤바 높이 */
 }
 
-/* 스크롤바 핸들 */
+/* carousel 스크롤바 핸들 디자인************** */
 .carousel::-webkit-scrollbar-thumb {
   background: #f1f1f1;
   border-radius: 4px;
   border-radius: 5px;
 }
 
-/* <!-- carousel card 컴포넌트 --> */
+/* 상품 이미지-좋아요 디자인 ***************** */
+.product-img-wrap {
+  position: relative;
+  width: fit-content;
+
+  .like-btn {
+    position: absolute;
+    display: block;
+    bottom: 0.3125rem;
+    right: 0.3125rem;
+    width: 11%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* carousel 카드 속 상품 콘텐츠 디자인************** */
 .carousel-product-card {
   --popularity-text-color: #979797;
 
   height: auto;
   min-width: 0;
-  /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */
-  flex: 0 0 auto;
+  flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */
   width: 33%;
-
-  /* transition: all 0.3s ease; */
-
-  .img-wrap {
-    position: relative;
-    width: fit-content;
-
-    .like-btn {
-      position: absolute;
-      display: block;
-      bottom: 0.3125rem;
-      right: 0.3125rem;
-      width: 4vw;
-      max-width: 32px;
-
-      img {
-        width: 100%;
-      }
-    }
-  }
 
   .brand {
     font-size: var(--text-12);
@@ -367,7 +393,7 @@ button {
     margin-top: 0.75rem;
     margin-bottom: 0.25rem;
 
-    @media (min-width: 33.8125rem) {
+    @media (min-width: 541px) {
       font-size: var(--text-14);
     }
   }
@@ -378,7 +404,7 @@ button {
     text-overflow: ellipsis;
     width: 16ch;
     max-width: 100%;
-    @media (min-width: 33.8125rem) {
+    @media (min-width: 541px) {
       font-size: var(--text-14);
     }
   }
@@ -386,7 +412,7 @@ button {
     font-size: var(--text-14);
     font-weight: 700;
     margin-block: 0.375rem;
-    @media (min-width: 33.8125rem) {
+    @media (min-width: 541px) {
       font-size: var(--text-16);
     }
   }
@@ -399,13 +425,7 @@ button {
   }
 }
 
-@media (max-width: 33.75rem) {
-  /* .carousel-product-card:hover {
-    translate: 0 -10px;
-  } */
-}
-
-@media (min-width: 33.8125rem) {
+@media (min-width: 541px) {
   .carousel-product-card.show {
     width: 70%;
   }
@@ -440,12 +460,14 @@ button {
   }
 }
 
+/* 더보기 | 흰 그라디언트 div 디자인 ********** */
 .more-white-container {
   width: 100%;
   position: absolute;
   bottom: 0;
   pointer-events: none;
 
+  /* 흰 그라디언트 디자인 ************* */
   .white-background {
     translate: 0 5px;
     bottom: 0;
@@ -462,12 +484,14 @@ button {
     .two-box,
     .three-box {
       width: 28%;
-      @media (min-width: 33.8125rem) {
+      @media (min-width: 541px) {
         border-left: solid 0.5px rgba(0, 0, 0, 0.115);
         border-bottom: solid 0.5px rgba(0, 0, 0, 0.115);
       }
     }
   }
+
+  /* 더보기 버튼 디자인 ***************** */
   .more-btn-container {
     width: 100%;
     padding-top: 2.4rem;

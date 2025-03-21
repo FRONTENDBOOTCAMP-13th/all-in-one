@@ -1,0 +1,49 @@
+@import url('/src/components/styles/indexWelcomingComponent.css');
+
+section {
+  width: 100%;
+}
+
+.coupon-sec {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+  padding-inline: var(--brand-inline-padding);
+  padding-block: 4.375rem;
+
+  @media (min-width: 541px) {
+    padding-inline: var(--brand-inline-padding-desk);
+  }
+
+  .mini-ad-wrap {
+    width: 100%;
+    padding-bottom: 2.5rem;
+  }
+
+  .coupon-btn-wrap {
+    width: 50%;
+    min-width: 200px;
+  }
+}
+
+.brand-sec {
+  padding-bottom: 60px;
+
+  @media (min-width: 541px) {
+    padding-bottom: 80px;
+  }
+
+  .title-category {
+    padding-top: 60px;
+    width: 100%;
+    font-size: 60px;
+    text-align: center;
+
+    @media (min-width: 541px) {
+      font-size: 80px;
+      padding-top: 80px;
+    }
+  }
+}
