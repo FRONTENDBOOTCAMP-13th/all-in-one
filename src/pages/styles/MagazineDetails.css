@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 a {
@@ -27,27 +27,41 @@ a {
 
 .main-container {
   margin: 0 auto;
+  background-color: #fff;
 }
 
 /* Hero Section */
 .hero-section {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  height: 100vh; /* 전체 화면 높이로 설정 */
+  overflow: hidden; /* 섹션 자체는 스크롤 없음 */
 }
 
 /* Left Banner */
 .hero-banner {
-  background-color: #ffca62;
-  padding: 80px 20px;
+  background-color: #f3f3f3;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 30%;
-  min-width: 390px;
+  min-width: 400px;
+  height: 100%;
+  overflow-y: auto; /* 개별 배너 스크롤 활성화 */
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+  overscroll-behavior: contain; /* 부모 스크롤로 전달 방지 */
 }
 
-.hero-banner img {
+.hero-part {
+  background-color: #ffca62;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-part img {
   max-width: 100%;
   margin-bottom: 20px;
 }
@@ -68,21 +82,157 @@ a {
   }
 }
 
+/* Featured Products Section */
+.featured-products {
+  background-color: #f3f3f3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열 그리드로 수정 */
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+  margin-bottom: 30px;
+}
+
+.featured-product {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%; /* 너비 100%로 설정 */
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+  min-width: 0; /* 그리드 아이템 최소 너비 제한 해제 */
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-product-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  overflow: hidden; /* 이미지가 컨테이너를 벗어나지 않도록 */
+}
+
+.featured-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-product-info {
+  justify-self: start;
+  width: 100%; /* 너비 100%로 설정 */
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-product-title {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.featured-product-price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.featured-product-discount {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.featured-product-amount {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.comp3-banner-video {
+  margin-bottom: 80px;
+}
+
+.featured-special-message {
+  padding: 10px;
+  text-align: center;
+  color: #ff9500;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fff;
+  line-height: 1.5;
+}
+
+.featured-special-message span {
+  color: #ff6b6b;
+}
+
 /* Right Banner */
 .right-banner {
-  display: flex;
   height: 100%;
   width: 100%;
-  padding: 0 20px 80px;
+  position: relative; /* 컨테이너에 position 설정*/
+  overflow-y: auto; /* 개별 배너 스크롤 활성화 */
+  overscroll-behavior: contain; /* 부모 스크롤로 전달 방지 */
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
   margin: 0;
-  padding: 0;
+  padding: 0 20px 0;
   gap: 20px;
   width: 100%;
+}
+
+/* Component 4 - Navigation Tabs */
+.comp4-nav-container {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  padding: 10px 0; /* 상하 패딩만 적용 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+.comp4-nav-tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0 20px; /* 좌우 패딩 적용 */
+  flex-wrap: nowrap;
+  overflow-x: auto; /* 가로 스크롤 가능하도록 설정 */
+  -webkit-overflow-scrolling: touch; /* 모바일에서 부드러운 스크롤 */
+  scrollbar-width: none; /* Firefox에서 스크롤바 숨김 */
+}
+
+.comp4-nav-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari에서 스크롤바 숨김 */
+}
+
+.comp4-nav-tab {
+  white-space: nowrap;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  flex-shrink: 0; /* 버튼이 줄어들지 않도록 설정 */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* 부드러운 애니메이션 */
+}
+
+/* 호버했을 때 스타일 변경 */
+.comp4-nav-tab:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 /* Component 1 - Product Card with Discount */
@@ -93,9 +243,7 @@ a {
   width: 100%;
   padding-bottom: 16px;
   background-color: #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
   position: relative;
 }
 
@@ -120,7 +268,6 @@ a {
   flex: 1 1 0%;
   display: flex;
   flex-direction: column;
-  padding: 0 8px;
 }
 
 .comp1-product-title {
@@ -149,171 +296,66 @@ a {
   font-size: 12px;
   margin-bottom: 4px;
   white-space: nowrap;
+  display: block; /* flex → block 변경 */
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Component 3 - Product Banner */
-.comp3-product-banner {
-  background-color: #ffca62;
-  padding: 40px 20px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.comp3-banner-header {
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.comp3-banner-image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-}
-
-.comp3-banner-description {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.comp3-framer-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.comp3-framer-text {
-  font-size: 16px;
-  padding: 0 0 20px 0;
-}
-
-.comp3-framer-text p {
-  margin-bottom: 5px;
-}
-
-.comp3-banner-video {
-  width: 100%;
-  max-width: 600px;
-}
-
-/* Component 4 - Navigation Tabs */
-.comp4-nav-container {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.comp4-nav-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  flex-wrap: nowrap;
-}
-
-.comp4-nav-tab {
-  white-space: nowrap;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background-color: #f8f8f8;
-  color: #333;
-  font-size: 14px;
-  cursor: pointer;
-  border: none;
-  font-weight: 500;
-}
-
-.comp4-nav-tab.active {
-  background-color: #000;
-  color: #fff;
-}
-
-/* Featured Products Section */
-.featured-products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.featured-product {
-  flex: 1;
-  min-width: 250px;
-  max-width: calc(25% - 15px);
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-.featured-product-image {
-  width: 100%;
-  aspect-ratio: 1/1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.featured-product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.featured-product-info {
-  text-align: center;
-}
-
-.featured-product-title {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.featured-product-price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
-.featured-product-discount {
-  color: #ff6b6b;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.featured-product-amount {
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
 }
 
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
+    height: auto;
+    overflow: visible; /* 섹션 높이 자동으로 설정 */
   }
 
   .hero-banner {
     width: 100%;
-    margin-bottom: 20px;
+    min-width: auto;
+    max-height: none;
+    height: auto;
+    overflow: visible;
+  }
+
+  .right-banner {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding-bottom: 20px; /* 하단 여백 추가 */
   }
 
   .product-grid {
+    padding: 20px 20px 80px; /* 좌우 패딩 조정 */
     width: 100%;
-    padding-left: 0;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 
-  .featured-product {
-    max-width: calc(50% - 10px);
+  /* 모바일에서도 네비게이션은 sticky 유지 */
+  .comp4-nav-container {
+    position: sticky;
+    top: 0;
+  }
+
+  .featured-products {
+    grid-template-columns: 1fr 1fr; /* 모바일에서 2열 유지 */
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .featured-special-message {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .featured-product-info {
+    padding: 12px;
+  }
+
+  .featured-product-title {
+    font-size: 14px;
+  }
+
+  .featured-product-discount,
+  .featured-product-amount {
+    font-size: 14px;
   }
 }
