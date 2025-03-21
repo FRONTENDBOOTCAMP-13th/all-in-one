@@ -1,0 +1,90 @@
+@import '/src/components/styles/header.css';
+@import '/src/components/styles/ptComponent.css';
+
+.pt-bold {
+  font-weight: 900;
+  color: black;
+}
+
+.pt-history-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-inline: 50px;
+  gap: 20px;
+}
+
+.pt-button-wrap {
+  text-align: center;
+  padding-block: 40px;
+}
+
+@media (max-width: 1024px) {
+  .pt-pages {
+    font-size: 16px;
+    margin: 30px 0px 50px 0px;
+  }
+  .pt-virtual-border {
+    padding-inline: 30px;
+    margin-inline: 10px;
+  }
+
+  .pt-future {
+    font-size: 60px;
+    padding: 90px 50px 274px;
+  }
+}
+
+/* 모바일  */
+@media (max-width: 541px) {
+  .pt-history-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+    gap: 0;
+  }
+
+  .pt-button-more {
+    display: inline-flex;
+    font-size: 20px;
+    justify-content: center;
+  }
+
+  .pt-button-more::after {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+
+    margin-left: 15px;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    transform: rotate(45deg);
+  }
+
+  .pt-nav {
+    margin-top: 16px;
+  }
+  .page-title {
+    display: block;
+    all: unset;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .pt-pages {
+    margin: 10px 0px 10px 0px;
+    color: #a0a0a0;
+    font-size: 14px;
+  }
+
+  .pt-virtual-border {
+    border: none;
+    padding-inline: 10px;
+  }
+
+  .pt-future {
+    font-size: 32px;
+    padding: 80px 25px 116px;
+  }
+}

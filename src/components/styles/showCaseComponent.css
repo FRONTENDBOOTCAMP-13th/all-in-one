@@ -1,0 +1,209 @@
+@import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+
+:root {
+  --weight-600: 600;
+
+  /* 색상 */
+  --real-black: rgb(0, 0, 0);
+  --real-white: #fff;
+  --pretty-white: #f4f4f4;
+
+  --spacing-4: 0.25rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+  --spacing-50: 3.125rem;
+  --spacing-56: 3.5rem;
+  --spacing-80: 5rem;
+}
+
+* {
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  --font-color: var(--real-black);
+  color: var(--font-color);
+  list-style: none;
+
+  a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 글자색 상속 */
+  }
+}
+
+.card {
+  .head {
+    font-size: var(--text-34);
+    font-weight: var(--weight-600);
+  }
+
+  .event {
+    font-size: var(--text-15);
+    font-weight: normal;
+  }
+
+  .time-frame {
+    font-size: var(--text-15);
+    font-weight: normal;
+  }
+}
+
+/* 위쪽 카드 영역 스타일링 */
+
+.head-container {
+  --background-color: var(--real-white);
+
+  background: var(--background-color);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-inline: var(--spacing-50);
+  padding-block-start: var(--spacing-56);
+  padding-block-end: var(--spacing-80);
+  gap: 0 var(--spacing-20);
+
+  @media (max-width: 541px) {
+    grid-template-columns: 1fr;
+    padding-inline: var(--spacing-20);
+    padding-block: 0px;
+    .card-container {
+      padding-block-start: var(--spacing-56);
+    }
+
+    .head {
+      font-size: var(--text-22);
+      font-weight: var(--weight-600);
+    }
+  }
+
+  .card-container {
+    position: relative; /* 포지션 상대값 추가 */
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    transition: transform 0.3s ease; /* 부드러운 전환 효과 */
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* 호버 영역을 확장하기 위한 가상 요소 */
+  .card-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .card-link {
+    display: contents;
+  }
+
+  .card {
+    display: contents;
+  }
+
+  .card-text {
+    display: contents;
+
+    .head {
+      margin-block-start: var(--spacing-20);
+    }
+
+    .event {
+      margin-block-start: var(--spacing-4);
+    }
+    .time-frame {
+      margin-block-start: var(--spacing-16);
+      font-weight: var(--weight-600);
+    }
+  }
+}
+
+/* 아래 카드 영역 스타일링 */
+.body-container {
+  --background-color: var(--pretty-white);
+
+  background: var(--background-color);
+  padding-inline: var(--spacing-50);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 var(--spacing-20);
+
+  @media (max-width: 541px) {
+    --background-color: var(--real-white);
+    grid-template-columns: 1fr;
+    background: var(--real-white);
+    padding-inline: var(--spacing-20);
+  }
+
+  .card-container {
+    position: relative; /* 포지션 상대값 추가 */
+    padding-block-start: var(--spacing-56);
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    transition: transform 0.3s ease; /* 부드러운 전환 효과 */
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* 호버 영역을 확장하기 위한 가상 요소 */
+  .card-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .card-link {
+    display: contents;
+  }
+
+  .card {
+    display: contents;
+
+    .card-text {
+      display: contents;
+
+      .head {
+        font-size: var(--text-22);
+        font-weight: var(--weight-600);
+        margin-block-start: var(--spacing-16);
+      }
+
+      .event {
+        font-size: var(--text-15);
+        font-weight: normal;
+        margin-block-start: var(--spacing-4);
+      }
+
+      .time-frame {
+        font-size: var(--text-15);
+        font-weight: var(--weight-600);
+        margin-block-start: var(--spacing-16);
+      }
+    }
+  }
+}

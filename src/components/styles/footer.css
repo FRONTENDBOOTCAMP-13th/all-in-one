@@ -1,0 +1,228 @@
+@import '/src/common/theme.css';
+
+:root {
+  /* 여백 (Spacing) */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-15: 15px;
+  --spacing-20: 20px;
+  --spacing-30: 30px;
+  --spacing-50: 50px;
+  --spacing-200: 200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-size: var(--text-12);
+  color: #333;
+}
+
+.container {
+  display: block;
+  padding: 0 var(--spacing-50);
+}
+
+/*고객센터, 소셜 아이콘 있는 부분*/
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-20) 0;
+  border-bottom: 1px solid #eee;
+}
+
+/*고객센터*/
+.top-section-inform {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+
+  /*고객센터의 하위요소들*/
+  .customer-service {
+    line-height: 150%;
+    font-size: var(--text-15);
+    font-weight: 700;
+  }
+
+  .service-hours {
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: var(--text-12);
+  }
+
+  .button-group {
+    display: flex;
+    gap: var(--spacing-10);
+  }
+
+  .button {
+    box-sizing: border-box;
+    width: 94px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: set-bewteen;
+    padding: var(--spacing-8) var(--spacing-12);
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: var(--text-15);
+    white-space: nowrap;
+  }
+
+  .button i {
+    margin-left: auto;
+    color: #999;
+  }
+}
+
+/*소셜 아이콘*/
+.top-section-social {
+  display: flex;
+  margin-top: auto;
+
+  /*소셜 아이콘의 하위요소들*/
+  .social-icons {
+    display: flex;
+    gap: var(--spacing-10);
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*notice, about us, my order, my account, help*/
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-30) 0;
+  border-bottom: 1px solid #eee;
+}
+
+.footer-column {
+  display: block;
+}
+
+.footer-column.notice {
+  display: block;
+  width: 30%;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-15);
+  font-size: var(--text-14);
+}
+
+.footer-links,
+.notice-content ul {
+  list-style: none;
+}
+
+.notice-content {
+  display: block;
+  padding: 0 var(--spacing-20) 0 0;
+}
+
+.footer-links li,
+.notice-content ul li {
+  margin-bottom: var(--spacing-8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  a {
+    color: #666;
+    text-decoration: none;
+    font-size: var(--text-13);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/*회사 정보 */
+.bottom-footer {
+  display: block;
+  padding: 0 var(--spacing-200) var(--spacing-50) 0;
+  flex-wrap: wrap;
+}
+
+/*개인정보처리방침 행*/
+.bottom-nav {
+  display: block;
+  margin: var(--spacing-12) 0 var(--spacing-4);
+
+  a {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: var(--text-12);
+    font-weight: bolder;
+    position: relative;
+    margin-right: var(--spacing-15);
+  }
+
+  a:not(:last-child):after {
+    content: '';
+    position: absolute;
+    right: calc(-1 * var(--spacing-8));
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: 1px;
+    background-color: #ddd;
+  }
+}
+
+/*회사정보 하위요소*/
+.company-info {
+  display: block;
+  color: #888;
+  font-size: var(--text-11);
+  line-height: 24px;
+
+  p {
+    margin-bottom: var(--spacing-5);
+  }
+
+  span {
+    display: inline-block;
+    margin-right: var(--spacing-10);
+  }
+}
+
+/*사업자 정보확인 박스*/
+.business-info {
+  dispaly: inline-block;
+  magin-left: var(--spacing-8);
+  padding: 0 7px;
+  color: #fff;
+  background-color: #a4a4a4;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.disclaimer {
+  padding: var(--spacing-4) 0;
+  font-size: var(--text-11);
+  color: #888;
+}
