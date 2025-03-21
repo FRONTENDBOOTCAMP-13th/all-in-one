@@ -15,19 +15,19 @@
   </head>
   <body>
     <div class="container-31cm">
-      <div class="header-31cm">
-        <header class="header-1">
-          <h1 class="sr-only">31cm</h1>
+      <header class="header-31cm">
+        <div class="header-31cm-inner">
+          <h1 class="sr-only">쇼핑몰 31cm</h1>
           <a href="#">
             <img
               src="/src/assets/images/header-images/31cm_logo_high_res.webp"
-              alt="31cm 로고"
+              alt="31cm 쇼핑몰 메인으로 이동"
               class="logo"
               width="90"
               height="25"
             />
           </a>
-          <nav class="header-1-navMobile" aria-label="모바일 헤더 네비게이션">
+          <nav class="header-nav-mobile" aria-label="모바일 헤더 네비게이션">
             <a href="#" aria-label="장바구니">
               <svg
                 width="30"
@@ -58,7 +58,7 @@
               </svg>
             </a>
           </nav>
-          <nav class="header-1-nav" aria-label="헤더 네비게이션">
+          <nav class="header-inner-nav" aria-label="헤더 네비게이션">
             <ul>
               <li>
                 <a href="#" class="nav-item" aria-label="나의 페이지">
@@ -150,15 +150,15 @@
               </li>
             </ul>
           </nav>
-        </header>
-        <nav class="nav-container-1" aria-label="페이지 메뉴">
+        </div>
+        <nav class="header-page-nav" aria-label="페이지 메뉴">
           <ul>
             <li><a href="#" class="current-page-so">Special-Order</a></li>
             <li><a href="#" class="current-page-sc">Showcase</a></li>
             <li><a href="#" class="current-page-pt">PT</a></li>
             <li><a href="#" class="current-page-29">29Magazine</a></li>
           </ul>
-          <a href="#" aria-label="검색" role="button">
+          <a href="#" aria-label="검색">
             <svg
               width="35"
               height="35"
@@ -172,8 +172,8 @@
             </svg>
           </a>
         </nav>
-        <nav class="nav-container-2" aria-label="주 메뉴">
-          <ul class="main-header">
+        <nav class="header-main-menu-nav" aria-label="주 메뉴">
+          <ul class="header-main-menu">
             <li class="top-menu">
               <a href="#" class="main-menu">BEST</a>
             </li>
@@ -560,16 +560,15 @@
                 </ul>
               </div>
             </li>
-            <li class="dif"></li>
             <li class="top-menu-slim">
-              <a href="#">Event</a>
+              <a class="top-menu-border" href="#">Event</a>
             </li>
             <li class="top-menu-slim">
               <a href="">Lookbook</a>
             </li>
           </ul>
         </nav>
-      </div>
+      </header>
       <nav class="pt-nav" aria-label="pt페이지 목록">
         <h2 class="sr-only page-title">pt</h2>
         <ul class="pt-pages">

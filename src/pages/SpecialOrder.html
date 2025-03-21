@@ -15,19 +15,19 @@
   </head>
   <body>
     <div class="container-31cm">
-      <div class="header-31cm">
-        <header class="header-1">
-          <h1 class="sr-only">31cm</h1>
+      <header class="header-31cm">
+        <div class="header-31cm-inner">
+          <h1 class="sr-only">쇼핑몰 31cm</h1>
           <a href="#">
             <img
               src="/src/assets/images/header-images/31cm_logo_high_res.webp"
-              alt="31cm 로고"
+              alt="31cm 쇼핑몰 메인으로 이동"
               class="logo"
               width="90"
               height="25"
             />
           </a>
-          <nav class="header-1-navMobile" aria-label="모바일 헤더 네비게이션">
+          <nav class="header-nav-mobile" aria-label="모바일 헤더 네비게이션">
             <a href="#" aria-label="장바구니">
               <svg
                 width="30"
@@ -58,7 +58,7 @@
               </svg>
             </a>
           </nav>
-          <nav class="header-1-nav" aria-label="헤더 네비게이션">
+          <nav class="header-inner-nav" aria-label="헤더 네비게이션">
             <ul>
               <li>
                 <a href="#" class="nav-item" aria-label="나의 페이지">
@@ -150,15 +150,15 @@
               </li>
             </ul>
           </nav>
-        </header>
-        <nav class="nav-container-1" aria-label="페이지 메뉴">
+        </div>
+        <nav class="header-page-nav" aria-label="페이지 메뉴">
           <ul>
             <li><a href="#" class="current-page-so">Special-Order</a></li>
             <li><a href="#" class="current-page-sc">Showcase</a></li>
             <li><a href="#" class="current-page-pt">PT</a></li>
             <li><a href="#" class="current-page-29">29Magazine</a></li>
           </ul>
-          <a href="#" aria-label="검색" role="button">
+          <a href="#" aria-label="검색">
             <svg
               width="35"
               height="35"
@@ -172,8 +172,8 @@
             </svg>
           </a>
         </nav>
-        <nav class="nav-container-2" aria-label="주 메뉴">
-          <ul class="main-header">
+        <nav class="header-main-menu-nav" aria-label="주 메뉴">
+          <ul class="header-main-menu">
             <li class="top-menu">
               <a href="#" class="main-menu">BEST</a>
             </li>
@@ -560,16 +560,15 @@
                 </ul>
               </div>
             </li>
-            <li class="dif"></li>
             <li class="top-menu-slim">
-              <a href="#">Event</a>
+              <a class="top-menu-border" href="#">Event</a>
             </li>
             <li class="top-menu-slim">
               <a href="">Lookbook</a>
             </li>
           </ul>
         </nav>
-      </div>
+      </header>
       <main>
         <div class="item-introduce">
           <h2 class="sr-only page-title">SPECIAL ORDER</h2>
@@ -580,301 +579,327 @@
         </div>
         <ul>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-01.webp"
-                alt="Roughside 5% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">스타일을 더해주는 티셔츠</h4>
-                <p class="item-description">
-                  감각적인 컬러 배합이 돋보이는 러프사이드 시그니처 스트라이프
-                  티셔츠 5%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-01.webp"
+                  alt="Roughside 5% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">스타일을 더해주는 티셔츠</h4>
+                  <p class="item-description">
+                    감각적인 컬러 배합이 돋보이는 러프사이드 시그니처 스트라이프
+                    티셔츠 5%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-02.webp"
-                alt="LE MONT ST MICHEL 5% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">100년 역사의 워크 재킷</h4>
-                <p class="item-description">
-                  클래스 무드를 대표하는 르몽생미셸 몰스킨 프렌치 워크재킷 단독
-                  5%
-                </p>
-                <div class="balloon-wrap">
-                  <div class="balloon m-d3">D-3</div>
-                </div>
-                <div class="progress-container">
-                  <div class="progress-bar d3-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-02.webp"
+                  alt="LE MONT ST MICHEL 5% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">100년 역사의 워크 재킷</h4>
+                  <p class="item-description">
+                    클래스 무드를 대표하는 르몽생미셸 몰스킨 프렌치 워크재킷
+                    단독 5%
+                  </p>
+                  <div class="balloon-wrap">
+                    <div class="balloon m-d3">D-3</div>
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-bar d3-bar"></div>
+                  </div>
 
-                <p class="item-period item-day-3">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period item-day-3">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-03.webp"
-                alt="MAGOODGAN 20+5% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">빈티지 무드를 담은 데님</h4>
-                <p class="item-description">
-                  스타일링의 완성을 도와줄 맥우드건 시그니처 데님 7608 단독
-                  20+5%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-03.webp"
+                  alt="MAGOODGAN 20+5% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">빈티지 무드를 담은 데님</h4>
+                  <p class="item-description">
+                    스타일링의 완성을 도와줄 맥우드건 시그니처 데님 7608 단독
+                    20+5%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-04.webp"
-                alt="OLIVE DES OLIVE 32+10% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">
-                  인플루언서 뉴뉴, 지우가 추천하는 재킷
-                </h4>
-                <p class="item-description">
-                  크롭 봄 스웨이드 재킷 32+10% 할인
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-04.webp"
+                  alt="OLIVE DES OLIVE 32+10% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">
+                    인플루언서 뉴뉴, 지우가 추천하는 재킷
+                  </h4>
+                  <p class="item-description">
+                    크롭 봄 스웨이드 재킷 32+10% 할인
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-05.webp"
-                alt="GBH 20+5% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">기본에 충실한 카디건</h4>
-                <p class="item-description">
-                  미니멀과 클래식이 조화를 이루는 지비에이치 카디건, 단독 20+5%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-05.webp"
+                  alt="GBH 20+5% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">기본에 충실한 카디건</h4>
+                  <p class="item-description">
+                    미니멀과 클래식이 조화를 이루는 지비에이치 카디건, 단독
+                    20+5%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-06.webp"
-                alt="ROMANTIC MOVE 42% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">3월을 함께할 하이킹 슈즈</h4>
-                <p class="item-description">
-                  로맨틱무브의 베스트셀러 하이킹슈즈 단독 42% 할인
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-06.webp"
+                  alt="ROMANTIC MOVE 42% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">3월을 함께할 하이킹 슈즈</h4>
+                  <p class="item-description">
+                    로맨틱무브의 베스트셀러 하이킹슈즈 단독 42% 할인
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-07.webp"
-                alt="OUI MAIS MON 25% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">지금 입기 좋은 워크 재킷</h4>
-                <p class="item-description">
-                  워크 재킷의 오리지널티를 담아낸 위메농 베를린 재킷 단독 25%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-07.webp"
+                  alt="OUI MAIS MON 25% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">지금 입기 좋은 워크 재킷</h4>
+                  <p class="item-description">
+                    워크 재킷의 오리지널티를 담아낸 위메농 베를린 재킷 단독 25%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-08.webp"
-                alt="GENERAL IDEA 38% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">올봄을 위한 니트</h4>
-                <p class="item-description">
-                  봄에 잘 어울리는 사랑스러운 멀티 스트라이프 칼라 니트 단독 38%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-08.webp"
+                  alt="GENERAL IDEA 38% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">올봄을 위한 니트</h4>
+                  <p class="item-description">
+                    봄에 잘 어울리는 사랑스러운 멀티 스트라이프 칼라 니트 단독
+                    38%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-09.webp"
-                alt="SIYAZU 20+10% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">클래식 스트라이프 니트</h4>
-                <p class="item-description">
-                  감각적인 컬러 조합의 시아쥬 클래식 스트라이프 니트 20+10%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-09.webp"
+                  alt="SIYAZU 20+10% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">클래식 스트라이프 니트</h4>
+                  <p class="item-description">
+                    감각적인 컬러 조합의 시아쥬 클래식 스트라이프 니트 20+10%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-10.webp"
-                alt="STUDIO TOMBOY 12+10% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">빈티지 무드의 레더 재킷</h4>
-                <p class="item-description">
-                  편안한 실루엣이 돋보이는 데일리 레더 재킷 단독 12+10%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-10.webp"
+                  alt="STUDIO TOMBOY 12+10% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">빈티지 무드의 레더 재킷</h4>
+                  <p class="item-description">
+                    편안한 실루엣이 돋보이는 데일리 레더 재킷 단독 12+10%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-11.webp"
-                alt="EASTLOGUE PERMANENT 10+5% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">오래도록 함께할 데님</h4>
-                <p class="item-description">
-                  순수한 평상복이 되어줄 이스트로그 퍼머넌트의 데님 단독 10+5%
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-11.webp"
+                  alt="EASTLOGUE PERMANENT 10+5% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">오래도록 함께할 데님</h4>
+                  <p class="item-description">
+                    순수한 평상복이 되어줄 이스트로그 퍼머넌트의 데님 단독 10+5%
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
           <li>
-            <figure>
-              <img
-                src="/src/assets/images/specialorder-images/specialOrder-12.webp"
-                alt="NCSSRY 15+10% 할인"
-              />
-              <figcaption>
-                <h4 class="item-title">시그니처 와이드 미니백</h4>
-                <p class="item-description">
-                  클래식하고 미니멀한 디자인의 네세서리 와이드 미니백 단독 15%
-                  할인
-                </p>
-                <div class="progress-container">
-                  <div class="progress-bar"></div>
-                </div>
+            <a href="#">
+              <figure>
+                <img
+                  src="/src/assets/images/specialorder-images/specialOrder-12.webp"
+                  alt="NCSSRY 15+10% 할인"
+                />
+                <figcaption>
+                  <h4 class="item-title">시그니처 와이드 미니백</h4>
+                  <p class="item-description">
+                    클래식하고 미니멀한 디자인의 네세서리 와이드 미니백 단독 15%
+                    할인
+                  </p>
+                  <div class="progress-container">
+                    <div class="progress-bar"></div>
+                  </div>
 
-                <p class="item-period">
-                  <time datetime="2025-03-12">2025.03.12</time>.~
-                  <time datetime="2025-03-25"
-                    ><span class="sr-only">2025.</span>03.25</time
-                  >.
-                </p>
-              </figcaption>
-            </figure>
+                  <p class="item-period">
+                    <time datetime="2025-03-12">2025.03.12</time>.~
+                    <time datetime="2025-03-25"
+                      ><span class="sr-only">2025.</span>03.25</time
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </li>
         </ul>
       </main>
