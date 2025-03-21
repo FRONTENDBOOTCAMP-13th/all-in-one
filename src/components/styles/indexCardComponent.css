@@ -11,6 +11,26 @@
   --text-s: var(--text-12);
 }
 
+/* hover 이펙트 *************** */
+.poster img,
+.brand img,
+.product {
+  transition: all 0.4s;
+}
+.poster:hover {
+  img {
+    filter: brightness(0.75);
+  }
+}
+.brand:hover {
+  img {
+    filter: brightness(0.75);
+  }
+}
+.product:hover {
+  background: #ededed;
+}
+
 /* 컴포넌트 컨테이너 디자인************** */
 .components-container {
   /* margin: 100px; */
@@ -340,6 +360,24 @@ button {
   border-radius: 5px;
 }
 
+/* 상품 이미지-좋아요 디자인 ***************** */
+.product-img-wrap {
+  position: relative;
+  width: fit-content;
+
+  .like-btn {
+    position: absolute;
+    display: block;
+    bottom: 0.3125rem;
+    right: 0.3125rem;
+    width: 11%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
 /* carousel 카드 속 상품 콘텐츠 디자인************** */
 .carousel-product-card {
   --popularity-text-color: #979797;
@@ -348,24 +386,6 @@ button {
   min-width: 0;
   flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */
   width: 33%;
-
-  .img-wrap {
-    position: relative;
-    width: fit-content;
-
-    .like-btn {
-      position: absolute;
-      display: block;
-      bottom: 0.3125rem;
-      right: 0.3125rem;
-      width: 4vw;
-      max-width: 32px;
-
-      img {
-        width: 100%;
-      }
-    }
-  }
 
   .brand {
     font-size: var(--text-12);
