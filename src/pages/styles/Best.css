@@ -1,0 +1,82 @@
+@import '/src/components/styles/bestComponent.css';
+
+.best-main {
+  padding-inline: var(--spacing-50);
+  padding-block-start: var(--spacing-40);
+  padding-block-end: var(--spacing-90);
+  display: flex;
+  column-gap: var(--spacing-80);
+
+  @media (max-width: 561px) {
+    padding-inline: 0;
+  }
+
+  .side-bar {
+    flex: 0 0 var(--spacing-200);
+    position: sticky;
+    top: var(--spacing-40); /* 여기에 top 값을 추가 */
+    height: 100vh;
+
+    @media (max-width: 561px) {
+      display: none;
+    }
+  }
+
+  .main-content {
+    flex: 1 1 0%; /* flex-grow, flex-shrink 설정 */
+    min-width: 520px; /* 최소 너비 520px 유지 */
+  }
+}
+
+.main-content {
+  .main-head {
+    margin-block-end: var(--spacing-36);
+  }
+
+  .buttons {
+    margin-block-start: var(--spacing-30);
+  }
+
+  .rank-container {
+    margin-block-start: var(--spacing-36);
+  }
+}
+
+/* 호버링 효과 구현 */
+.product-container {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-container:hover {
+  background-color: #f8f8f8;
+}
+
+.product-container figure img {
+  transition: transform 0.4s ease;
+}
+
+.product-container:hover figure img {
+  transform: scale(1.08);
+}
+
+.product-container:hover .product-name a {
+  color: #0066cc;
+}
+
+/* 이거 사용할지 말지 팀원들에게 물어보기 */
+.product-container {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
+  row-gap: 0;
+  figure {
+    display: contents;
+  }
+  .product-txt {
+    display: contents;
+    .brand {
+      margin-block-start: var(--spacing-20);
+    }
+  }
+}

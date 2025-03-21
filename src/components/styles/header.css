@@ -29,11 +29,11 @@ a {
 
 /* 헤더  */
 
-.header-1 {
+.header-31cm-inner {
   display: flex;
   justify-content: space-between;
 
-  .header-1-nav {
+  .header-inner-nav {
     ul {
       display: flex;
       column-gap: 16px;
@@ -50,8 +50,8 @@ a {
     column-gap: 4px;
   }
 
-  @media (max-width: 900px) {
-    .header-1-nav {
+  @media (max-width: 1024px) {
+    .header-inner-nav {
       svg {
         width: 15px;
         height: 15px;
@@ -85,6 +85,8 @@ a {
 
 .top-menu:focus-within .sub-menu {
   display: block;
+  border-top: 1px solid lightgray;
+  background: white;
 }
 
 .sub-menu > ul {
@@ -95,7 +97,7 @@ a {
   }
 }
 
-.main-header {
+.header-main-menu {
   display: flex;
   column-gap: 20px;
   list-style-type: none;
@@ -104,7 +106,7 @@ a {
   font-size: 17px;
   flex-wrap: wrap;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     column-gap: 10px;
     font-size: 12px;
   }
@@ -129,7 +131,7 @@ a {
   padding-block: 5px;
   padding-inline: 32px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     font-size: 10px;
   }
 }
@@ -140,11 +142,11 @@ a {
 }
 
 /* 헤더 : 페이지 메뉴  */
-.nav-container-1 {
+.header-page-nav {
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     svg {
       width: 30px;
       height: 30px;
@@ -159,7 +161,7 @@ a {
     font-weight: 900;
     flex-flow: wrap;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       font-size: 25px;
       column-gap: 13px;
     }
@@ -168,7 +170,7 @@ a {
       &:hover {
         border-bottom: 5px solid black;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           border-bottom: 3px solid black;
         }
       }
@@ -181,9 +183,18 @@ a {
   font-weight: 200;
   font-style: italic;
 }
-.dif::before {
+/* .dif::before {
   content: '|';
   color: gray;
+} */
+.top-menu-border {
+  border-left: 1px solid #c4c4c4;
+  padding-top: 4px;
+  padding-left: 20px;
+  @media (max-width: 1024px) {
+    padding-left: 10px;
+    padding-top: 2px;
+  }
 }
 
 /* 최종 반응형 추가 */
@@ -199,14 +210,14 @@ a {
   inset-block-start: 0;
   background: #fff;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     gap: 10px;
     padding-top: 20px;
   }
 }
 
 .logo {
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     width: 65px;
     height: 20px;
   }
@@ -214,7 +225,7 @@ a {
 
 /* 모바일 */
 
-.header-1-navMobile {
+.header-nav-mobile {
   display: none;
 }
 
@@ -230,13 +241,13 @@ a {
   .header-31cm {
     padding: 10px;
   }
-  .header-1-nav,
-  .nav-container-1,
-  .nav-container-2 {
+  .header-inner-nav,
+  .header-page-nav,
+  .header-main-menu-nav {
     display: none;
   }
 
-  .header-1-navMobile {
+  .header-nav-mobile {
     display: flex;
     gap: 10px;
 

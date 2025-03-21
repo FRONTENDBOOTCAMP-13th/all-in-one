@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>31CM-best component</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
+    <link rel="stylesheet" href="/font/pretendardvariable.css" />
+    <link rel="stylesheet" href="/src/components/styles/bestComponent.css" />
+  </head>
+  <body>
+    <!-- 사이드바 컴포넌트 -->
+    <aside role="comlplementary">
+      <nav aria-label="카테고리 메뉴">
+        <h3 class="sidebar-head">BEST</h3>
+        <ul class="sidebar-list">
+          <li class="current-side"><a href="/">여성의류</a></li>
+          <li><a href="/">여성가방</a></li>
+          <li><a href="/">여성신발</a></li>
+          <li><a href="/">여성액세서리</a></li>
+          <li><a href="/">남성의류</a></li>
+          <li><a href="/">남성가방</a></li>
+          <li><a href="/">남성신발</a></li>
+          <li><a href="/">남성액세서리</a></li>
+          <li><a href="/">주방,생활</a></li>
+          <li><a href="/">가구,인테리어</a></li>
+          <li><a href="/">뷰티</a></li>
+          <li><a href="/">컴퓨터,디지털</a></li>
+          <li><a href="/">가전</a></li>
+          <li><a href="/">컬쳐</a></li>
+          <li><a href="/">레저</a></li>
+          <li><a href="/">유아,아동</a></li>
+          <li><a href="/">푸드</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- 제목 컴포넌트 스타일링 -->
+    <h2 class="main-head">여성의류</h2>
+
+    <!-- 상의, 하의, 아우터 분류 컴포넌트 스타일링 -->
+    <ul class="category">
+      <li class="current-category"><a href="/">전체</a></li>
+      <li><a href="/">상의</a></li>
+      <li><a href="/">아우터</a></li>
+      <li><a href="/">바지</a></li>
+      <li><a href="/">원피스</a></li>
+      <li><a href="/">스커트</a></li>
+      <li><a href="/">니트웨어</a></li>
+      <li><a href="/">홈웨어</a></li>
+      <li><a href="/">셋업</a></li>
+      <li><a href="/">액티브웨어</a></li>
+      <li><a href="/">언더웨어</a></li>
+      <li><a href="/">EXCLUSIVE</a></li>
+      <li><a href="/">점프수트</a></li>
+      <li><a href="/">해외브랜드</a></li>
+    </ul>
+
+    <!-- 버튼 컴포넌트 -->
+    <h2>버튼 컴포넌트 스타일링</h2>
+    <div class="buttons">
+      <a href="/" class="btn current-btn" aria-label="실시간 순위로 이동"
+        >실시간</a
+      >
+      <a href="/" class="btn" aria-label="일간 순위로 이동">일간</a>
+      <a href="/" class="btn" aria-label="주간 순위로 이동">주간</a>
+      <a href="/" class="btn" aria-label="월간 순위로 이동">월간</a>
+    </div>
+
+    <!-- 이미지 컴포넌트 -->
+    <figure class="product-container">
+      <img src="/src/assets/images/best-images/1.webp" alt="/" />
+      <div class="rank-box" aria-hidden="true"><span class="rank">1</span></div>
+      <figcaption class="product-txt">
+        <p class="brand"><a href="">엠엠엠</a></p>
+        <h4 class="product-name">
+          [기장선택]High-rise Wide Straight Denim_Light Blue
+        </h4>
+      </figcaption>
+    </figure>
+
+    <!-- 할인들어간 가격 컴포넌트  -->
+    <div class="price">
+      <p class="original-price">183,000<span class="sr-only">원</span></p>
+      <p class="discount">
+        <span class="dc-rate">15%</span>
+        <strong class="current-price"
+          >156,465<span class="sr-only">원</span></strong
+        >
+      </p>
+    </div>
+
+    <!-- 할인 안들어간 가격 컴포넌트 -->
+
+    <div class="price">
+      <strong class="current-price"
+        >289,000<span class="sr-only">원</span></strong
+      >
+    </div>
+
+    <!-- 신상품, 무료배송 뱃지 컴포넌트 -->
+    <ul class="badge-group">
+      <li class="badge coupon-badge">쿠폰</li>
+      <li class="badge new-badge">신상품</li>
+      <li class="badge free-badge">무료배송</li>
+    </ul>
+
+    <!-- 하트, 리뷰 인터랙티브 요소 컴포넌트 -->
+    <div class="interactions">
+      <button class="btn like-btn" aria-label="좋아요 45,369개">
+        <svg
+          aria-hidden="true"
+          width="16"
+          height="17"
+          viewBox="0 0 16 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVG">
+            <path
+              id="Vector"
+              d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+              stroke="#5D5D5D"
+              stroke-width="0.888889"
+            />
+          </g>
+        </svg>
+        <span class="like-count">45,369</span>
+      </button>
+
+      <button class="btn mention-btn" aria-label="후기보기 2047개">
+        <svg
+          aria-hidden="true"
+          width="16"
+          height="17"
+          viewBox="0 0 16 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVG">
+            <path
+              id="Vector"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+              stroke="#5D5D5D"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </g>
+        </svg>
+        <span class="mention-count">2047</span>
+      </button>
+    </div>
+
+    <!-- 제품 카드 컴포넌트-->
+    <figure class="product-container">
+      <img src="/src/assets/images/best-images/1.webp" alt="/" />
+      <div class="rank-box" aria-hidden="true"><span class="rank">1</span></div>
+      <figcaption class="product-txt">
+        <p class="brand"><a href="">엠엠엠</a></p>
+        <h4 class="product-name">
+          [기장선택]High-rise Wide Straight Denim_Light Blue
+        </h4>
+        <div class="price">
+          <p class="original-price">183,000<span class="sr-only">원</span></p>
+          <p class="discount">
+            <span class="dc-rate">15%</span>
+            <strong class="current-price"
+              >156,465<span class="sr-only">원</span></strong
+            >
+          </p>
+        </div>
+        <div class="interactions">
+          <button class="btn like-btn" aria-label="좋아요 45,369개">
+            <svg
+              aria-hidden="true"
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVG">
+                <path
+                  id="Vector"
+                  d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                  stroke="#5D5D5D"
+                  stroke-width="0.888889"
+                />
+              </g>
+            </svg>
+            <span class="like-count">45,369</span>
+          </button>
+
+          <button class="btn mention-btn" aria-label="후기보기 2047개">
+            <svg
+              aria-hidden="true"
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVG">
+                <path
+                  id="Vector"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                  stroke="#5D5D5D"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+            <span class="mention-count">2047</span>
+          </button>
+        </div>
+      </figcaption>
+    </figure>
+
+    <!-- 실시간 순위 컴포넌트 -->
+    <main class="rank-container">
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">1</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">2</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">3</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">4</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">5</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">6</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">7</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">8</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="product-container">
+        <img src="/src/assets/images/best-images/1.webp" alt="/" />
+        <div class="rank-box" aria-hidden="true">
+          <span class="rank">9</span>
+        </div>
+        <figcaption class="product-txt">
+          <p class="brand"><a href="">엠엠엠</a></p>
+          <h4 class="product-name">
+            [기장선택]High-rise Wide Straight Denim_Light Blue
+          </h4>
+          <div class="price">
+            <p class="original-price">183,000<span class="sr-only">원</span></p>
+            <p class="discount">
+              <span class="dc-rate">15%</span>
+              <strong class="current-price"
+                >156,465<span class="sr-only">원</span></strong
+              >
+            </p>
+          </div>
+          <div class="interactions">
+            <button class="btn like-btn" aria-label="좋아요 45,369개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    d="M7.99978 5.60253C7.99978 3.59631 9.59178 1.96875 11.5553 1.96875C13.5189 1.96875 15.1109 3.59542 15.1109 5.60253C15.1109 7.15186 13.8131 8.47364 13.8131 8.47364L7.99978 14.4132L2.18645 8.47364C2.18645 8.47364 0.888672 7.15097 0.888672 5.60253C0.888672 3.59631 2.48067 1.96875 4.44423 1.96875C6.40778 1.96875 7.99978 3.59542 7.99978 5.60253Z"
+                    stroke="#5D5D5D"
+                    stroke-width="0.888889"
+                  />
+                </g>
+              </svg>
+              <span class="like-count">45,369</span>
+            </button>
+            <button class="btn mention-btn" aria-label="후기보기 2047개">
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="17"
+                viewBox="0 0 16 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVG">
+                  <path
+                    id="Vector"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.5 2.19841V11.0114C1.5 11.5674 1.957 12.0184 2.52 12.0184H10.269L14.5 15.1914V2.19841C14.5 1.64241 14.043 1.19141 13.48 1.19141H2.52C1.957 1.19141 1.5 1.64241 1.5 2.19841Z"
+                    stroke="#5D5D5D"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+              <span class="mention-count">2047</span>
+            </button>
+          </div>
+        </figcaption>
+      </figure>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+@import '/src/components/styles/specialOrderComponent.css';
+@import '/src/components/styles/header.css';
+
+.item-introduce {
+  text-align: center;
+  padding-block: 40px 72px;
+}
+
+br {
+  display: none;
+}
+
+@media (max-width: 541px) {
+  .balloon-wrap,
+  .progress-container,
+  .item-day-3::before {
+    display: none;
+  }
+  br {
+    display: block;
+  }
+
+  .page-title {
+    display: block;
+    all: unset;
+    font-size: 20px;
+    font-weight: 800;
+    font-weight: 900;
+  }
+
+  h3 {
+    padding-top: 30px;
+    font-weight: 600;
+  }
+
+  .item-introduce {
+    padding-block: 18px 40px;
+    line-height: 30px;
+  }
+
+  .item-introduce h3 {
+    font-size: 16px;
+  }
+
+  main ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+    gap: 15px;
+    line-height: 30px;
+  }
+
+  main h4,
+  main p {
+    padding-left: 20px;
+  }
+
+  main figcaption .item-title {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  main figcaption .item-description {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  main figcaption .item-period {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 900;
+  }
+}
+
+@media (max-width: 1024px) {
+  .item-introduce {
+    padding-block: 30px 50px;
+  }
+
+  .item-introduce h3 {
+    font-size: 16px;
+  }
+
+  figcaption {
+    padding-bottom: 25px;
+  }
+
+  figcaption .item-title {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+
+  figcaption .item-description {
+    margin-top: 7px;
+    font-size: 13px;
+  }
+
+  figcaption .balloon-wrap {
+    margin-top: 50px;
+  }
+
+  figcaption .progress-container {
+    margin-top: 50px;
+  }
+
+  figcaption .item-period {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  figcaption .bar-black {
+    margin-top: 60px;
+  }
+
+  .balloon {
+    min-width: 38px;
+    padding: 0 8px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 25px;
+  }
+}
