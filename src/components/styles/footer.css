@@ -27,7 +27,7 @@ body {
   color: #333;
 }
 
-.container {
+.header-container {
   display: block;
   padding: 0 var(--spacing-50);
 }

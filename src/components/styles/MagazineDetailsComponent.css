@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Component 1 - Product Card with Discount */
+.comp1-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-bottom: 16px;
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  height: min-content;
+}
+
+.comp1-product-image {
+  display: flex;
+  width: 207px;
+  height: 207px;
+  background-color: #eee;
+  border-radius: 2px;
+  aspect-ratio: 1/1;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.comp1-product-info {
+  justify-self: start;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+.comp1-product-title {
+  font-size: 14px;
+  color: #333;
+}
+
+.comp1-discount {
+  color: #ff6b6b;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comp1-price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.comp1-product-rating {
+  display: flex;
+  align-items: center;
+  color: #888;
+  font-size: 12px;
+}
+
+/* Component 2 - Product Card with Special Message */
+.comp2-product-card {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: min-content;
+  margin: 0 auto;
+}
+
+.comp2-special-message {
+  padding: 16px;
+  text-align: center;
+  color: #ff9500;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fff;
+  line-height: 1.5;
+}
+
+.comp2-special-message span {
+  color: #ff6b6b;
+}
+
+.comp2-product-image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comp2-product-image-container img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.comp2-product-info {
+  padding: 16px;
+  background-color: #fff;
+}
+
+.comp2-product-title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.comp2-discount {
+  color: #ff6b6b;
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.comp2-price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Component 3 - Product Banner */
+.comp3-product-banner {
+  background-color: #ffca62;
+  padding: 80px 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comp3-banner-header {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.comp3-banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+.comp3-banner-description {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.comp3-framer-title {
+  font-size: 18px;
+}
+
+.comp3-framer-text {
+  font-size: 16px;
+  padding: 0 0 80px 0;
+}
+
+.comp3-banner-video {
+  width: 100%;
+}
+
+/* Component 4 - Navigation Tabs */
+.comp4-nav-container {
+  width: 100%;
+}
+
+.comp4-nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  flex-wrap: nowrap;
+}
+
+.comp4-nav-tab {
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+}
+
+.comp4-nav-tab.active {
+  background-color: #000;
+  color: #fff;
+}
