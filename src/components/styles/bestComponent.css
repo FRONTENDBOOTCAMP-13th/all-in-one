@@ -63,6 +63,8 @@
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
+
+  list-style: none;
 }
 
 a {
@@ -73,7 +75,7 @@ a {
 /* 사이드바 컴포넌트 스타일링 */
 aside {
   /* 나중에 flex-basis로 변경 */
-  width: var(--width-200);
+  /* width: var(--width-200); */
 
   .sidebar-head {
     font-size: var(--text-23);
