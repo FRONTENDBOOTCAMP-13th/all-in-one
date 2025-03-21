@@ -93,10 +93,10 @@ a {
   width: 100%;
   padding-bottom: 16px;
   background-color: #fff;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
-  height: min-content;
 }
 
 .comp1-product-image {
