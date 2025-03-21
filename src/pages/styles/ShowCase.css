@@ -14,3 +14,7 @@
 .d-day-badge {
   color: red;
 }
+
+.body-container {
+  padding-block-end: var(--spacing-40);
+}
