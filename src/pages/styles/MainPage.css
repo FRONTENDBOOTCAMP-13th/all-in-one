@@ -17,11 +17,12 @@ main {
   overflow: hidden;
   max-height: var(--mobile-max-height);
 
-  @media (min-width: 33.8125rem) {
+  @media (min-width: 541px) {
     max-height: var(--max-height);
     flex-flow: row nowrap;
   }
 
+  /* 브랜드 광고 (poster 포함) 섹션 ****************** */
   .brand-ad-section {
     width: 100%;
     position: relative;
@@ -36,12 +37,12 @@ main {
       left: 50%;
       transform: translate(-50%, -50%);
 
-      @media (max-width: 23.375rem) {
+      @media (max-width: 374px) {
         padding-inline: 1.875rem;
       }
     }
 
-    @media (max-width: 33.75rem) {
+    @media (max-width: 540px) {
       .poster-wrap {
         padding-left: 1.25rem;
         display: flex;
@@ -58,26 +59,26 @@ main {
       }
     }
 
-    @media (min-width: 33.8125rem) {
+    @media (min-width: 541px) {
       padding-right: 1.9vw;
       width: 44%;
 
       .poster.mobile {
         display: none;
-
-        .next-btn-wrap {
-          display: none;
-        }
+      }
+      .next-btn-wrap {
+        display: none;
       }
     }
   }
 
+  /* 상품 섹션 ************************* */
   .products-section {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
 
-    @media (min-width: 33.8125rem) {
+    @media (min-width: 541px) {
       width: 56%;
     }
 
@@ -88,14 +89,14 @@ main {
       align-content: start;
       max-height: var(--mobile-max-height);
 
-      @media (min-width: 33.8125rem) {
+      @media (min-width: 541px) {
         max-height: var(--max-height);
       }
     }
 
     .card-poster-wrap {
       display: none;
-      @media (min-width: 33.8125rem) {
+      @media (min-width: 541px) {
         display: flex;
         flex-flow: row nowrap;
       }
@@ -104,7 +105,7 @@ main {
         width: 100%;
         font-size: 0;
 
-        @media (min-width: 33.8125rem) {
+        @media (min-width: 541px) {
           width: 50%;
         }
       }

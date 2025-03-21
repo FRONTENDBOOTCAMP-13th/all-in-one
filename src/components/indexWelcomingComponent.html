@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>29CM Magazine</title>
+    <link rel="icon" href="/assets/favicon.svg" />
+    <link
+      rel="preload"
+      as="font"
+      href="/public/font/woff2/PretendardVariable.woff2"
+    />
+    <link rel="stylesheet" href="/public/font/pretendardvariable.css" />
+    <link
+      rel="stylesheet"
+      href="/src/components/styles/indexWelcomingComponent.css"
+    />
+  </head>
+  <body>
+    <main>
+      <h1>메인 포스터 컴포넌트</h1>
+      <div class="components-container">
+        <figure class="main-poster">
+          <picture>
+            <source
+              srcset="/src/assets/images/main-images/welcoming/main-poster.webp"
+              media="(min-width: 541px)"
+            />
+            <img
+              src="/src/assets/images/main-images/welcoming/main-poster-mobile.webp"
+              alt=""
+            />
+          </picture>
+          <figcaption>
+            <span class="sr-only"
+              >29 수요 입점회, 수요일 10시부터 목요일 09시 59분까지 29%</span
+            >
+          </figcaption>
+
+          <div class="title-texts-wrap">
+            <div class="main-title">
+              <img
+                src="/src/assets/images/main-images/welcoming/main-title-text.webp"
+                alt=""
+              />
+            </div>
+
+            <div class="train-period-wrap">
+              <div class="period wed">WED 10:00</div>
+              <div class="train-animation">
+                <div class="train"></div>
+              </div>
+              <div class="period thu">THU 09:59</div>
+
+              <div class="mobile-period">
+                <div aria-hidden="true">WED 10:00</div>
+                <div aria-hidden="true">THU 09:59</div>
+              </div>
+            </div>
+
+            <div class="num-text">
+              <img
+                src="/src/assets/images/main-images/welcoming/num-text.webp"
+                alt=""
+              />
+            </div>
+          </div>
+        </figure>
+      </div>
+
+      <h1>메인 포스터 꾸밈요소 컴포넌트</h1>
+      <div
+        class="components-container"
+        style="background-color: black; padding: 20px"
+      >
+        <div class="title-texts-wrap">
+          <div class="main-title">
+            <img
+              src="/src/assets/images/main-images/welcoming/main-title-text.webp"
+              alt=""
+            />
+          </div>
+
+          <div class="train-period-wrap">
+            <div class="period wed">WED 10:00</div>
+            <div class="train-animation">
+              <div class="train"></div>
+            </div>
+            <div class="period thu">THU 09:59</div>
+
+            <div class="mobile-period">
+              <div aria-hidden="true">WED 10:00</div>
+              <div aria-hidden="true">THU 09:59</div>
+            </div>
+          </div>
+
+          <div class="num-text">
+            <img
+              src="/src/assets/images/main-images/welcoming/num-text.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <h1>29% 24HRS 쿠폰 광고</h1>
+      <div class="components-container">
+        <div class="mini-ad-card">
+          <h1 class="catchphrase-wrap">
+            <span class="catchphrase">어디에도 없는</span>
+            <span class="catchphrase">막강한 29% 할인</span>
+          </h1>
+
+          <div class="ad-text">
+            <img
+              src="/src/assets/images/main-images/welcoming/per-text.webp"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <h1>쿠폰 광고 카드</h1>
+      <div class="components-container">
+        <div class="mini-ad-wrap">
+          <!-- 1 -->
+
+          <div class="mini-ad-card">
+            <h1 class="catchphrase-wrap">
+              <span class="catchphrase">어디에도 없는</span>
+              <span class="catchphrase">막강한 29% 할인</span>
+            </h1>
+
+            <div class="ad-text">
+              <img
+                src="/src/assets/images/main-images/welcoming/per-text.webp"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- 2 -->
+
+          <div class="mini-ad-card">
+            <h1 class="catchphrase-wrap">
+              <span class="catchphrase">어디에도 없는</span>
+              <span class="catchphrase">막강한 29% 할인</span>
+            </h1>
+
+            <div class="ad-text">
+              <img
+                src="/src/assets/images/main-images/welcoming/per-text.webp"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- 3 -->
+
+          <div class="mini-ad-card">
+            <h1 class="catchphrase-wrap">
+              <span class="catchphrase">어디에도 없는</span>
+              <span class="catchphrase">막강한 29% 할인</span>
+            </h1>
+
+            <div class="ad-text">
+              <img
+                src="/src/assets/images/main-images/welcoming/per-text.webp"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- 4 -->
+
+          <div class="mini-ad-card">
+            <h1 class="catchphrase-wrap">
+              <span class="catchphrase">어디에도 없는</span>
+              <span class="catchphrase">막강한 29% 할인</span>
+            </h1>
+
+            <div class="ad-text">
+              <img
+                src="/src/assets/images/main-images/welcoming/per-text.webp"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1>쿠폰 컴포넌트</h1>
+      <div class="components-container">
+        <button class="coupon-card">
+          <div class="round"></div>
+
+          <p class="percent">
+            29%
+            <span>브랜드 상품 전용</span>
+          </p>
+
+          <div class="download-icon">
+            <svg
+              width="28"
+              height="40"
+              viewBox="0 0 28 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.999999 17L14 30L27 17"
+                stroke="white"
+                stroke-width="2"
+              />
+              <line
+                x1="14"
+                y1="4.37114e-08"
+                x2="14"
+                y2="29"
+                stroke="white"
+                stroke-width="2"
+              />
+              <line
+                x1="1"
+                y1="39"
+                x2="27"
+                y2="39"
+                stroke="white"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+
+      <h1>유의사항더보기 컴포넌트</h1>
+      <div class="components-container">
+        <button class="precaution-more-btn">
+          <p>유의사항 더보기</p>
+          <svg
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.15997 12.8431L15.5845 6.41931L14.7355 5.57031L9.15997 11.1473L3.58447 5.57031L2.73547 6.41931L9.15997 12.8431Z"
+              fill="#696969"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <h1>스티키 헤더 컴포넌트</h1>
+      <div class="sticky-header">
+        <a href="/" class="sticky-menu checked">우먼패션&잡화</a>
+        <a href="/" class="sticky-menu">맨패션&잡화</a>
+        <a href="/" class="sticky-menu">COMING</a>
+      </div>
+
+      <div style="margin-block: 100px"></div>
+
+      <h1>브랜드/태그 컴포넌트</h1>
+      <div class="components-container">
+        <div class="brand-report-card">
+          <h1 class="brand-title">EEE</h1>
+          <h1 class="kr-brand-title">
+            이이에
+            <svg
+              width="19"
+              height="28"
+              viewBox="0 0 19 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M1 27L17 14L1 1" stroke="black" stroke-width="2" />
+            </svg>
+          </h1>
+
+          <div class="tags-wrap">
+            <span class="sr-only">브랜드 키워드:</span>
+            <div class="tag">로맨틱 무드</div>
+            <div class="tag">플로럴 포인트</div>
+            <div class="tag">파스텔 감성</div>
+            <div class="tag">산뜻한 레이어링</div>
+          </div>
+        </div>
+      </div>
+
+      <h1>브랜드 메인 이미지 컴포넌트</h1>
+      <div class="components-container">
+        <div class="brand-main-img">
+          <img
+            class="first"
+            src="/src/assets/images/main-images/welcoming/brand1-main-img1.webp"
+            alt=""
+          />
+          <img
+            class="second"
+            src="/src/assets/images/main-images/welcoming/brand1-main-img2.webp"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <h1>브랜드 상품 개별 컴포넌트</h1>
+      <div class="components-container">
+        <a href="/" class="brand-product-card">
+          <article>
+            <div class="product-img-wrap">
+              <img
+                src="/src/assets/images/main-images/carousel1-product1.webp"
+                alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+              />
+              <button class="like-btn" aria-label="좋아요">
+                <img
+                  src="/src/assets/images/main-images/like-btn-white.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+            <p class="brand">클로르</p>
+            <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+            <p class="product-price">
+              <span class="sr-only">할인율</span>
+              <span class="text-red">30%</span>
+              <span class="sr-only">판매가</span>
+              27,000원
+            </p>
+          </article>
+        </a>
+      </div>
+
+      <h1>브랜드 상품 모아둔 컴포넌트</h1>
+      <div class="components-container">
+        <div class="product-selling-card">
+          <!-- 1 -->
+          <a href="/" class="brand-product-card">
+            <article>
+              <div class="product-img-wrap">
+                <img
+                  src="/src/assets/images/main-images/carousel1-product1.webp"
+                  alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                />
+                <button class="like-btn" aria-label="좋아요">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-white.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              <p class="brand">클로르</p>
+              <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+              <p class="product-price">
+                <span class="sr-only">할인율</span>
+                <span class="text-red">30%</span>
+                <span class="sr-only">판매가</span>
+                27,000원
+              </p>
+            </article>
+          </a>
+          <!-- 2 -->
+          <a href="/" class="brand-product-card">
+            <article>
+              <div class="product-img-wrap">
+                <img
+                  src="/src/assets/images/main-images/carousel1-product1.webp"
+                  alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                />
+                <button class="like-btn" aria-label="좋아요">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-white.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              <p class="brand">클로르</p>
+              <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+              <p class="product-price">
+                <span class="sr-only">할인율</span>
+                <span class="text-red">30%</span>
+                <span class="sr-only">판매가</span>
+                27,000원
+              </p>
+            </article>
+          </a>
+          <!-- 3 -->
+          <a href="/" class="brand-product-card">
+            <article>
+              <div class="product-img-wrap">
+                <img
+                  src="/src/assets/images/main-images/carousel1-product1.webp"
+                  alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                />
+                <button class="like-btn" aria-label="좋아요">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-white.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              <p class="brand">클로르</p>
+              <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+              <p class="product-price">
+                <span class="sr-only">할인율</span>
+                <span class="text-red">30%</span>
+                <span class="sr-only">판매가</span>
+                27,000원
+              </p>
+            </article>
+          </a>
+          <!-- 4 -->
+          <a href="/" class="brand-product-card">
+            <article>
+              <div class="product-img-wrap">
+                <img
+                  src="/src/assets/images/main-images/carousel1-product1.webp"
+                  alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                />
+                <button class="like-btn" aria-label="좋아요">
+                  <img
+                    src="/src/assets/images/main-images/like-btn-white.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              <p class="brand">클로르</p>
+              <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+              <p class="product-price">
+                <span class="sr-only">할인율</span>
+                <span class="text-red">30%</span>
+                <span class="sr-only">판매가</span>
+                27,000원
+              </p>
+            </article>
+          </a>
+        </div>
+      </div>
+
+      <h1>브랜드 카드</h1>
+      <div class="components-container">
+        <div class="brand-selling-card">
+          <div class="brand-report-card">
+            <div class="brand-report-hr"></div>
+            <h1 class="brand-title">EEE</h1>
+            <a href="/" class="kr-brand-title">
+              이이에
+              <svg
+                width="19"
+                height="28"
+                viewBox="0 0 19 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M1 27L17 14L1 1" stroke="black" stroke-width="2" />
+              </svg>
+            </a>
+
+            <div class="tags-wrap">
+              <span class="sr-only">브랜드 키워드:</span>
+              <div class="tag">로맨틱 무드</div>
+              <div class="tag">플로럴 포인트</div>
+              <div class="tag">파스텔 감성</div>
+              <div class="tag">산뜻한 레이어링</div>
+            </div>
+          </div>
+          <!-- 이미지 -->
+          <div class="brand-main-img">
+            <img
+              class="first"
+              src="/src/assets/images/main-images/welcoming/brand1-main-img1.webp"
+              alt=""
+            />
+            <img
+              class="second"
+              src="/src/assets/images/main-images/welcoming/brand1-main-img2.webp"
+              alt=""
+            />
+          </div>
+          <!-- 상품 -->
+          <div class="product-selling-card">
+            <!-- 1 -->
+            <a href="/" class="brand-product-card">
+              <article>
+                <div class="product-img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product1.webp"
+                    alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">할인율</span>
+                  <span class="text-red">30%</span>
+                  <span class="sr-only">판매가</span>
+                  27,000원
+                </p>
+              </article>
+            </a>
+            <!-- 2 -->
+            <a href="/" class="brand-product-card">
+              <article>
+                <div class="product-img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product1.webp"
+                    alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">할인율</span>
+                  <span class="text-red">30%</span>
+                  <span class="sr-only">판매가</span>
+                  27,000
+                </p>
+              </article>
+            </a>
+            <!-- 3 -->
+            <a href="/" class="brand-product-card">
+              <article>
+                <div class="product-img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product1.webp"
+                    alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">할인율</span>
+                  <span class="text-red">30%</span>
+                  <span class="sr-only">판매가</span>
+                  27,000
+                </p>
+              </article>
+            </a>
+            <!-- 4 -->
+            <a href="/" class="brand-product-card">
+              <article>
+                <div class="product-img-wrap">
+                  <img
+                    src="/src/assets/images/main-images/carousel1-product1.webp"
+                    alt="RIBBON ORGANZA SCRUNCHIE - 5 colors"
+                  />
+                  <button class="like-btn" aria-label="좋아요">
+                    <img
+                      src="/src/assets/images/main-images/like-btn-white.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                <p class="brand">클로르</p>
+                <p class="product-title">RIBBON ORGANZA SCRUNCHIE - 5 colors</p>
+                <p class="product-price">
+                  <span class="sr-only">할인율</span>
+                  <span class="text-red">30%</span>
+                  <span class="sr-only">판매가</span>
+                  27,000
+                </p>
+              </article>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <h1>커밍 쑨 카드</h1>
+      <div class="coming-card">
+        <time class="coming-time" datetime="2025-03-26">2025.03.26</time>
+        <div class="coming-text-wrap">
+          <div class="coming-soon-img">
+            <img
+              src="/src/assets/images/main-images/welcoming/coming-soon-text.webp"
+              alt="COMING SOON"
+            />
+          </div>
+          <p class="description">다음 수요입점회 브랜드를 미리 알려드릴게요.</p>
+        </div>
+
+        <div class="coming-brand-wrap">
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+          <div class="coming-brand">
+            <p class="brand-en">브랜드 영어</p>
+            <p class="brand-kr">브랜드 한국어</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
