@@ -1,0 +1,206 @@
+@import '/src/common/best-reset.css';
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 컴포넌트 */
+fieldset {
+  padding: 30px 10px;
+  margin: 30px;
+}
+
+fieldset img {
+  width: 100%;
+}
+
+fieldset legend {
+  text-align: center;
+}
+
+fieldset .comp {
+  left: 4%;
+  bottom: -18px;
+}
+
+fieldset .balloon-black.comp {
+  left: 20%;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+/* 카드 위치 */
+main figure {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100%;
+}
+
+main ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-inline: 50px;
+  column-gap: 20px;
+  row-gap: 80px;
+}
+
+main ul img {
+  width: 100%;
+}
+
+/* 카드 여백과 폰트 사이즈 */
+figcaption {
+  padding-bottom: 30px;
+}
+
+figcaption .item-title {
+  margin-top: 13px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+figcaption .item-description {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+figcaption .balloon-wrap {
+  margin-top: 60px;
+}
+
+figcaption .progress-container {
+  margin-top: 60px;
+}
+
+figcaption .item-period {
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+figcaption .bar-black {
+  margin-top: 60px;
+}
+
+/* 회색 바 */
+.progress-container {
+  width: 100%;
+  background-color: #eee;
+  height: 2px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+/* 주황색 바 */
+.progress-bar {
+  width: 20%;
+  height: 100%;
+  background-color: #f4511e;
+}
+
+.bar-black {
+  width: 100%;
+  background-color: black;
+  height: 2px;
+  border-radius: 3px;
+  margin: 30px 0;
+}
+
+/* 말풍선 */
+.balloon {
+  position: absolute;
+  bottom: 3px;
+  left: 70%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  min-width: 48px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background: rgb(255, 72, 0);
+  transition: 0.4s;
+  margin-bottom: 10px;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: 0px;
+  border-width: 5px 5px 0px 0px;
+  border-style: solid;
+  border-top-color: rgb(255, 72, 0);
+  border-right-color: transparent;
+}
+
+.balloon-wrap {
+  display: block;
+  position: relative;
+}
+
+/* 풍선 검은색 버전 */
+.balloon-black {
+  position: absolute;
+  bottom: 1px;
+  left: 98%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  min-width: 48px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background: black;
+  transition: 0.4s;
+  margin-bottom: 10px;
+}
+
+.balloon-black::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: 0px;
+  border-width: 5px 5px 0px 0px;
+  border-style: solid;
+  border-top-color: black;
+  border-right-color: transparent;
+}
+
+/* D-1 */
+.d1 {
+  left: 90%;
+}
+
+.d1-bar {
+  width: 90%;
+}
+
+.d3-bar {
+  width: 70%;
+}
+
+.item-day-3::before {
+  content: 'D-3';
+  color: #f4511e;
+  padding-right: 3px;
+}
