@@ -354,6 +354,10 @@ aside {
   gap: var(--spacing-40) var(--spacing-20);
   width: 100%;
 
+  @media (max-width: 541px) {
+    gap: 0;
+  }
+
   & > :nth-child(1),
   & > :nth-child(2),
   & > :nth-child(3) {
@@ -375,6 +379,16 @@ aside {
 
     & > :nth-child(n + 3) {
       grid-column: span 4; /* 두번째 행부터는 3열 (12 ÷ 3 = 4칸씩) */
+      border-bottom: none;
+    }
+
+    @media (max-width: 541px) {
+      & > :nth-child(1),
+      & > :nth-child(2),
+      & > :nth-child(n + 3) {
+        grid-column: span 6;
+        border-bottom: none;
+      }
     }
   }
 }
