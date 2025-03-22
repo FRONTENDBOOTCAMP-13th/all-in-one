@@ -547,3 +547,110 @@ button {
     }
   }
 }
+
+/* 모달 기본 스타일 (로드되자마자 보이게 설정) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+  --line-height: 1.375rem;
+  --mobile-line-height: 1rem;
+  --spacing: 1.375rem;
+  --mobile-spacing: 1rem;
+
+  background: white;
+  padding: 28px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  line-height: var(--mobile-line-height);
+
+  @media (min-width: 768px) {
+    line-height: var(--line-height);
+    width: 55%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 36%;
+  }
+
+  hr {
+    width: 70%;
+    margin-top: var(--spacing);
+    border: solid 1px var(--border-color);
+    opacity: 0.5;
+  }
+
+  ul {
+    list-style-position: inside;
+    color: #979797;
+  }
+
+  .modal-title {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+  }
+  .modal-text,
+  ul {
+    font-size: clamp(12px, 1.6vw, 16px);
+  }
+  .modal-text.last,
+  .modal-text.first {
+    padding-block: var(--mobile-spacing);
+  }
+  ul {
+    padding-top: var(--mobile-spacing);
+  }
+
+  @media (min-width: 541px) {
+    .modal-text.last,
+    .modal-text.first {
+      padding-block: var(--spacing);
+    }
+    ul {
+      padding-top: var(--spacing);
+    }
+  }
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+  display: inline-block;
+  padding: 0.875rem 0.75rem;
+  width: 100%;
+  background: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+.close:hover {
+  background: #3358ff;
+}
+
+/* 모달 숨기기 (닫기 버튼 클릭 시) */
+#modal-checkbox {
+  display: none;
+}
+
+#modal-checkbox:checked + .modal {
+  display: none;
+}

@@ -12,8 +12,36 @@
     />
     <link rel="stylesheet" href="/public/font/pretendardvariable.css" />
     <link rel="stylesheet" href="./styles/MainPage.css" />
+    <script type="module" src="/src/main.js"></script>
   </head>
   <body>
+    <input type="checkbox" id="modal-checkbox" />
+    <div class="modal">
+      <div class="modal-content">
+        <p class="modal-title">안내드립니다!</p>
+        <hr />
+        <p class="modal-text first">
+          <strong> 이 웹사이트는 공식 29CM 사이트가 아닙니다.</strong>
+        </p>
+        <p class="modal-text">
+          디자인 및 개발 연습을 위한
+          <strong>비상업적 프로젝트 사이트</strong>로,
+          <br />
+          실제 쇼핑 및 결제 기능이 제공되지 않습니다.
+        </p>
+        <ul>
+          <li>
+            공식 29CM 사이트는
+            <a href="https://www.29cm.co.kr/">www.29cm.co.kr</a>입니다.
+          </li>
+          <li>본 사이트는 개인 학습 및 포트폴리오 목적으로 제작되었습니다.</li>
+        </ul>
+        <p class="modal-text last">
+          <strong>👉이용에 착오 없으시길 바랍니다!</strong>
+        </p>
+        <label for="modal-checkbox" class="close">확인</label>
+      </div>
+    </div>
     <header></header>
     <main>
       <div class="main-wrap">
