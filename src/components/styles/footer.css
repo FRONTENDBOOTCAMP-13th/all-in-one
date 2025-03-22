@@ -27,7 +27,7 @@ body {
   color: #333;
 }
 
-.header-container {
+.footer-container {
   display: block;
   padding: 0 var(--spacing-50);
 }
@@ -225,4 +225,77 @@ body {
   padding: var(--spacing-4) 0;
   font-size: var(--text-11);
   color: #888;
+}
+
+/* 모바일 반응형 (541px 이하) */
+@media screen and (max-width: 541px) {
+  .footer-container {
+    padding: 0 var(--spacing-15);
+  }
+
+  /* 이미지에 보이는 부분만 남기고 나머지 감추기 */
+  .main-footer {
+    display: none;
+  }
+
+  /* 고객센터 영역 - 이미지 1에 맞게 조정 */
+  .top-section {
+    flex-direction: column;
+    gap: var(--spacing-20);
+    padding: var(--spacing-15) 0;
+    border-bottom: none;
+  }
+
+  .top-section-social {
+    margin-top: var(--spacing-20);
+  }
+
+  .top-section-inform .button-group {
+    display: flex;
+    width: 100%;
+    gap: var(--spacing-10);
+  }
+
+  .top-section-inform .button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-8) var(--spacing-12);
+  }
+
+  /* 회사 정보 영역 - 이미지 2에 맞게 조정 */
+  .bottom-footer {
+    padding: var(--spacing-20) 0;
+  }
+
+  /* 개인정보처리방침 행 스타일 조정 */
+  .bottom-nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: var(--spacing-15);
+    padding-bottom: var(--spacing-8);
+    gap: 0;
+  }
+
+  .bottom-nav a {
+    font-size: var(--text-12);
+    font-weight: 500;
+    margin-right: var(--spacing-15);
+  }
+
+  .bottom-nav a:not(:last-child):after {
+    right: calc(-1 * var(--spacing-8));
+  }
+
+  /* 회사 정보 */
+  .company-info {
+    display: none;
+  }
+
+  /* 고지사항 */
+  .disclaimer {
+    display: none;
+  }
 }
