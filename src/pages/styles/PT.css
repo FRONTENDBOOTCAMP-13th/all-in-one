@@ -1,5 +1,8 @@
 @import '/src/components/styles/header.css';
 @import '/src/components/styles/ptComponent.css';
+.current-page-pt {
+  border-bottom: 5px solid black;
+}
 
 .pt-bold {
   font-weight: 900;

@@ -8,12 +8,14 @@
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <link rel="stylesheet" href="/src/pages/styles/ShowCase.css" />
+    <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <!-- 헤더가 들어올 영역 -->
+    <header-component> </header-component>
 
-    <!-- 상단의 이미지 카드 두개 -->
     <main>
+      <!-- 상단의 이미지 카드 두개 -->
       <ul class="head-container">
         <li class="card-container">
           <a href="/" class="card-link" aria-label="세터 쇼케이스 상세보기">
@@ -1319,5 +1321,28 @@
         </li>
       </ul>
     </main>
+    <!-- 푸터가 들어올 영역 -->
+    <footer-component>
+      <img
+        slot="instagram-icon"
+        src="/src/assets/images/footer-images/Link.svg"
+        alt="Instagram"
+      />
+      <img
+        slot="youtube-icon"
+        src="/src/assets/images/footer-images/Link-1.svg"
+        alt="YouTube"
+      />
+      <img
+        slot="apple-icon"
+        src="/src/assets/images/footer-images/Link-2.svg"
+        alt="Apple"
+      />
+      <img
+        slot="google-play-icon"
+        src="/src/assets/images/footer-images/Link-3.svg"
+        alt="Google Play"
+      />
+    </footer-component>
   </body>
 </html>
