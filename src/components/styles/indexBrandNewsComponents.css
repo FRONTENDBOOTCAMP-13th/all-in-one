@@ -251,6 +251,10 @@ p {
     width: fit-content;
     padding: var(--gap-5);
     margin-bottom: var(--gap-10);
+
+    @media (prefers-color-scheme: dark) {
+      background: #404040;
+    }
   }
 
   .popularity-wrap {
@@ -300,6 +304,10 @@ p {
         border: solid 1px var(--border-color);
         border-radius: 30rem;
         padding: var(--gap-5) var(--gap-10);
+
+        @media (prefers-color-scheme: dark) {
+          border-color: #404040;
+        }
       }
     }
   }

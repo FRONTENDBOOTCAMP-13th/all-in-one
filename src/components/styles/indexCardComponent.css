@@ -5,6 +5,7 @@
 :root {
   /* border */
   --border-color: rgba(0, 0, 0, 0.17); /* card 옆 border 컬러 */
+  --border-color-dark: #404040;
 
   /* btn */
   --like-btn-color: #5d5d5da3;
@@ -43,6 +44,10 @@
 }
 .product:hover {
   background: #ededed;
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--border-color-dark);
+  }
 }
 
 .carousel-product-card:hover {
@@ -193,6 +198,9 @@ button {
   @media (min-width: 541px) {
     width: 50%;
   }
+  @media (prefers-color-scheme: dark) {
+    border-left: solid 1px var(--border-color-dark);
+  }
 
   img {
     border-radius: 0.125rem;
@@ -230,6 +238,10 @@ button {
       align-items: center;
       padding-block: 10px;
       border-top: solid 1px var(--border-color);
+
+      @media (prefers-color-scheme: dark) {
+        border-top: solid 1px var(--border-color-dark);
+      }
     }
     .product a {
       width: 100%;
@@ -304,6 +316,10 @@ button {
 
   @media (min-width: 541px) {
     width: 50%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    border-left: solid 1px var(--border-color-dark);
   }
 
   img {
@@ -506,15 +522,19 @@ button {
 
     .one-box {
       width: 44%;
-      border-bottom: solid 0.5px rgba(0, 0, 0, 0.115);
+      border-bottom: solid 0.5px var(--border-color);
     }
     .two-box,
     .three-box {
       width: 28%;
       @media (min-width: 541px) {
-        border-left: solid 0.5px rgba(0, 0, 0, 0.115);
-        border-bottom: solid 0.5px rgba(0, 0, 0, 0.115);
+        border-left: solid 0.5px var(--border-color);
+        border-bottom: solid 0.5px var(--border-color);
       }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: linear-gradient(to bottom, #00000000, #000000b6, #000000);
     }
   }
 
@@ -541,9 +561,26 @@ button {
       border-radius: 0.25rem;
       margin: auto;
       cursor: pointer;
+      transition: all 0.4s ease;
     }
     .more-btn:hover {
       background: rgb(243, 243, 243);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: #000;
+      .more-btn {
+        border: solid 1px var(--border-color-dark);
+        color: #fff;
+
+        path {
+          fill: #fff;
+        }
+      }
+
+      .more-btn:hover {
+        background: var(--border-color-dark);
+      }
     }
   }
 }
@@ -643,7 +680,7 @@ button {
   transition: all 0.4s ease;
 }
 .close:hover {
-  background: #3358ff;
+  opacity: 0.8;
 }
 
 /* 모달 숨기기 (닫기 버튼 클릭 시) */

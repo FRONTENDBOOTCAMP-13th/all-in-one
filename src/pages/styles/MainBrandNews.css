@@ -16,3 +16,40 @@
     padding: 0;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #fff;
+  }
+  .brand-news-sec {
+    background: #27272a;
+
+    .sec-header {
+      .brand-sale {
+        border-color: #ffffff;
+      }
+      .bar {
+        color: #fff;
+      }
+    }
+
+    .brand-home-a {
+      border-color: #fff;
+      path {
+        stroke: #fff;
+      }
+    }
+    .brand-home-a:hover {
+      background: #fff;
+
+      span {
+        color: #000;
+      }
+
+      path {
+        stroke: #000;
+      }
+    }
+  }
+}

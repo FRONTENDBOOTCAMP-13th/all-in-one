@@ -5,6 +5,7 @@
 :root {
   --brand-inline-padding: 1.25rem;
   --brand-inline-padding-desk: 15%;
+  --border-color-dark: #404040;
 }
 
 /* animation ******************** */
@@ -348,6 +349,9 @@ body {
     @media (min-width: 541px) {
       margin-bottom: 4rem;
     }
+    @media (prefers-color-scheme: dark) {
+      background: #404040;
+    }
   }
 
   .kr-brand-title {
@@ -371,6 +375,10 @@ body {
       background: #f4f4f4;
       font-size: var(--text-12);
       padding: 0.3125rem;
+
+      @media (prefers-color-scheme: dark) {
+        background: #404040;
+      }
     }
   }
 }
