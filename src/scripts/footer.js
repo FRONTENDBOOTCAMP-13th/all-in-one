@@ -17,6 +17,8 @@ class FooterComponent extends HTMLElement {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
             Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
+
+   
         
         * {
           margin: 0;
@@ -24,7 +26,7 @@ class FooterComponent extends HTMLElement {
           box-sizing: border-box;
         }
         
-        .container {
+        .footer-container {
           display: block;
           padding: 0 50px;
         }
@@ -223,9 +225,134 @@ class FooterComponent extends HTMLElement {
           font-size: 11px;
           color: #888;
         }
+
+        /* 모바일 반응형 (541px 이/* 모바일 반응형 (541px 이하) */
+       @media screen and (max-width: 541px) {
+        .footer-container {
+          padding: 0 15px;
+          background-color: #121212;
+          color: #e0e0e0;
+        }
+
+        /* 이미지에 보이는 부분만 남기고 나머지 감추기 */
+        .main-footer {
+          display: none;
+        }
+
+        /* 고객센터 영역 - 이미지 1에 맞게 조정 */
+        .top-section {
+          flex-direction: column;
+          gap: 20px;
+          padding: 15px 0;
+          border-bottom: none;
+        }
+
+        .top-section-inform .customer-service {
+          color: #ffffff;
+        }
+
+        .top-section-inform .service-hours {
+          color: #a0a0a0;
+        }
+
+        .top-section-social {
+          margin-top: 20px;
+        }
+
+        .top-section-inform .button-group {
+          display: flex;
+          width: 100%;
+          gap: 10px;
+        }
+
+        .top-section-inform .button {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 8px 12px;
+          background-color: #333333;
+          color: #ffffff;
+          border: 1px solid #444444;
+        }
+
+        .top-section-inform .button i {
+          color: #bbbbbb;
+        }
+
+        /* 소셜 아이콘 다크모드 적용 */
+        .social-icon {
+          background-color: #333333;
+          border: 1px solid #444444;
+        }
+
+        /* 회사 정보 영역 - 이미지 2에 맞게 조정 */
+        .bottom-footer {
+          padding: 20px 0;
+        }
+
+        /* 개인정보처리방침 행 스타일 조정 */
+        .bottom-nav {
+          display: flex;
+          overflow-x: auto;
+          white-space: nowrap;
+          margin-bottom: 15px;
+          padding-bottom: 8px;
+          gap: 0;
+          border-bottom: 1px solid #333333;
+        }
+
+        .bottom-nav a {
+          font-size: 12px;
+          font-weight: 500;
+          margin-right: 15px;
+          color: #cccccc;
+        }
+
+        .bottom-nav a:not(:last-child):after {
+          right: -8px;
+          background-color: #444444;
+        }
+
+        /* 회사 정보 */
+        .company-info {
+          display: none;
+        }
+
+        /* 사업자정보확인 박스 다크모드 적용 */
+        .business-info {
+          display: block;
+          margin: 10px 0;
+          padding: 8px 12px;
+          color: #ffffff;
+          background-color: #444444;
+          line-height: 20px;
+          text-align: center;
+          border-radius: 4px;
+        }
+
+        /* 고지사항 */
+        .disclaimer {
+          display: none;
+        }
+
+        /* 토글 버튼 다크모드 적용 */
+        .company-info-toggle-btn {
+          background-color: #333333;
+          color: #e0e0e0;
+          border: 1px solid #444444;
+        }
+
+        .company-info.show {
+          background-color: #222222;
+          border: 1px solid #444444;
+          color: #bbbbbb;
+        }
+      }
+
       </style>
       
-      <div class="container">
+      <div class="footer-container">
         <div class="top-section">
           <section class="top-section-inform">
             <div class="customer-service">고객 센터 1660-2929</div>
