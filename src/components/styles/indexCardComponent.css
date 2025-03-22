@@ -3,25 +3,40 @@
 @import '/src/common/a11y.css';
 
 :root {
+  /* border */
   --border-color: rgba(0, 0, 0, 0.17); /* card 옆 border 컬러 */
+  --border-color-dark: #404040;
+
+  /* btn */
   --like-btn-color: #5d5d5da3;
+
+  /* text */
   --text-title: var(--text-22);
   --text-normal: var(--text-15);
   --text-xs: var(--text-11);
   --text-s: var(--text-12);
+
+  /* gap */
+  --gap-5: 0.3125rem;
+  --gap-10: 0.625rem;
 }
 
 /* hover 이펙트 *************** */
 .poster img,
 .brand img,
-.product {
+.product,
+.carousel-product-card img {
   transition: all 0.4s;
 }
-.poster:hover {
-  img {
-    filter: brightness(0.75);
+
+@media (min-width: 541px) {
+  .poster:hover {
+    img {
+      filter: brightness(0.75);
+    }
   }
 }
+
 .brand:hover {
   img {
     filter: brightness(0.75);
@@ -29,6 +44,16 @@
 }
 .product:hover {
   background: #ededed;
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--border-color-dark);
+  }
+}
+
+.carousel-product-card:hover {
+  img {
+    filter: brightness(0.75);
+  }
 }
 
 /* 컴포넌트 컨테이너 디자인************** */
@@ -40,6 +65,7 @@
   width: 100%;
 }
 
+/* 공통 CSS *********************** */
 body {
   font-family: 'Pretendard Variable';
 }
@@ -56,6 +82,7 @@ a {
 button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .text-red {
@@ -78,15 +105,17 @@ button {
   텍스트, bar 컴포넌트  디자인************** */
 .mobile-text-num-wrap {
   --margin-bottom-gap: 5%;
+  --padding-inline: 2rem;
+  --padding-inline-desk: 3.75rem;
 
   width: 100%;
   position: absolute;
   bottom: 0;
   padding-bottom: 10%;
-  padding-inline: 3.75rem;
+  padding-inline: var(--padding-inline-desk);
 
   @media (max-width: 374px) {
-    padding-inline: 2rem;
+    padding-inline: var(--padding-inline);
     padding-bottom: 5%;
   }
   @media (min-width: 541px) {
@@ -112,6 +141,7 @@ button {
   /* mobile poster bar  디자인************** */
   .poster-num-bar {
     --gray-color: #a9a9a9;
+    --mobile-poster-gap: var(--gap-5);
 
     display: flex;
     justify-content: center;
@@ -126,13 +156,13 @@ button {
       color: #fff;
       display: flex;
       flex-flow: row nowrap;
-      gap: 5px;
+      gap: var(--mobile-poster-gap);
 
       .total-num {
         display: flex;
         flex-flow: row nowrap;
         color: var(--gray-color);
-        gap: 5px;
+        gap: var(--mobile-poster-gap);
       }
     }
     .bar-track {
@@ -168,6 +198,9 @@ button {
   @media (min-width: 541px) {
     width: 50%;
   }
+  @media (prefers-color-scheme: dark) {
+    border-left: solid 1px var(--border-color-dark);
+  }
 
   img {
     border-radius: 0.125rem;
@@ -185,7 +218,7 @@ button {
     }
     .description {
       font-size: var(--text-normal);
-      padding-top: 0.625rem;
+      padding-top: var(--gap-10);
     }
   }
 }
@@ -205,13 +238,17 @@ button {
       align-items: center;
       padding-block: 10px;
       border-top: solid 1px var(--border-color);
+
+      @media (prefers-color-scheme: dark) {
+        border-top: solid 1px var(--border-color-dark);
+      }
     }
     .product a {
       width: 100%;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      gap: 0.625rem;
+      gap: var(--gap-10);
       flex-grow: 1;
       min-width: 0;
 
@@ -245,7 +282,7 @@ button {
     .product .button-container {
       cursor: pointer;
       text-align: center;
-      margin-left: 0.625rem;
+      margin-left: var(--gap-10);
 
       .like-btn {
         cursor: pointer;
@@ -281,6 +318,10 @@ button {
     width: 50%;
   }
 
+  @media (prefers-color-scheme: dark) {
+    border-left: solid 1px var(--border-color-dark);
+  }
+
   img {
     border-radius: 0.125rem;
   }
@@ -300,7 +341,7 @@ button {
 
     .button-wrap {
       display: none;
-      gap: 0.3125rem;
+      gap: var(--gap-5);
 
       @media (min-width: 541px) {
         display: flex;
@@ -313,12 +354,14 @@ button {
   }
 
   .carousel {
+    --gap: var(--gap-10);
+
     display: flex;
     width: 100%;
     overflow-x: scroll;
     white-space: nowrap;
-    gap: 0.625rem;
-    padding-bottom: 0.625rem;
+    gap: var(--gap);
+    padding-bottom: (--gap);
 
     @media (min-width: 541px) {
       /* 스크롤바 숨기기 */
@@ -368,8 +411,8 @@ button {
   .like-btn {
     position: absolute;
     display: block;
-    bottom: 0.3125rem;
-    right: 0.3125rem;
+    bottom: var(--gap-5);
+    right: var(--gap-5);
     width: 11%;
 
     img {
@@ -479,15 +522,19 @@ button {
 
     .one-box {
       width: 44%;
-      border-bottom: solid 0.5px rgba(0, 0, 0, 0.115);
+      border-bottom: solid 0.5px var(--border-color);
     }
     .two-box,
     .three-box {
       width: 28%;
       @media (min-width: 541px) {
-        border-left: solid 0.5px rgba(0, 0, 0, 0.115);
-        border-bottom: solid 0.5px rgba(0, 0, 0, 0.115);
+        border-left: solid 0.5px var(--border-color);
+        border-bottom: solid 0.5px var(--border-color);
       }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: linear-gradient(to bottom, #00000000, #000000b6, #000000);
     }
   }
 
@@ -514,9 +561,133 @@ button {
       border-radius: 0.25rem;
       margin: auto;
       cursor: pointer;
+      transition: all 0.4s ease;
     }
     .more-btn:hover {
       background: rgb(243, 243, 243);
     }
+
+    @media (prefers-color-scheme: dark) {
+      background: #000;
+      .more-btn {
+        border: solid 1px var(--border-color-dark);
+        color: #fff;
+
+        path {
+          fill: #fff;
+        }
+      }
+
+      .more-btn:hover {
+        background: var(--border-color-dark);
+      }
+    }
   }
+}
+
+/* 모달 기본 스타일 (로드되자마자 보이게 설정) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+  --line-height: 1.375rem;
+  --mobile-line-height: 1rem;
+  --spacing: 1.375rem;
+  --mobile-spacing: 1rem;
+
+  background: white;
+  padding: 28px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  line-height: var(--mobile-line-height);
+
+  @media (min-width: 768px) {
+    line-height: var(--line-height);
+    width: 55%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 36%;
+  }
+
+  hr {
+    width: 70%;
+    margin-top: var(--spacing);
+    border: solid 1px var(--border-color);
+    opacity: 0.5;
+  }
+
+  ul {
+    list-style-position: inside;
+    color: #979797;
+  }
+
+  .modal-title {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+  }
+  .modal-text,
+  ul {
+    font-size: clamp(12px, 1.6vw, 16px);
+  }
+  .modal-text.last,
+  .modal-text.first {
+    padding-block: var(--mobile-spacing);
+  }
+  ul {
+    padding-top: var(--mobile-spacing);
+  }
+
+  @media (min-width: 541px) {
+    .modal-text.last,
+    .modal-text.first {
+      padding-block: var(--spacing);
+    }
+    ul {
+      padding-top: var(--spacing);
+    }
+  }
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+  display: inline-block;
+  padding: 0.875rem 0.75rem;
+  width: 100%;
+  background: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+.close:hover {
+  opacity: 0.8;
+}
+
+/* 모달 숨기기 (닫기 버튼 클릭 시) */
+#modal-checkbox {
+  display: none;
+}
+
+#modal-checkbox:checked + .modal {
+  display: none;
 }

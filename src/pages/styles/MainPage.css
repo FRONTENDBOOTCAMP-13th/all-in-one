@@ -3,6 +3,8 @@
 :root {
   --max-height: 450vh;
   --mobile-max-height: 800vh;
+
+  --light-gray-border: rgb(134, 134, 134);
 }
 
 main {
@@ -108,6 +110,28 @@ main {
         @media (min-width: 541px) {
           width: 50%;
         }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #fff;
+  }
+  .modal-content {
+    color: #000;
+  }
+  .product-card,
+  .brand-card,
+  .products-carousel {
+    border-left: solid 1px var(light-gray-border);
+  }
+  .product-card {
+    .products-container {
+      .product {
+        border-top: solid 1px var(light-gray-border);
       }
     }
   }
