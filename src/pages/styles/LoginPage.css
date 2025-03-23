@@ -1,1 +1,96 @@
 @import '/src/components/styles/loginComponent.css';
+
+:root {
+  --background-color: var(--real-white);
+  --text-color: #333333;
+  --secondary-text-color: #666666;
+  --button-bg: var(--real-white);
+  --button-text: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 다크 모드 스타일 - 시스템 설정 기반 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #a0a0a0;
+    --button-bg: #2a2a2a;
+    --button-text: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.main {
+  width: var(--spacing-400);
+  margin: 0 auto;
+  padding-block-start: var(--spacing-30);
+  padding-block-end: var(--spacing-80);
+
+  .login-title {
+    color: var(--text-color);
+  }
+
+  .login-more {
+    text-align: center;
+    margin-block-start: var(--spacing-21);
+    color: var(--secondary-text-color);
+
+    .login-more-link {
+      margin-inline-start: var(--spacing-5);
+    }
+  }
+
+  .login-buttons {
+    margin-block-start: var(--spacing-83);
+
+    .btn {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      border: 1px solid var(--button-border);
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .btn-naver {
+      background-color: var(--naver-green);
+      color: var(--real-white);
+    }
+
+    .btn-kakao {
+      background-color: var(--kakao-yellow);
+      color: var(--real-black);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .btn-apple svg path,
+    .btn-facebook svg path,
+    .btn-email svg path {
+      fill: var(--button-text);
+    }
+
+    /* 카카오와 네이버는 브랜드 색상 유지 */
+    .btn-naver svg path {
+      fill: var(--real-white);
+    }
+
+    .btn-kakao svg path {
+      fill: var(--real-black);
+    }
+  }
+
+  .account {
+    margin-block-start: var(--spacing-34);
+  }
+}

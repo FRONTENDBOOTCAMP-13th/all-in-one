@@ -3,12 +3,251 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>로그인 - 감도 깊은 취향 셀렉트샵 29CM</title>
+    <title>로그인 - 감도 깊은 취향 셀렉트샵 31CM</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <link rel="stylesheet" href="/src/pages/styles/LoginPage.css" />
     <script type="module" src="/src/main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- 헤더가 올 영역 -->
+    <header-component></header-component>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="main">
+      <h2 class="sr-only">로그인 페이지</h2>
+      <h2 class="login-title">
+        31CM에<br />
+        오신 것을 환영해요!
+      </h2>
+
+      <p class="login-more">
+        31CM가 처음이라면, <strong class="login-more-effect">15%</strong> 할인
+        꼭 받으세요
+        <a
+          href="https://www.29cm.co.kr/event/benefit-guide/guide"
+          class="login-more-link"
+          >자세히</a
+        >
+      </p>
+
+      <ul class="login-buttons">
+        <li class="login-button-box naver">
+          <a
+            href="https://nid.naver.com/nidlogin.login?oauth_token=ZaSxZYVV1J6QelokQu&consumer_key=3UNToo0c2vUrSFT0hBq3&logintp=oauth2&nurl=https%3A%2F%2Fnid.naver.com%2Foauth2.0%2Fauthorize%3Fresponse_type%3Dtoken%26state%3Da1af4bd9-972b-4a7a-947c-aa6d69963f2c%26client_id%3D3UNToo0c2vUrSFT0hBq3%26redirect_uri%3Dhttps%253A%252F%252Fauth.29cm.co.kr%252Flogin%253Fsocial_type%253Dnaver%26locale%3Dko_KR%26inapp_view%3D%26oauth_os%3D&locale=ko_KR&inapp_view=&svctype=1"
+            class="btn btn-naver"
+            aria-label="네이버로 계속하기"
+            ><div class="flex-container">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <g>
+                    <mask
+                      style="mask-type: luminance"
+                      maskUnits="userSpaceOnUse"
+                      x="0"
+                      y="1"
+                      width="14"
+                      height="14"
+                    >
+                      <g>
+                        <path
+                          d="M13.8711 1.2207H0.871094V14.2207H13.8711V1.2207Z"
+                          fill="white"
+                        />
+                      </g>
+                    </mask>
+                    <g mask="url(#mask0_227_553)">
+                      <g>
+                        <path
+                          d="M9.41477 7.9638L4.74313 1.2207H0.871094V13.8207H4.92742V7.07655L9.59906 13.8207H13.4711V1.2207H9.41477V7.9638Z"
+                          fill="white"
+                        />
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span>네이버로 계속하기</span>
+            </div></a
+          >
+        </li>
+        <li class="login-button-box kakao">
+          <a
+            href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fclient_id%3D0576138ae835b86d79d9ca905a58b03d%26prompt%3Dselect_account%26redirect_uri%3Dhttps%253A%252F%252Fauth.29cm.co.kr%252Flogin%253Fsocial_type%253Dkakao%26response_type%3Dcode%26auth_tran_id%3DC948uoQOxrq_UcOzjuTb32od02peQr1A2Swzl1ymBAhRbWm7bMjm1vSPMjgc%26ka%3Dsdk%252F2.7.2%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttps%25253A%25252F%25252Fauth.29cm.co.kr%26is_popup%3Dfalse%26through_account%3Dtrue#login"
+            class="btn btn-kakao"
+            aria-label="카카오로 계속하기"
+            ><div class="flex-container">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M9.17271 3.22266C5.19602 3.22266 1.97266 5.72414 1.97266 8.80931C1.97266 10.7281 3.21939 12.4195 5.1179 13.4256L4.3191 16.3567C4.24852 16.6157 4.54341 16.8221 4.76985 16.672L8.27137 14.3507C8.56685 14.3794 8.86715 14.3961 9.17271 14.3961C13.1491 14.3961 16.3727 11.8947 16.3727 8.80931C16.3727 5.72414 13.1491 3.22266 9.17271 3.22266Z"
+                    fill="black"
+                  />
+                </g>
+              </svg>
+              <span>카카오로 계속하기</span>
+            </div></a
+          >
+        </li>
+        <li class="login-button-box apple">
+          <a
+            href="https://account.apple.com/"
+            class="btn btn-apple"
+            aria-label="Apple로 계속하기"
+            ><div class="flex-container">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M12.404 3.04543C11.8151 3.70668 10.8728 4.22823 9.93052 4.15373C9.81274 3.25963 10.274 2.30966 10.8139 1.72292C11.4028 1.04304 12.4334 0.558738 13.2677 0.521484C13.3659 1.45283 12.9831 2.36554 12.404 3.04543ZM13.2579 4.33068C11.8936 4.25617 10.7255 5.06644 10.0777 5.06644C9.42013 5.06644 8.42879 4.36794 7.34911 4.38656C5.94554 4.40519 4.64011 5.15958 3.9236 6.36101C2.45131 8.76388 3.54081 12.3216 4.96401 14.2775C5.6609 15.2461 6.49519 16.3078 7.5945 16.2705C8.63491 16.2333 9.04715 15.6279 10.3035 15.6279C11.5697 15.6279 11.9329 16.2705 13.0322 16.2519C14.1707 16.2333 14.8873 15.2833 15.5841 14.3147C16.3792 13.2157 16.7031 12.1447 16.7227 12.0888C16.7031 12.0702 14.5241 11.2785 14.5045 8.89427C14.4848 6.90119 16.2221 5.95122 16.3006 5.89534C15.3191 4.51695 13.7879 4.36794 13.2579 4.33068Z"
+                    fill="black"
+                  />
+                </g>
+              </svg>
+              <span>Apple로 계속하기</span>
+            </div></a
+          >
+        </li>
+        <li class="login-button-box facebook">
+          <a
+            href="https://www.facebook.com/login.php?skip_api_login=1&api_key=291704510930968&kid_directed_site=0&app_id=291704510930968&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv13.0%2Fdialog%2Foauth%3Fclient_id%3D291704510930968%26redirect_uri%3Dhttps%253A%252F%252Fauth.29cm.co.kr%252Flogin%253Fsocial_type%253Dfacebook%26response_type%3Dtoken%26scope%3Demail%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D55c4c2fd-7647-41dd-beda-8b35144a176f%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fauth.29cm.co.kr%2Flogin%3Fsocial_type%3Dfacebook%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=page&locale=ko_KR&pl_dbl=0"
+            class="btn btn-facebook"
+            aria-label="페이스북으로 계속하기"
+            ><div class="flex-container">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <g>
+                    <mask
+                      style="mask-type: luminance"
+                      maskUnits="userSpaceOnUse"
+                      x="0"
+                      y="1"
+                      width="16"
+                      height="16"
+                    >
+                      <g>
+                        <path
+                          d="M15.582 1.02148H0.582031V16.0215H15.582V1.02148Z"
+                          fill="white"
+                        />
+                      </g>
+                    </mask>
+                    <g mask="url(#mask0_227_577)">
+                      <g>
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M15.582 8.56732C15.582 4.39986 12.2241 1.02148 8.08203 1.02148C3.93989 1.02148 0.582031 4.39986 0.582031 8.56732C0.582031 12.3337 3.32467 15.4554 6.91015 16.0215V10.7486H5.00586V8.56732H6.91015V6.90487C6.91015 5.0137 8.02985 3.96907 9.74302 3.96907C10.5635 3.96907 11.4218 4.11645 11.4218 4.11645V5.97343H10.4761C9.54446 5.97343 9.25391 6.5551 9.25391 7.15184V8.56732H11.334L11.0014 10.7486H9.25391V16.0215C12.8394 15.4554 15.582 12.3337 15.582 8.56732Z"
+                          fill="black"
+                        />
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span>페이스북으로 계속하기</span>
+            </div></a
+          >
+        </li>
+        <li class="login-button-box email">
+          <a
+            href="https://auth.29cm.co.kr/email-login?redirect_uri=https%3A%2F%2Fwww.29cm.co.kr%2F"
+            class="btn btn-email"
+            aria-label="이메일로 계속하기"
+            ><div class="flex-container">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M8.69033 12.9418C7.05986 12.9418 5.84334 11.6726 5.8349 9.51324C5.84334 7.34566 7.1021 6.10115 8.69033 6.10115C9.85616 6.10115 10.3715 6.80994 10.5827 7.22203H10.6672V6.23302H12.1372V10.8484C12.1625 11.4501 12.4075 11.7468 12.9144 11.7385C13.869 11.7468 14.4942 10.6671 14.5026 9.06818C14.5195 6.08467 12.3315 4.12313 9.18032 4.12313C5.92782 4.13137 3.84961 6.505 3.84116 9.51324C3.84116 12.7852 5.65749 14.9446 9.11273 14.9199C10.3039 14.9116 11.1487 14.821 12.1372 14.5572V15.8759C11.2501 16.1231 10.2279 16.2715 9.11273 16.2715C4.93096 16.2715 2.42189 13.6671 2.42189 9.51324C2.41344 5.61489 5.21819 2.77148 9.18032 2.77148C13.1847 2.77148 15.9303 5.44181 15.9219 9.01873C15.9219 11.549 14.5955 13.016 12.7961 13.0078C11.6979 13.0078 10.8784 12.4638 10.7517 11.7056H10.6672C10.456 12.1259 9.9153 12.9418 8.69033 12.9418ZM7.42313 9.49676C7.41468 10.6918 8.00604 11.5819 9.06205 11.5902C10.135 11.5819 10.6925 10.7578 10.701 9.49676C10.6925 8.26873 10.1434 7.46104 9.06205 7.4528C7.99759 7.46104 7.41468 8.33467 7.42313 9.49676Z"
+                    fill="black"
+                  />
+                </g>
+              </svg>
+              <span>이메일로 계속하기</span>
+            </div></a
+          >
+        </li>
+      </ul>
+
+      <nav class="account" aria-label="계정 관련 링크">
+        <ul class="account-links">
+          <li class="account-link">
+            <a href="/" aria-label="계정 찾기">계정 찾기</a>
+          </li>
+          <li class="account-link">
+            <a href="/" aria-label="비밀번호 변경">비밀번호 변경</a>
+          </li>
+          <li class="account-link">
+            <a href="/" aria-label="문의하기">문의하기</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+
+    <!-- 푸터가 들어올 영역 -->
+    <footer-component>
+      <img
+        slot="instagram-icon"
+        src="/src/assets/images/footer-images/Link.svg"
+        alt="Instagram"
+      />
+      <img
+        slot="youtube-icon"
+        src="/src/assets/images/footer-images/Link-1.svg"
+        alt="YouTube"
+      />
+      <img
+        slot="apple-icon"
+        src="/src/assets/images/footer-images/Link-2.svg"
+        alt="Apple"
+      />
+      <img
+        slot="google-play-icon"
+        src="/src/assets/images/footer-images/Link-3.svg"
+        alt="Google Play"
+      />
+    </footer-component>
+  </body>
 </html>

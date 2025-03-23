@@ -1,5 +1,224 @@
 @import '/src/components/styles/bestComponent.css';
 
+/* 라이트 모드(기본) 변수 */
+:root {
+  /* 기존 색상 유지 */
+  --real-black: #000;
+  --medium-black: rgb(29, 29, 29);
+  --pretty-black: rgb(93, 93, 93);
+  --real-white: #fff;
+  --medium-white: rgb(228, 228, 228);
+  --pretty-white: rgb(244, 244, 244);
+  --pretty-gray: #d4d4d4;
+  --light-gray: #e4e4e4;
+  --real-gray: rgb(196, 196, 196);
+  --real-red: rgb(255, 72, 0);
+
+  /* 시맨틱 색상 변수(테마 전환용) */
+  --background-color: var(--real-white);
+  --text-color: var(--real-black);
+  --secondary-text-color: var(--pretty-black);
+  --border-color: var(--pretty-gray);
+  --box-background: var(--real-black);
+  --box-text: var(--real-white);
+  --card-hover-background: #f8f8f8;
+  --link-hover-color: #0066cc;
+  --highlight-text: #ffffff;
+  --badge-background: var(--pretty-white);
+  --badge-text: var(--medium-black);
+  --interaction-text: var(--pretty-black);
+}
+
+/* 다크 모드 변수 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #a0a0a0;
+    --border-color: #444444;
+    --box-background: #555555;
+    --box-text: #ffffff;
+    --card-hover-background: #222222;
+    --link-hover-color: #5599ff;
+    --highlight-text: #ffffff;
+    --badge-background: #555555;
+    --badge-text: #ffffff;
+    --interaction-text: #b0b0b0;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  /* 사이드바 스타일 수정 */
+  aside .sidebar-list li {
+    color: var(--secondary-text-color);
+  }
+
+  /* 사이드바 호버 및 현재 선택 항목 */
+  aside .sidebar-list .current-side {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-list .current-side a {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-list li:hover {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-list li:hover a {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-head {
+    color: var(--text-color);
+    border-bottom-color: var(--text-color);
+  }
+
+  /* 카테고리 스타일 수정 */
+  .category {
+    color: var(--secondary-text-color);
+    border-color: var(--border-color);
+  }
+
+  .category li {
+    border-left-color: var(--border-color);
+  }
+
+  /* 카테고리 호버 및 현재 선택 항목 */
+  .category .current-category {
+    color: var(--highlight-text);
+  }
+
+  .category .current-category a {
+    color: var(--highlight-text);
+  }
+
+  .category li:hover {
+    color: var(--highlight-text);
+  }
+
+  .category li:hover a {
+    color: var(--highlight-text);
+  }
+
+  /* 버튼 스타일 수정 */
+  .buttons .btn {
+    background-color: var(--background-color);
+    color: var(--secondary-text-color);
+    border-color: var(--border-color);
+  }
+
+  .buttons .btn.current-btn {
+    background-color: var(--text-color);
+    color: var(--background-color);
+  }
+
+  .buttons .btn:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+  }
+
+  /* 랭크 박스 스타일 수정 */
+  .product-container .rank-box {
+    background-color: var(--box-background);
+    color: var(--box-text);
+  }
+
+  /* 상품 정보 스타일 수정 */
+  .price .original-price {
+    color: var(--secondary-text-color);
+  }
+
+  .price .current-price {
+    color: var(--text-color);
+  }
+
+  /* 배지 스타일 수정 - 쿠폰 및 배송 뱃지 가시성 개선 */
+  .badge-group .badge {
+    background-color: var(--badge-background);
+    color: var(--badge-text);
+    font-weight: 600;
+  }
+
+  /* 쿠폰 뱃지 강조 */
+  .badge-group .coupon-badge {
+    background-color: #7a5fff;
+    color: white;
+  }
+
+  /* 무료배송 뱃지 강조 */
+  .badge-group .free-badge {
+    background-color: #ff5f8f;
+    color: white;
+  }
+
+  /* 인터랙션 스타일 수정 - 좋아요/후기 가시성 개선 */
+  .interactions {
+    color: var(--interaction-text);
+  }
+
+  /* SVG 아이콘 색상 수정 */
+  .interactions svg path {
+    stroke: var(--interaction-text);
+  }
+
+  /* 좋아요 카운트와 후기 카운트 가시성 향상 */
+  .like-count,
+  .mention-count {
+    color: var(--interaction-text);
+    font-weight: 500;
+  }
+
+  /* 상품 호버 효과 수정 */
+  .product-container:hover {
+    background-color: var(--card-hover-background);
+  }
+
+  .product-container:hover .product-name a {
+    color: var(--link-hover-color);
+  }
+
+  /* 호버 시 인터랙션 가시성 유지를 위한 코드 수정 */
+  .product-container:hover .interactions {
+    color: var(--interaction-text); /* 호버 시에도 원래 색상 유지 */
+  }
+
+  .product-container:hover .interactions svg path {
+    stroke: var(--interaction-text); /* 호버 시에도 원래 아이콘 색상 유지 */
+  }
+
+  .product-container:hover .like-count,
+  .product-container:hover .mention-count {
+    color: var(--interaction-text); /* 호버 시에도 원래 텍스트 색상 유지 */
+  }
+
+  /* 브랜드 및 상품명 */
+  .product-txt .brand a {
+    color: var(--text-color);
+  }
+
+  .product-txt .product-name a {
+    color: var(--text-color);
+  }
+
+  /* 순위 컨테이너 경계선 수정 */
+  .rank-container > :nth-child(1),
+  .rank-container > :nth-child(2),
+  .rank-container > :nth-child(3) {
+    border-bottom-color: var(--border-color);
+  }
+
+  @media (max-width: 1024px) {
+    .rank-container > :nth-child(1),
+    .rank-container > :nth-child(2) {
+      border-bottom-color: var(--border-color);
+    }
+  }
+}
 .best-main {
   padding-inline: var(--spacing-50);
   padding-block-start: var(--spacing-40);
@@ -14,8 +233,12 @@
   .side-bar {
     flex: 0 0 var(--spacing-200);
     position: sticky;
-    top: var(--spacing-40); /* 여기에 top 값을 추가 */
+    top: var(--spacing-265); /* 여기에 top 값을 추가 */
     height: 100vh;
+
+    @media (max-width: 1024px) {
+      top: var(--spacing-180);
+    }
 
     @media (max-width: 561px) {
       display: none;
@@ -64,7 +287,6 @@
   color: #0066cc;
 }
 
-/* 이거 사용할지 말지 팀원들에게 물어보기 */
 .product-container {
   display: grid;
   grid-template-rows: subgrid;
