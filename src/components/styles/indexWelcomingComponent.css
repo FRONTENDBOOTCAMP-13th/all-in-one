@@ -5,8 +5,10 @@
 :root {
   --brand-inline-padding: 1.25rem;
   --brand-inline-padding-desk: 15%;
+  --border-color-dark: #404040;
 }
 
+/* animation ******************** */
 @keyframes train-animation {
   0% {
     translate: -100% 0;
@@ -36,6 +38,12 @@
   }
 }
 
+/* hover 이펙트 ****************** */
+.brand-product-card:hover {
+  translate: 0 -4%;
+}
+
+/* 공통 css ******************* */
 .text-red {
   color: #ff4800;
 }
@@ -284,6 +292,10 @@ body {
   }
 }
 
+.sticky-menu:hover {
+  color: #f4f4f4;
+}
+
 /* 스티키 헤더 컴포넌트 ********* */
 .sticky-header {
   position: sticky;
@@ -303,6 +315,10 @@ body {
   background: black;
   color: #ffffff6d;
   font-weight: 700;
+
+  .sticky-menu {
+    transition: all 0.3s ease;
+  }
   .sticky-menu.checked {
     color: #f4f4f4;
   }
@@ -333,6 +349,9 @@ body {
     @media (min-width: 541px) {
       margin-bottom: 4rem;
     }
+    @media (prefers-color-scheme: dark) {
+      background: #404040;
+    }
   }
 
   .kr-brand-title {
@@ -356,6 +375,10 @@ body {
       background: #f4f4f4;
       font-size: var(--text-12);
       padding: 0.3125rem;
+
+      @media (prefers-color-scheme: dark) {
+        background: #404040;
+      }
     }
   }
 }
@@ -404,6 +427,7 @@ body {
   min-width: 0;
   flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */
   width: 100%;
+  transition: all 0.5s;
 
   .brand {
     font-size: var(--text-12);
