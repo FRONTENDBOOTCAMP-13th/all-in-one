@@ -42,7 +42,10 @@
   --spacing-50: 3.125rem;
   --spacing-80: 5rem;
   --spacing-90: 5.625rem;
+  --spacing-180: 11.25rem;
   --spacing-200: 12.5rem;
+  --spacing-230: 14.375rem;
+  --spacing-265: 16.5625rem;
 
   /* 색상 */
   --real-black: #000;

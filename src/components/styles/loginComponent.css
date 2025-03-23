@@ -34,14 +34,18 @@
   --spacing-14: 0.875rem;
   --spacing-16: 1rem;
   --spacing-20: 1.25rem;
+  --spacing-21: 1.3125rem;
   --spacing-24: 1.5rem;
   --spacing-30: 1.875rem;
+  --spacing-34: 2.125rem;
   --spacing-36: 2.25rem;
   --spacing-40: 2.5rem;
   --spacing-50: 3.125rem;
   --spacing-80: 5rem;
+  --spacing-83: 5.1875rem;
   --spacing-90: 5.625rem;
   --spacing-200: 12.5rem;
+  --spacing-400: 25rem;
 
   /* 색상 */
   --real-black: #000;
@@ -88,16 +92,18 @@ a {
   font-weight: var(--weight-700);
   text-align: center;
   color: var(--real-black);
-  background: yellow;
+  background: transparent;
 }
 /* 더보기 컴포넌트 스타일링 */
 .login-more {
-  background: green;
+  background: transparent;
   color: var(--login-black);
   font-size: var(--text-14);
+  font-weight: var(--weight-400);
 
   .login-more-effect {
     color: var(--login-red);
+    font-weight: var(--weight-400);
   }
 
   .login-more-link {
@@ -170,6 +176,11 @@ a {
 
   .account-links {
     display: flex;
+    justify-content: center;
+
+    :first-child {
+      border: none;
+    }
   }
 
   .account-link {
