@@ -683,18 +683,18 @@ a {
       <nav class="header-page-nav" aria-label="페이지 메뉴">
         <ul>
           <li>
-            <a href="/src/pages/SpecialOrder.html" class="current-page-so"
+            <a href="/src/pages/SpecialOrder.html" class="current-page-so"  part="current-page-so"
               >Special-Order</a
             >
           </li>
           <li>
-            <a href="/src/pages/ShowCase.html" class="current-page-sc"
+            <a href="/src/pages/ShowCase.html" class="current-page-sc"  part="current-page-sc"
               >Showcase</a
             >
           </li>
-          <li><a href="/src/pages/PT.html" class="current-page-pt">PT</a></li>
+          <li><a href="/src/pages/PT.html" class="current-page-pt"  part="current-page-pt">PT</a></li>
           <li>
-            <a href="/src/pages/Magazine.html" class="current-page-29"
+            <a href="/src/pages/Magazine.html" class="current-page-29"  part="current-page-29"
               >29Magazine</a
             >
           </li>
@@ -716,7 +716,7 @@ a {
       <nav class="header-main-menu-nav" aria-label="주 메뉴">
         <ul class="header-main-menu">
           <li class="top-menu">
-            <a href="/src/pages/Best.html" class="main-menu current-page-best"
+            <a href="/src/pages/Best.html" class="main-menu current-page-best"  part="current-page-best"
               >BEST</a
             >
           </li>

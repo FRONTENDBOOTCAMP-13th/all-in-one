@@ -22,10 +22,6 @@
     font-weight: var(--weight-500);
   }
 
-  .current-page-pt {
-    border-bottom: 5px solid #e0e0e0;
-  }
-
   /* 가상 보더 색상 변경 */
   .pt-virtual-border {
     border-inline-color: #555;
@@ -33,7 +29,6 @@
 
   /* 버튼 스타일 변경 */
   .pt-button-more {
-    background-color: #333;
     color: var(--color-whitebase);
   }
   .pt-button-more::after {
@@ -48,7 +43,7 @@
 
 .pt-bold {
   font-weight: var(--weight-900);
-  color: var(--color-blackbase);
+  color: #555;
 }
 
 .pt-history-items {
@@ -130,6 +125,23 @@
 
   .pt-future {
     font-size: var(--text-32);
-    padding: var(--spaicng-80) var(--spacing-25) var(--spacing-116);
+    padding: var(--spacing-80) var(--spacing-25) var(--spacing-116);
+  }
+}
+
+.pt-pages {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.pt-nav {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+header-component::part(current-page-pt) {
+  border-bottom: 5px solid var(--color-blackbase);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
   }
 }
