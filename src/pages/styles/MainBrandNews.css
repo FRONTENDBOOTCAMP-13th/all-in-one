@@ -1,0 +1,55 @@
+@import url('/src/components/styles/indexBrandNewsComponents.css');
+
+.brand-news-sec,
+.product-sell-sec {
+  padding-inline: var(--padding-inline);
+  padding-block: var(--padding-block);
+
+  @media (min-width: 1024px) {
+    padding-inline: 18%;
+  }
+}
+
+.brand-news-sec {
+  background: #f0f0f0;
+  @media (max-width: 540px) {
+    padding: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #fff;
+  }
+  .brand-news-sec {
+    background: #27272a;
+
+    .sec-header {
+      .brand-sale {
+        border-color: #ffffff;
+      }
+      .bar {
+        color: #fff;
+      }
+    }
+
+    .brand-home-a {
+      border-color: #fff;
+      path {
+        stroke: #fff;
+      }
+    }
+    .brand-home-a:hover {
+      background: #fff;
+
+      span {
+        color: #000;
+      }
+
+      path {
+        stroke: #000;
+      }
+    }
+  }
+}
