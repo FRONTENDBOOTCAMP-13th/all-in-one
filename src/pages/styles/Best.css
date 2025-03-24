@@ -302,3 +302,13 @@
     }
   }
 }
+
+header-component::part(current-page-best) {
+  border-bottom: 5px solid var(--color-blackbase);
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-best) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
+}

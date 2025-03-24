@@ -141,7 +141,10 @@
 
 header-component::part(current-page-pt) {
   border-bottom: 5px solid var(--color-blackbase);
-  @media (prefers-color-scheme: dark) {
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-pt) {
     border-bottom: 5px solid var(--color-whitebase);
   }
 }

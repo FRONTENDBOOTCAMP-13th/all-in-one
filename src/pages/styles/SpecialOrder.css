@@ -130,14 +130,12 @@ br {
   }
 }
 
-.current-page-so {
+header-component::part(current-page-so) {
   border-bottom: 5px solid var(--color-blackbase);
 }
 
-header-component::part(current-page-so) {
-  border-bottom: 5px solid var(--color-blackbase);
-
-  @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-so) {
     border-bottom: 5px solid var(--color-whitebase);
   }
 }

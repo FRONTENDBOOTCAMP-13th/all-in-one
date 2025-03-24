@@ -158,3 +158,13 @@
 .body-container {
   padding-block-end: var(--spacing-40);
 }
+
+header-component::part(current-page-sc) {
+  border-bottom: 5px solid var(--color-blackbase);
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-sc) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
+}
