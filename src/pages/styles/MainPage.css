@@ -4,7 +4,7 @@
   --max-height: 450vh;
   --mobile-max-height: 800vh;
 
-  --light-gray-border: rgb(134, 134, 134);
+  --dark-gray-border: rgb(134, 134, 134);
 }
 
 main {
@@ -117,21 +117,21 @@ main {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: #000;
-    color: #fff;
+    background: var(--background-color);
+    color: var(--box-text);
   }
   .modal-content {
-    color: #000;
+    color: var(--background-color);
   }
   .product-card,
   .brand-card,
   .products-carousel {
-    border-left: solid 1px var(light-gray-border);
+    border-left: solid 1px var(border-color);
   }
   .product-card {
     .products-container {
       .product {
-        border-top: solid 1px var(light-gray-border);
+        border-top: solid 1px var(border-color);
       }
     }
   }

@@ -1,5 +1,11 @@
 @import '/src/components/styles/specialOrderComponent.css';
 @import '/src/components/styles/header.css';
+.current-page-so {
+  border-bottom: 5px solid var(--color-blackbase);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
+}
 
 .item-introduce {
   text-align: center;

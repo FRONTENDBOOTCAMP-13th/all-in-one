@@ -331,30 +331,127 @@ a {
     align-items: center;
   }
 }
+.logo {
+  content: url('/public/images/logo.webp');
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: var(--color-whitebase);
+  }
+
+  .header-31cm {
+    background-color: #121212;
+  }
+
+  a {
+    color: var(--color-whitebase);
+  }
+
+  .banner-31cm-mobile {
+    background-color: #1e1e1e;
+  }
+
+  .banner-31cm-mobile p,
+  .banner-31cm-mobile a {
+    color: var(--color-whitebase);
+  }
+
+  .banner-31cm-mobile span {
+    color: var(--color-orangebanner);
+  }
+
+  .banner-item-button {
+    background-color: var(--color-orangebanner);
+    color: var(--color-blackbase);
+  }
+
+  .top-menu:hover .sub-menu,
+  .top-menu:focus-within .sub-menu {
+    background-color: #1e1e1e;
+    border-top: 1px solid #333333;
+  }
+
+  .top-menu:hover,
+  .top-menu:focus-within {
+    border-bottom-color: #f5f5f5;
+  }
+
+  .top-menu-border {
+    border-left: 1px solid #444444;
+  }
+
+  .drop-down-menu a {
+    color: #f5f5f5;
+  }
+
+  .header-page-nav ul li {
+    border-bottom-color: #f5f5f5;
+  }
+
+  svg path,
+  svg rect,
+  svg text {
+    fill: #f5f5f5 !important;
+    stroke: #121212 !important;
+  }
+
+  .logo {
+    content: url('/public/images/logodark.webp');
+  }
+
+  .header-page-nav ul a:hover {
+    border-bottom: 5px solid #f5f5f5;
+  }
+
+  @media (max-width: 1024px) {
+    .header-page-nav ul a:hover {
+      border-bottom: 3px solid #f5f5f5;
+    }
+  }
+}
 
 /* 보더 바텀 - 해당 페이지 스타일에 복사 붙여넣기 */
 
 /* special-order  */
 /* .current-page-so {
   border-bottom: 5px solid var(--color-blackbase);
+
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
 } */
 
 /* showcase */
 /* .current-page-sc {
   border-bottom: 5px solid var(--color-blackbase);
+
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
 } */
 
 /* PT */
 /* .current-page-pt {
   border-bottom: 5px solid var(--color-blackbase);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
 } */
 
 /* 29Magazine */
 /* .current-page-29 {
   border-bottom: 5px solid var(--color-blackbase);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
 } */
 
 /* best */
 /* .main-menu.current-page-best {
   border-bottom: 2px solid var(--color-blackbase);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
 } */
