@@ -27,7 +27,8 @@
 /* hover ***************** */
 .brand-home-a,
 .brand-home-a span,
-.brand-home-a path {
+.brand-home-a path,
+.brand-product-card {
   transition: all 0.4s ease;
 }
 .brand-home-a:hover {
@@ -39,6 +40,11 @@
   path {
     stroke: #fff;
   }
+}
+
+/* hover 이펙트 ****************** */
+.brand-product-card:hover {
+  translate: 0 -2%;
 }
 
 /* 컴포넌트 컨테이너 디자인************** */
@@ -253,7 +259,7 @@ p {
     margin-bottom: var(--gap-10);
 
     @media (prefers-color-scheme: dark) {
-      background: #404040;
+      background: var(--badge-background);
     }
   }
 
@@ -306,7 +312,7 @@ p {
         padding: var(--gap-5) var(--gap-10);
 
         @media (prefers-color-scheme: dark) {
-          border-color: #404040;
+          border-color: var(--badge-background);
         }
       }
     }
