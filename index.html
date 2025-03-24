@@ -12,7 +12,23 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+
     <style>
+      @import '/src/components/styles/header.css';
+
+      /* 로고 크기 조정을 위한 추가 스타일 */
+      .header-31cm-inner img.logo {
+        width: 110px; /* 로고 너비 조정 */
+        height: auto; /* 비율 유지 */
+      }
+
+      /* 모바일 환경에서의 로고 크기 */
+      @media (max-width: 768px) {
+        .header-31cm-inner img.logo {
+          width: 90px;
+        }
+      }
+
       :root {
         --primary-color: #111;
         --secondary-color: #f8f8f8;
@@ -36,18 +52,241 @@
           'Segoe UI',
           sans-serif;
       }
-
-      body {
-        background-color: #fff;
-        color: var(--text-color);
-        line-height: 1.6;
-        padding: 40px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
+      html {
+        scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
       }
-      header {
-        margin-bottom: 50px;
+      /* 스크롤 타겟에 대한 여백 설정 - 헤더에 가려지지 않게 */
+      section[id] {
+        scroll-margin-top: 210px; /* 헤더 높이에 맞게 조정 */
+      }
+
+      /* 포커스 표시를 위한 스타일 - 웹접근성 향상 */
+      section[id]:target {
+        outline: none; /* 기본 아웃라인 제거 */
+        animation: highlight 1s ease-out; /* 포커스시 애니메이션 효과 */
+      }
+
+      /* 대상 섹션 하이라이트 애니메이션 */
+      @keyframes highlight {
+        from {
+          background-color: rgba(255, 90, 106, 0.2); /* 강조색 */
+        }
+        to {
+          background-color: transparent;
+        }
+      }
+      section {
+        padding-inline: 50px;
+      }
+
+      /* 팀원 소개 섹션 스타일 */
+      .team-section {
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 30px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--light-gray);
+        color: var(--primary-color);
+      }
+
+      .section-description {
+        font-size: 1.1rem;
+        color: var(--medium-gray);
+        max-width: 700px;
+        margin: 0 auto 30px;
         text-align: center;
+      }
+
+      .team-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 기본 4열 배치 */
+        gap: 30px;
+      }
+
+      .team-card {
+        background: var(--secondary-color);
+        border-radius: 8px;
+        overflow: hidden;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .team-card:hover,
+      .team-card:focus {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        outline: none;
+      }
+
+      .team-card:focus-visible {
+        box-shadow: 0 0 0 3px var(--accent-color);
+      }
+
+      .team-photo {
+        height: 220px;
+        overflow: hidden;
+      }
+
+      .team-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .team-card:hover .team-photo img {
+        transform: scale(1.05);
+      }
+
+      .team-info {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .team-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+      }
+
+      .team-role {
+        font-size: 1rem;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .team-description {
+        font-size: 0.95rem;
+        color: var(--text-color);
+        margin-bottom: 15px;
+        flex-grow: 1;
+      }
+
+      /* 팀원 연락처 영역 스타일 수정 */
+      .team-contact {
+        margin-top: auto;
+        border-top: 1px solid var(--light-gray);
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* 연락처 제목 스타일 */
+      .contact-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+
+      /* 이메일 링크 스타일 */
+      .contact-link {
+        display: flex;
+        justify-content: space-between;
+        color: var(--medium-gray);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      .contact-link:hover,
+      .contact-link:focus {
+        color: var(--accent-color);
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      /* 이메일 호버 시 화살표 스타일 수정 */
+      .contact-link::after {
+        content: '→';
+        opacity: 0;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        position: static; /* absolute에서 static으로 변경 */
+        margin-left: 10px;
+      }
+
+      .contact-link:hover::after {
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      /* GitHub 링크 스타일 */
+      .github-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #24292e;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+      }
+
+      .github-link:hover,
+      .github-link:focus {
+        background-color: #1b1f23;
+        color: white;
+      }
+
+      /* GitHub 링크에는 화살표 제거 */
+      .github-link::after {
+        content: none;
+      }
+
+      .github-icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      /* 중단점 설정 - 1024px 이하일 때 2행 2열 */
+      @media (max-width: 1024px) {
+        .team-container {
+          grid-template-columns: repeat(2, 1fr); /* 2열 배치 */
+        }
+      }
+
+      /* 중단점 설정 - 541px 이하일 때 1열 배치 */
+      @media (max-width: 541px) {
+        .team-container {
+          grid-template-columns: 1fr; /* 1열 배치 */
+        }
+
+        .team-photo {
+          height: 180px;
+        }
       }
 
       h1 {
@@ -134,7 +373,8 @@
         color: var(--accent-color);
       }
 
-      a::after {
+      /* 일반 링크의 화살표 스타일 - 팀원 카드 외부의 링크에만 적용 */
+      .card a::after {
         content: '→';
         position: absolute;
         right: 20px;
@@ -144,7 +384,7 @@
           transform 0.2s ease;
       }
 
-      a:hover::after {
+      .card a:hover::after {
         opacity: 1;
         transform: translateX(5px);
       }
@@ -156,6 +396,18 @@
         border-top: 1px solid var(--light-gray);
         color: var(--medium-gray);
         font-size: 0.9rem;
+      }
+
+      /* 모든 인터랙티브 요소에 포커스 스타일 추가 */
+      a:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px;
+      }
+
+      /* 이미지에 alt 텍스트 없을 때 경고 표시 */
+      img:not([alt]),
+      img[alt=''] {
+        border: 2px dashed var(--accent-color);
       }
 
       @media (max-width: 768px) {
@@ -170,134 +422,716 @@
         .container {
           grid-template-columns: 1fr;
         }
+
+        /* 모바일에서 깃허브 버튼 높이 조정 */
+        .github-link {
+          padding: 12px 10px;
+        }
+
+        /* 모바일에서 이메일 링크 텍스트 크기 조정 */
+        .contact-link {
+          font-size: 0.85rem;
+          word-break: break-all;
+        }
+
+        /* 헤더 모바일 스타일 */
+        .header-inner-nav {
+          display: none;
+        }
+
+        .header-nav-mobile {
+          display: flex;
+          gap: 15px;
+        }
+
+        .header-page-nav ul {
+          gap: 20px;
+        }
+
+        .header-page-nav ul .index-nav a {
+          font-size: 16px;
+        }
+      }
+      footer {
+        padding: 50px;
+      }
+
+      /* 다크 모드 지원 */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          /* 더 높은 대비를 위해 색상 조정 */
+          --primary-color: #ffffff; /* 더 밝은 흰색으로 변경 */
+          --secondary-color: #1a1a1a; /* 배경색 약간 어둡게 */
+          --text-color: #f0f0f0; /* 텍스트 색상 더 밝게 */
+          --light-gray: #555; /* 경계선 색상 약간 밝게 */
+          --medium-gray: #aaa; /* 중간 회색 더 밝게 */
+          --accent-color: #ff5a6a; /* 강조색 더 선명하게 */
+        }
+
+        body {
+          background-color: #111;
+          color: var(--text-color);
+        }
+
+        /* 헤더 다크모드 개선 */
+        .header-31cm {
+          border-bottom-color: #444;
+          background-color: #111;
+        }
+
+        .header-31cm-inner {
+          background-color: #111;
+        }
+
+        /* 로고 필터 추가 - 어두운 배경에서 로고가 보이도록 */
+        .header-31cm-inner img.logo-index {
+          filter: brightness(0) invert(1); /* 로고를 흰색으로 변환 */
+        }
+
+        /* SVG 아이콘 색상 개선 - 더 명확한 색상 */
+        .header-31cm svg path {
+          fill: var(--primary-color);
+          stroke: var(--primary-color);
+        }
+
+        /* 헤더 네비게이션 링크 색상 개선 */
+        .header-inner-nav ul li a,
+        .header-page-nav ul index-nav a {
+          color: var(--primary-color);
+        }
+
+        /* 현재 페이지 표시 더 명확하게 */
+
+        .team-section {
+          .header-page-nav ul .index-nav a:hover,
+          .current-page-introduce,
+          .current-page-page,
+          .current-page-component,
+          .current-page-structure {
+            border-bottom-color: var(--accent-color);
+            color: var(--accent-color);
+          }
+        }
+
+        /* Structure 페이지 메뉴 스타일만 추가 */
+        .current-page-structure {
+          border-bottom: 2px solid var(--color-blackbase);
+        }
+
+        /* 다른 현재 페이지 메뉴 항목에는 호버 효과 방지 */
+        .current-page-introduce:hover,
+        .current-page-page:hover,
+        .current-page-component:hover {
+          border-bottom-width: 5px; /* 기존 굵기 유지 */
+        }
+
+        /* Structure 메뉴 항목 호버 시 스타일 */
+        a.current-page-structure:hover {
+          border-bottom-width: 5px;
+        }
+
+        /* 다크 모드 대응 */
+        @media (prefers-color-scheme: dark) {
+          .current-page-structure {
+            border-bottom: 2px solid rgb(255, 255, 255);
+          }
+
+          a.current-page-structure:hover {
+            border-bottom-width: 5px;
+          }
+        }
+        /* 카드 스타일 개선 */
+        .card {
+          background: var(--secondary-color);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+          background: #333;
+          color: var(--primary-color);
+        }
+
+        /* 링크 상태 개선 */
+        a:hover {
+          color: var(--accent-color);
+        }
+
+        /* 팀원 카드 다크모드 개선 */
+        .team-card {
+          background: var(--secondary-color);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-card:hover,
+        .team-card:focus {
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 포커스 표시 더 명확하게 */
+        a:focus-visible,
+        .team-card:focus-visible {
+          outline: 2px solid var(--accent-color);
+          outline-offset: 2px;
+        }
+
+        /* 깃허브 링크 스타일 개선 */
+        .github-link {
+          background-color: #333;
+        }
+
+        .github-link:hover,
+        .github-link:focus {
+          background-color: #444;
+        }
+
+        /* 이메일 링크 다크모드 개선 */
+        .contact-link {
+          background-color: rgba(255, 255, 255, 0.05);
+          color: var(--text-color);
+        }
+
+        .contact-link:hover,
+        .contact-link:focus {
+          background-color: rgba(255, 255, 255, 0.1);
+          color: var(--accent-color);
+        }
+
+        /* 카드 내부 링크 경계선 색상 개선 */
+        li {
+          border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 푸터 개선 */
+        footer {
+          border-top-color: var(--light-gray);
+          color: var(--medium-gray);
+          padding: 50px;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>29CM 스타일 프로젝트</h1>
-      <p class="project-description">
-        all-in-one팀(1팀)의 29cm 웹사이트를 모티브로 한 웹 프로젝트입니다.<br />
-        아래 링크를 통해 페이지와 컴포넌트를 확인해보세요.
-      </p>
-    </header>
+    <div class="wrapper">
+      <header class="header-31cm">
+        <h1 class="sr-only">
+          멋쟁이사자처럼 13기 1팀 all-in-one UI프로젝트 저장소
+        </h1>
+        <div class="header-31cm-inner">
+          <a href="/index.html">
+            <img
+              src="/public/images/logo.webp"
+              alt="프로젝트 소개 페이지로 이동"
+              class="logo-index"
+              width="110"
+              height="30"
+            />
+          </a>
+          <nav class="header-nav-mobile" aria-label="모바일 헤더 네비게이션">
+            <a href="#" aria-label="장바구니">
+              <svg
+                width="30"
+                height="25"
+                viewBox="0 0 14 17"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7.01953 0.75C6.02496 0.75 5.07114 1.14508 4.36788 1.84835C3.84409 2.37214 3.49126 3.03492 3.34528 3.75H1.17103C0.664931 3.75 0.269531 4.15819 0.269531 4.65V15.6091L0.269749 15.6182C0.275426 15.8518 0.371344 16.0741 0.537379 16.2385C0.703406 16.4029 0.926651 16.4966 1.16028 16.4999L1.16565 16.5H12.868C13.3741 16.5 13.7695 16.0918 13.7695 15.6V10.875H7.01953V9.375H13.7695V4.65C13.7695 4.165 13.3727 3.75 12.868 3.75H10.6938C10.5478 3.03492 10.195 2.37214 9.67116 1.84835C8.96796 1.14508 8.01411 0.75 7.01953 0.75ZM8.61051 2.90901C8.85006 3.14856 9.03006 3.43657 9.14083 3.75H4.89821C5.00903 3.43657 5.18898 3.14856 5.42854 2.90901C5.85051 2.48705 6.42283 2.25 7.01953 2.25C7.61623 2.25 8.18856 2.48705 8.61051 2.90901Z"
+                  fill="none"
+                  stroke="black"
+                  stroke-width="1"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="검색">
+              <svg
+                width="30"
+                height="25"
+                viewBox="0 0 35 35"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M15.983 4.25001C9.50287 4.25001 4.24967 9.50321 4.24967 15.9833C4.24967 22.4634 9.50287 27.7167 15.983 27.7167C19.2163 27.7167 22.141 26.4113 24.2651 24.2946C26.3991 22.1681 27.7163 19.2313 27.7163 15.9833C27.7163 9.50321 22.4631 4.25001 15.983 4.25001ZM0.583008 15.9833C0.583008 7.47816 7.47783 0.583344 15.983 0.583344C24.4882 0.583344 31.383 7.47816 31.383 15.9833C31.383 19.5818 30.147 22.8941 28.0792 25.5154L34.8766 32.2842L32.2894 34.8824L25.483 28.1046C22.8668 30.1574 19.5668 31.3833 15.983 31.3833C7.47783 31.3833 0.583008 24.4885 0.583008 15.9833Z"
+                />
+              </svg>
+            </a>
+          </nav>
+          <nav class="header-inner-nav" aria-label="헤더 네비게이션">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/FRONTENDBOOTCAMP-13th/all-in-one"
+                  class="nav-item"
+                  aria-label="all-in-one 깃허브로 이동"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 14 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7.76953 1.4375V0.6875H6.26953V1.4375V5.1875V5.9375H7.76953V5.1875V1.4375Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M13.7695 15.3125H0.269531V7.9994C0.269531 7.47837 0.692524 7.0625 1.20703 7.0625H12.832C13.3498 7.0625 13.7695 7.4822 13.7695 8V15.3125Z"
+                    />
+                  </svg>
+                  <span aria-hidden="true">GITHUB</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.notion.so/1-all-in-one-1b573873401a809f9186eb658941069a?pvs=4"
+                  class="nav-item item-heart"
+                  aria-label="all-in-one 노션으로 이동"
+                >
+                  <svg
+                    width="16"
+                    height="14"
+                    viewBox="0 0 16 14"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8.01961 2.81258C7.41398 1.522 6.13633 0.625 4.64453 0.625C2.56052 0.625 0.894531 2.37622 0.894531 4.504C0.894531 5.34921 1.24055 6.11095 1.56535 6.64382C1.72976 6.91352 1.89394 7.13312 2.01751 7.2859C2.07943 7.3624 2.13151 7.42263 2.16883 7.46447C2.18749 7.4854 2.2025 7.50175 2.21323 7.5133L2.22604 7.52688L2.22991 7.531L2.23117 7.53227L8.01953 13.5405L13.8072 7.53295L13.8079 7.53227L13.8092 7.531L13.813 7.52695L13.8258 7.5133C13.8365 7.50175 13.8515 7.4854 13.8702 7.46447C13.9076 7.42263 13.9596 7.3624 14.0216 7.2859C14.1451 7.13312 14.3093 6.91352 14.4737 6.64382C14.7985 6.11095 15.1445 5.34921 15.1445 4.504C15.1445 2.37546 13.4785 0.625 11.3945 0.625C9.90286 0.625 8.62531 1.52223 8.01961 2.81258Z"
+                    />
+                  </svg>
+                  <span aria-hidden="true">Notion</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.figma.com/design/UCIxpTBsxCZV9o0WYw3Y4p/Untitled?node-id=0-1&t=KKJ8TNBfKp75DCyE-1"
+                  class="nav-item"
+                  aria-label="all-in-one 피그마로 이동"
+                >
+                  <svg
+                    width="14"
+                    height="17"
+                    viewBox="0 0 14 17"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7.01953 0.75C6.02496 0.75 5.07114 1.14508 4.36788 1.84835C3.84409 2.37214 3.49126 3.03492 3.34528 3.75H1.17103C0.664931 3.75 0.269531 4.15819 0.269531 4.65V15.6091L0.269749 15.6182C0.275426 15.8518 0.371344 16.0741 0.537379 16.2385C0.703406 16.4029 0.926651 16.4966 1.16028 16.4999L1.16565 16.5H12.868C13.3741 16.5 13.7695 16.0918 13.7695 15.6V10.875H7.01953V9.375H13.7695V4.65C13.7695 4.165 13.3727 3.75 12.868 3.75H10.6938C10.5478 3.03492 10.195 2.37214 9.67116 1.84835C8.96796 1.14508 8.01411 0.75 7.01953 0.75ZM8.61051 2.90901C8.85006 3.14856 9.03006 3.43657 9.14083 3.75H4.89821C5.00903 3.43657 5.18898 3.14856 5.42854 2.90901C5.85051 2.48705 6.42283 2.25 7.01953 2.25C7.61623 2.25 8.18856 2.48705 8.61051 2.90901Z"
+                    />
+                  </svg>
+                  <span aria-hidden="true">Figma</span>
+                </a>
+              </li>
+              <li class="nav-hidden-item">
+                <a href="#" class="nav-item" aria-label="검색">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 35 35"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M15.983 4.25001C9.50287 4.25001 4.24967 9.50321 4.24967 15.9833C4.24967 22.4634 9.50287 27.7167 15.983 27.7167C19.2163 27.7167 22.141 26.4113 24.2651 24.2946C26.3991 22.1681 27.7163 19.2313 27.7163 15.9833C27.7163 9.50321 22.4631 4.25001 15.983 4.25001ZM0.583008 15.9833C0.583008 7.47816 7.47783 0.583344 15.983 0.583344C24.4882 0.583344 31.383 7.47816 31.383 15.9833C31.383 19.5818 30.147 22.8941 28.0792 25.5154L34.8766 32.2842L32.2894 34.8824L25.483 28.1046C22.8668 30.1574 19.5668 31.3833 15.983 31.3833C7.47783 31.3833 0.583008 24.4885 0.583008 15.9833Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <nav class="header-page-nav" aria-label="페이지 메뉴">
+          <ul>
+            <li class="index-nav">
+              <a href="#team" class="current-page-introduce">Introduce</a>
+            </li>
+            <li class="index-nav">
+              <a href="#page" class="current-page-page">Page</a>
+            </li>
+            <li class="index-nav">
+              <a href="#component" class="current-page-component">Component</a>
+            </li>
+            <li class="index-nav">
+              <a href="#structure" class="current-page-structure">Structure</a>
+            </li>
+          </ul>
+          <a href="#" aria-label="검색">
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M15.983 4.25001C9.50287 4.25001 4.24967 9.50321 4.24967 15.9833C4.24967 22.4634 9.50287 27.7167 15.983 27.7167C19.2163 27.7167 22.141 26.4113 24.2651 24.2946C26.3991 22.1681 27.7163 19.2313 27.7163 15.9833C27.7163 9.50321 22.4631 4.25001 15.983 4.25001ZM0.583008 15.9833C0.583008 7.47816 7.47783 0.583344 15.983 0.583344C24.4882 0.583344 31.383 7.47816 31.383 15.9833C31.383 19.5818 30.147 22.8941 28.0792 25.5154L34.8766 32.2842L32.2894 34.8824L25.483 28.1046C22.8668 30.1574 19.5668 31.3833 15.983 31.3833C7.47783 31.3833 0.583008 24.4885 0.583008 15.9833Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </header>
+      <section class="introduce">
+        <h2>ALL-IN-ONE 프로젝트 소개</h2>
+        <p class="project-description">
+          연호, 원식, 아영, 시운 4명의 팀원이 함께한 이번 프로젝트는 패션 커머스
+          플랫폼인 '29CM'을 클론하여 제작했습니다. <br />
+          특히 모든 사용자가 쉽고 편리하게 서비스를 이용할 수 있도록 웹 접근성에
+          초점을 맞췄으며, 시맨틱 마크업, 키보드 탐색 지원, 스크린 리더 호환성
+          등 접근성 표준을 준수했습니다. <br />
+          이를 통해 다양한 사용 환경에서도 쾌적한 사용자 경험을 제공할 수 있도록
+          노력했습니다.
+        </p>
+      </section>
+      <section id="team" class="team-section">
+        <h2 class="section-title">Introduce</h2>
+        <p class="section-description">
+          all-in-one(1팀)의 멤버들을 소개합니다.
+        </p>
+        <div class="team-container">
+          <!-- 팀원 1 -->
+          <article class="team-card" tabindex="0">
+            <div class="team-photo">
+              <!-- 여기에 사진 링크만 넣으시면 됩니다 -->
+              <img
+                src="/src/assets/images/index-images/yeono.webp"
+                alt="김연호 사진"
+              />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">김연호</h3>
+              <p class="team-role">팀장, 스크럼 마스터</p>
+              <p class="team-description">
+                best페이지 제작 | Showcase페이지 제작 | Login페이지 제작 |
+                다크모드 구현
+              </p>
+              <div class="team-contact">
+                <p class="contact-title">Contact me!</p>
+                <a
+                  href="mailto:riderkim88@gmail.com"
+                  class="contact-link"
+                  aria-label="김연호에게 이메일 보내기"
+                >
+                  <span class="sr-only">이메일:</span> riderkim88@gmail.com
+                </a>
+                <a
+                  href="https://github.com/KYDDD"
+                  class="github-link"
+                  aria-label="김연호의 깃허브 방문하기"
+                >
+                  <span class="github-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 0.300049C5.4 0.300049 0 5.70005 0 12.3C0 17.6 3.4 22.1 8.2 23.7C8.8 23.8 9 23.4 9 23.1C9 22.8 9 22.1 9 21.1C5.7 21.8 5 19.5 5 19.5C4.5 18.1 3.7 17.7 3.7 17.7C2.5 17 3.7 17 3.7 17C4.9 17.1 5.5 18.2 5.5 18.2C6.6 20 8.3 19.5 9 19.2C9.1 18.4 9.4 17.9 9.8 17.6C7.1 17.3 4.3 16.3 4.3 11.7C4.3 10.4 4.8 9.3 5.5 8.5C5.5 8.1 5 6.9 5.7 5.3C5.7 5.3 6.7 5 9 6.5C10 6.2 11 6.1 12 6.1C13 6.1 14 6.2 15 6.5C17.3 5 18.3 5.3 18.3 5.3C19 6.9 18.5 8.1 18.4 8.5C19.2 9.3 19.6 10.4 19.6 11.7C19.6 16.3 16.8 17.3 14.1 17.6C14.5 18 14.9 18.7 14.9 19.8C14.9 21.4 14.9 22.7 14.9 23.1C14.9 23.4 15.1 23.8 15.7 23.7C20.5 22.1 23.9 17.6 23.9 12.3C24 5.70005 18.6 0.300049 12 0.300049Z"
+                      />
+                    </svg>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- 팀원 2 -->
+          <article class="team-card" tabindex="0">
+            <div class="team-photo">
+              <!-- 여기에 사진 링크만 넣으시면 됩니다 -->
+              <img
+                src="/src/assets/images/index-images/wonsick.webp"
+                alt="정원식 사진"
+              />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">정원식</h3>
+              <p class="team-role">씩씩한 팀원</p>
+              <p class="team-description">
+                Header 제작 | Special-Order페이지 제작 | PT페이지 제작 |
+                다크모드 구현
+              </p>
+              <div class="team-contact">
+                <p class="contact-title">Contact me!</p>
+                <a
+                  href="mailto:vvonsikgohigh@gmail.com"
+                  class="contact-link"
+                  aria-label="정원식에게 이메일 보내기"
+                >
+                  <span class="sr-only">이메일:</span> vvonsikgohigh@gmail.com
+                </a>
+                <a
+                  href="https://github.com/jwe0516"
+                  class="github-link"
+                  aria-label="정원식의 깃허브 방문하기"
+                >
+                  <span class="github-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 0.300049C5.4 0.300049 0 5.70005 0 12.3C0 17.6 3.4 22.1 8.2 23.7C8.8 23.8 9 23.4 9 23.1C9 22.8 9 22.1 9 21.1C5.7 21.8 5 19.5 5 19.5C4.5 18.1 3.7 17.7 3.7 17.7C2.5 17 3.7 17 3.7 17C4.9 17.1 5.5 18.2 5.5 18.2C6.6 20 8.3 19.5 9 19.2C9.1 18.4 9.4 17.9 9.8 17.6C7.1 17.3 4.3 16.3 4.3 11.7C4.3 10.4 4.8 9.3 5.5 8.5C5.5 8.1 5 6.9 5.7 5.3C5.7 5.3 6.7 5 9 6.5C10 6.2 11 6.1 12 6.1C13 6.1 14 6.2 15 6.5C17.3 5 18.3 5.3 18.3 5.3C19 6.9 18.5 8.1 18.4 8.5C19.2 9.3 19.6 10.4 19.6 11.7C19.6 16.3 16.8 17.3 14.1 17.6C14.5 18 14.9 18.7 14.9 19.8C14.9 21.4 14.9 22.7 14.9 23.1C14.9 23.4 15.1 23.8 15.7 23.7C20.5 22.1 23.9 17.6 23.9 12.3C24 5.70005 18.6 0.300049 12 0.300049Z"
+                      />
+                    </svg>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- 팀원 3 -->
+          <article class="team-card" tabindex="0">
+            <div class="team-photo">
+              <!-- 여기에 사진 링크만 넣으시면 됩니다 -->
+              <img
+                src="/src/assets/images/index-images/a-young.webp"
+                alt="장아영 사진"
+              />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">장아영</h3>
+              <p class="team-role">씩씩한 팀원</p>
+              <p class="team-description">
+                Main페이지 제작 | MainWelcoming제작 | 모달창 제작 | 다크모드
+                구현
+              </p>
+              <div class="team-contact">
+                <p class="contact-title">Contact me!</p>
+                <a
+                  href="mailto:fern3eh@gmail.com"
+                  class="contact-link"
+                  aria-label="장아영에게 이메일 보내기"
+                >
+                  <span class="sr-only">이메일:</span> fern3eh@gmail.com
+                </a>
+                <a
+                  href="https://github.com/cay0716"
+                  class="github-link"
+                  aria-label="장아영의 깃허브 방문하기"
+                >
+                  <span class="github-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 0.300049C5.4 0.300049 0 5.70005 0 12.3C0 17.6 3.4 22.1 8.2 23.7C8.8 23.8 9 23.4 9 23.1C9 22.8 9 22.1 9 21.1C5.7 21.8 5 19.5 5 19.5C4.5 18.1 3.7 17.7 3.7 17.7C2.5 17 3.7 17 3.7 17C4.9 17.1 5.5 18.2 5.5 18.2C6.6 20 8.3 19.5 9 19.2C9.1 18.4 9.4 17.9 9.8 17.6C7.1 17.3 4.3 16.3 4.3 11.7C4.3 10.4 4.8 9.3 5.5 8.5C5.5 8.1 5 6.9 5.7 5.3C5.7 5.3 6.7 5 9 6.5C10 6.2 11 6.1 12 6.1C13 6.1 14 6.2 15 6.5C17.3 5 18.3 5.3 18.3 5.3C19 6.9 18.5 8.1 18.4 8.5C19.2 9.3 19.6 10.4 19.6 11.7C19.6 16.3 16.8 17.3 14.1 17.6C14.5 18 14.9 18.7 14.9 19.8C14.9 21.4 14.9 22.7 14.9 23.1C14.9 23.4 15.1 23.8 15.7 23.7C20.5 22.1 23.9 17.6 23.9 12.3C24 5.70005 18.6 0.300049 12 0.300049Z"
+                      />
+                    </svg>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- 팀원 4 -->
+          <article class="team-card" tabindex="0">
+            <div class="team-photo">
+              <!-- 여기에 사진 링크만 넣으시면 됩니다 -->
+              <img
+                src="/src/assets/images/index-images/siwoon.webp"
+                alt="박시운 사진"
+              />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">박시운</h3>
+              <p class="team-role">씩씩한 팀원</p>
+              <p class="team-description">
+                Footer제작 | 29Magazine제작 및 상세 페이지 제작 | Readme,
+                notion등 전반적인 문서 작성 | 다크모드 구현
+              </p>
+              <div class="team-contact">
+                <p class="contact-title">Contact me!</p>
+                <a
+                  href="mailto:parksw003@gmail.com"
+                  class="contact-link"
+                  aria-label="박시운에게 이메일 보내기"
+                >
+                  <span class="sr-only">이메일:</span> parksw003@gmail.com
+                </a>
+                <a
+                  href="https://github.com/parksiwoon"
+                  class="github-link"
+                  aria-label="박시운의 깃허브 방문하기"
+                >
+                  <span class="github-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 0.300049C5.4 0.300049 0 5.70005 0 12.3C0 17.6 3.4 22.1 8.2 23.7C8.8 23.8 9 23.4 9 23.1C9 22.8 9 22.1 9 21.1C5.7 21.8 5 19.5 5 19.5C4.5 18.1 3.7 17.7 3.7 17.7C2.5 17 3.7 17 3.7 17C4.9 17.1 5.5 18.2 5.5 18.2C6.6 20 8.3 19.5 9 19.2C9.1 18.4 9.4 17.9 9.8 17.6C7.1 17.3 4.3 16.3 4.3 11.7C4.3 10.4 4.8 9.3 5.5 8.5C5.5 8.1 5 6.9 5.7 5.3C5.7 5.3 6.7 5 9 6.5C10 6.2 11 6.1 12 6.1C13 6.1 14 6.2 15 6.5C17.3 5 18.3 5.3 18.3 5.3C19 6.9 18.5 8.1 18.4 8.5C19.2 9.3 19.6 10.4 19.6 11.7C19.6 16.3 16.8 17.3 14.1 17.6C14.5 18 14.9 18.7 14.9 19.8C14.9 21.4 14.9 22.7 14.9 23.1C14.9 23.4 15.1 23.8 15.7 23.7C20.5 22.1 23.9 17.6 23.9 12.3C24 5.70005 18.6 0.300049 12 0.300049Z"
+                      />
+                    </svg>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <main>
+        <section id="page">
+          <h2>Page</h2>
+          <div class="container">
+            <div class="card">
+              <div class="card-header">메인</div>
+              <ul>
+                <li>
+                  <a href="/src/pages/MainPage.html">Main 페이지</a>
+                </li>
+                <li>
+                  <a href="/src/pages/MainWelcoming.html"
+                    >Main Welcoming Wednesday 페이지</a
+                  >
+                </li>
+                <li>
+                  <a href="/src/pages/MainBrandNews.html"
+                    >Main Brand News 페이지</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header">쇼핑</div>
+              <ul>
+                <li>
+                  <a href="/src/pages/SpecialOrder.html"
+                    >Special-Order 페이지</a
+                  >
+                </li>
+                <li>
+                  <a href="/src/pages/ShowCase.html">Showcase 페이지</a>
+                </li>
+                <li>
+                  <a href="/src/pages/PT.html">PT 페이지</a>
+                </li>
+                <li><a href="/src/pages/Best.html">Best 페이지</a></li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header">콘텐츠</div>
+              <ul>
+                <li>
+                  <a href="/src/pages/Magazine.html">Magazine 페이지</a>
+                </li>
+                <li>
+                  <a href="/src/pages/MagazineDetails.html"
+                    >Magazine Details 페이지</a
+                  >
+                </li>
+                <li><a href="/src/pages/LoginPage.html">Login 페이지</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="component">
+          <h2>Component</h2>
+          <div class="container">
+            <div class="card">
+              <div class="card-header">구조 컴포넌트</div>
+              <ul>
+                <li>
+                  <a href="/src/components/header.html">header 컴포넌트</a>
+                </li>
 
-    <section>
-      <h2>Page</h2>
-      <div class="container">
-        <div class="card">
-          <div class="card-header">메인</div>
-          <ul>
-            <li>
-              <a href="/src/pages/MainPage.html">Main 페이지</a>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-header">쇼핑</div>
-          <ul>
-            <li>
-              <a href="/src/pages/SpecialOrder.html">Special-Order 페이지</a>
-            </li>
-            <li>
-              <a href="/src/pages/ShowCase.html">Showcase 페이지</a>
-            </li>
-            <li>
-              <a href="/src/pages/PT.html">PT 페이지</a>
-            </li>
-            <li><a href="/src/pages/Best.html">Best 페이지</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-header">콘텐츠</div>
-          <ul>
-            <li>
-              <a href="/src/pages/Magazine.html">Magazine 페이지</a>
-            </li>
-            <li>
-              <a href="/src/pages/MagazineDetails.html"
-                >Magazine Details 페이지</a
-              >
-            </li>
-            <li><a href="/src/pages/LoginPage.html">Login 페이지</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Component</h2>
-      <div class="container">
-        <div class="card">
-          <div class="card-header">구조 컴포넌트</div>
-          <ul>
-            <li>
-              <a href="/src/components/header.html">header 컴포넌트</a>
-            </li>
-            <li>
-              <a href="/src/components/indexCardComponent.html"
-                >인덱스 카드 컴포넌트</a
-              >
-            </li>
-            <li><a href="/src/components/footer.html">footer 컴포넌트</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-header">메인 컴포넌트</div>
-          <ul>
-            <li>
-              <a href="/src/components/indexCardComponent.html"
-                >main 컴포넌트</a
-              >
-            </li>
-            <li>
-              <a href="/src/components/indexWelcomingComponent.html"
-                >main welcoming 컴포넌트</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-header">상품 컴포넌트</div>
-          <ul>
-            <li>
-              <a href="/src/components/showCaseComponent.html"
-                >showcase 컴포넌트</a
-              >
-            </li>
-            <li>
-              <a href="/src/components/ptComponent.html">pt 컴포넌트</a>
-            </li>
-            <li>
-              <a href="/src/components/bestComponent.html">best 컴포넌트</a>
-            </li>
-            <li>
-              <a href="/src/components/specialOrderComponent.html"
-                >Special-Order 컴포넌트</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-header">매거진 컴포넌트</div>
-          <ul>
-            <li>
-              <a href="/src/components/MagezineDetailsComponent.html"
-                >Magazine Details 컴포넌트</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="card-header">로그인 컴포넌트</div>
-          <ul>
-            <li>
-              <a href="/src/components/loginComponent.html">Login 컴포넌트</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+                <li>
+                  <a href="/src/components/footer.html">footer 컴포넌트</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header">메인 컴포넌트</div>
+              <ul>
+                <li>
+                  <a href="/src/components/indexCardComponent.html"
+                    >main 컴포넌트</a
+                  >
+                </li>
+                <li>
+                  <a href="/src/components/indexWelcomingComponent.html"
+                    >main welcoming 컴포넌트</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header">상품 컴포넌트</div>
+              <ul>
+                <li>
+                  <a href="/src/components/showCaseComponent.html"
+                    >showcase 컴포넌트</a
+                  >
+                </li>
+                <li>
+                  <a href="/src/components/ptComponent.html">pt 컴포넌트</a>
+                </li>
+                <li>
+                  <a href="/src/components/bestComponent.html">best 컴포넌트</a>
+                </li>
+                <li>
+                  <a href="/src/components/specialOrderComponent.html"
+                    >Special-Order 컴포넌트</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header">매거진 컴포넌트</div>
+              <ul>
+                <li>
+                  <a href="/src/components/MagezineDetailsComponent.html"
+                    >Magazine Details 컴포넌트</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header">로그인 컴포넌트</div>
+              <ul>
+                <li>
+                  <a href="/src/components/loginComponent.html"
+                    >Login 컴포넌트</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="structure">
+          <h2>Project Folder Structure</h2>
+          <img
+            src="/src/assets/images/index-images/mermaid-diagram-allinone.svg"
+            alt="프로젝트 폴더 구조를 보여주는 다이어그램"
+          />
+        </section>
+      </main>
+    </div>
     <footer>
       <p>© 2025 29CM 스타일 프로젝트 | all-in-one 프로젝트 저장소</p>
     </footer>

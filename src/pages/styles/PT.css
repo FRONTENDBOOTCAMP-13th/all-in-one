@@ -1,39 +1,76 @@
 @import '/src/components/styles/header.css';
 @import '/src/components/styles/ptComponent.css';
+@import '/src/common/theme.css';
+
+:root {
+  --spacing-274: 17.125rem;
+  --text-32: 2rem;
+  --spacing-116: 7.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* 기본 배경 및 텍스트 색상 */
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  /* 네비게이션 및 텍스트 관련 */
+  .pt-nav,
+  .pt-pages {
+    color: #e0e0e0;
+    font-weight: var(--weight-500);
+  }
+
+  /* 가상 보더 색상 변경 */
+  .pt-virtual-border {
+    border-inline-color: #555;
+  }
+
+  /* 버튼 스타일 변경 */
+  .pt-button-more {
+    color: var(--color-whitebase);
+  }
+  .pt-button-more::after {
+    border-right: 1px solid white;
+    border-bottom: 1px solid var(--color-whitebase);
+  }
+}
+
 .current-page-pt {
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid var(--color-blackbase);
 }
 
 .pt-bold {
-  font-weight: 900;
-  color: black;
+  font-weight: var(--weight-900);
+  color: #555;
 }
 
 .pt-history-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-inline: 50px;
-  gap: 20px;
+  padding-inline: var(--spacing-50);
+  gap: var(--spacing-20);
 }
 
 .pt-button-wrap {
   text-align: center;
-  padding-block: 40px;
+  padding-block: var(--spacing-40);
 }
 
 @media (max-width: 1024px) {
   .pt-pages {
-    font-size: 16px;
-    margin: 30px 0px 50px 0px;
+    font-size: var(--text-16);
+    margin: var(--spacing-30) 0 var(--spacing-50) 0;
   }
   .pt-virtual-border {
-    padding-inline: 30px;
-    margin-inline: 10px;
+    padding-inline: var(--spacing-30);
+    margin-inline: var(--spacing-10);
   }
 
   .pt-future {
-    font-size: 60px;
-    padding: 90px 50px 274px;
+    font-size: var(--text-60);
+    padding: var(--spacing-90) var(--spacing-50) var(--spacing-274);
   }
 }
 
@@ -48,46 +85,66 @@
 
   .pt-button-more {
     display: inline-flex;
-    font-size: 20px;
+    font-size: var(--text-20);
     justify-content: center;
   }
 
   .pt-button-more::after {
     content: '';
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 0.9375rem;
+    height: 0.9375rem;
 
-    margin-left: 15px;
-    border-right: 1px solid #333;
+    margin-left: var(--spacing-15);
+    border-right: 1px solid var();
     border-bottom: 1px solid #333;
     transform: rotate(45deg);
   }
 
   .pt-nav {
-    margin-top: 16px;
+    margin-top: var(--spacing-16);
   }
   .page-title {
     display: block;
     all: unset;
-    font-size: 20px;
+    font-size: var(--text-20);
     text-align: center;
-    font-weight: 800;
+    font-weight: var(--weight-800);
   }
 
   .pt-pages {
-    margin: 10px 0px 10px 0px;
+    margin: var(--spacing-10) 0 var(--spacing-10) 0;
     color: #a0a0a0;
-    font-size: 14px;
+    font-size: var(--text-14);
   }
 
   .pt-virtual-border {
     border: none;
-    padding-inline: 10px;
+    padding-inline: var(--spacing-10);
   }
 
   .pt-future {
-    font-size: 32px;
-    padding: 80px 25px 116px;
+    font-size: var(--text-32);
+    padding: var(--spacing-80) var(--spacing-25) var(--spacing-116);
+  }
+}
+
+.pt-pages {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.pt-nav {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+header-component::part(current-page-pt) {
+  border-bottom: 5px solid var(--color-blackbase);
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-pt) {
+    border-bottom: 5px solid var(--color-whitebase);
   }
 }

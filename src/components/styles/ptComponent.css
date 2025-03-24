@@ -1,4 +1,12 @@
 @import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+
+:root {
+  --spacing-45: 2.8125rem;
+  --spacing-160: 10rem;
+  --spacing-474: 29.625rem;
+}
+
 li,
 ul {
   list-style-type: none;
@@ -11,8 +19,8 @@ a {
 
 /* 틀 */
 fieldset {
-  padding: 30px;
-  margin: 40px;
+  padding: var(--spacing-30);
+  margin: var(--spacing-40);
 }
 legend {
   text-align: center;
@@ -22,7 +30,7 @@ legend {
 
 /* nav */
 .pt-nav-comp {
-  width: 400px;
+  width: var(--wegiht-400);
   .pt-nav {
     justify-content: left;
   }
@@ -37,51 +45,52 @@ legend {
 .pt-pages {
   display: flex;
   justify-content: center;
-  column-gap: 10px;
-  font-size: 22px;
-  margin: 62px 0px 50px 0px;
+  column-gap: var(--spacing-10);
+  font-size: var(--text-22);
+  margin: var(--spacing-60) 0 var(--spacing-50) 0;
   a {
-    min-width: 110px;
-    line-height: 40px;
+    min-width: 6.875rem;
+    line-height: 2.5rem;
   }
 }
 
 .pt-virtual-border {
   border-inline: 1px solid #c4c4c4;
-  padding-inline: 45px;
-  margin-inline: 20px;
+  padding-inline: var(--spacing-45);
+  margin-inline: var(--spacing-20);
 }
 
 /* comming soon comp */
 .future {
-  font-size: 80px;
-  font-weight: 500;
+  font-size: var(--text-80);
+  font-weight: var(--weight-500);
 
-  width: 450px;
+  width: 28.125rem;
 }
 
 /* 더보기 */
 .pt-button-more {
   display: inline-flex;
-  font-size: 30px;
-  width: 150px;
+  font-size: var(--text-30);
+  width: 9.375rem;
 }
 
 .pt-button-more::after {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 
-  margin-left: 15px;
+  margin-left: var(--spacing-15);
   border-right: 1px solid #333;
   border-bottom: 1px solid #333;
   transform: rotate(45deg);
 }
 
 .pt-future {
-  font-size: 80px;
+  font-size: var(--text-80);
   font-weight: 500;
-  padding: 160px 50px 474px 50px;
+  padding: var(--spacing-160) var(--spacing-50) var(--spacing-474)
+    var(--spacing-50);
   text-align: center;
 }

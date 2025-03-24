@@ -34,6 +34,24 @@ a {
   gap: 20px;
 }
 
+/* 모든 컴포넌트의 공통 스타일 - 검은색 테두리 */
+.component-box {
+  border: 2px solid #000;
+  padding: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.component-label {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background-color: #f5f5f5;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 /* Component 1 - Product Card with Discount */
 .comp1-product-card {
   display: flex;

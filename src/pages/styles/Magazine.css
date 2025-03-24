@@ -332,3 +332,125 @@ a {
   border: none;
   border-top: 4px solid #000;
 }
+
+/* 다크모드 설정 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #a0a0a0;
+    --border-color: #404040;
+    --black-black: #27272a;
+    --box-background: #66666a;
+    --box-text: #ffffff;
+    --card-hover-background: #27272a;
+    --link-hover-color: #5599ff;
+    --highlight-text: #ffffff;
+    --badge-background: #555555;
+    --badge-text: #ffffff;
+    --interaction-text: #b0b0b0;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  /* 헤더 관련 스타일 */
+  header {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  /* 섹션 타이틀 */
+  .section-title {
+    color: var(--text-color);
+    border-bottom: 4px solid var(--text-color);
+  }
+
+  .section-title.month {
+    border-top: 4px solid var(--text-color);
+  }
+
+  /* 최신 포스트 그리드 */
+  .featured-caption-title h3 {
+    color: var(--text-color);
+  }
+
+  .featured-caption-title p {
+    color: var(--secondary-text-color);
+  }
+
+  .featured-caption-desc .category {
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .featured-caption-desc .date {
+    color: var(--secondary-text-color);
+  }
+
+  /* 매거진 그리드 */
+  .grid-item {
+    background-color: var(--background-color);
+  }
+
+  .grid-item:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-hover-background);
+  }
+
+  .grid-item h3 {
+    color: var(--text-color);
+  }
+
+  .grid-item p {
+    color: var(--secondary-text-color);
+  }
+
+  .grid-item .category {
+    color: var(--badge-text);
+    background-color: var(--badge-background);
+    border: 1px solid var(--border-color);
+  }
+
+  .grid-item .day-area {
+    color: var(--highlight-text);
+  }
+
+  /* 그리드 아이템 간 경계선 */
+  .grid-item:not(:nth-child(5n)) {
+    border-right: 1px solid var(--border-color);
+  }
+
+  /* 모바일 뷰 */
+  @media (max-width: 541px) {
+    .grid-item {
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+
+  /* 이미지 밝기 조정 - 다크모드에서 이미지가 너무 밝게 보이지 않도록 */
+  img {
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+  }
+
+  img:hover {
+    filter: brightness(1);
+  }
+
+  /* 링크 효과 */
+  a:hover {
+    color: var(--link-hover-color);
+  }
+}
+
+header-component::part(current-page-29) {
+  border-bottom: 5px solid var(--color-blackbase);
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-29) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
+}
