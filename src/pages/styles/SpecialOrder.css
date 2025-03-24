@@ -1,11 +1,5 @@
 @import '/src/components/styles/specialOrderComponent.css';
 @import '/src/components/styles/header.css';
-.current-page-so {
-  border-bottom: 5px solid var(--color-blackbase);
-  @media (prefers-color-scheme: dark) {
-    border-bottom: 5px solid var(--color-whitebase);
-  }
-}
 
 .item-introduce {
   text-align: center;
@@ -133,5 +127,17 @@ br {
     font-size: var(--text-11);
     font-weight: var(--weight-800);
     line-height: 1.5625rem;
+  }
+}
+
+.current-page-so {
+  border-bottom: 5px solid var(--color-blackbase);
+}
+
+header-component::part(current-page-so) {
+  border-bottom: 5px solid var(--color-blackbase);
+
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
   }
 }

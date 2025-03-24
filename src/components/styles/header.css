@@ -415,7 +415,7 @@ a {
 /* 보더 바텀 - 해당 페이지 스타일에 복사 붙여넣기 */
 
 /* special-order  */
-/* .current-page-so {
+/* header-component::part(current-page-so){
   border-bottom: 5px solid var(--color-blackbase);
 
   @media (prefers-color-scheme: dark) {
@@ -424,7 +424,8 @@ a {
 } */
 
 /* showcase */
-/* .current-page-sc {
+
+/* header-component::part(current-page-sc) {
   border-bottom: 5px solid var(--color-blackbase);
 
   @media (prefers-color-scheme: dark) {
@@ -433,7 +434,7 @@ a {
 } */
 
 /* PT */
-/* .current-page-pt {
+/* header-component::part(current-page-pt) {
   border-bottom: 5px solid var(--color-blackbase);
   @media (prefers-color-scheme: dark) {
     border-bottom: 5px solid var(--color-whitebase);
@@ -441,7 +442,7 @@ a {
 } */
 
 /* 29Magazine */
-/* .current-page-29 {
+/* header-component::part(current-page-29) {
   border-bottom: 5px solid var(--color-blackbase);
   @media (prefers-color-scheme: dark) {
     border-bottom: 5px solid var(--color-whitebase);
@@ -449,9 +450,13 @@ a {
 } */
 
 /* best */
-/* .main-menu.current-page-best {
+
+/* header-component::part(current-page-best) {
   border-bottom: 2px solid var(--color-blackbase);
-  @media (prefers-color-scheme: dark) {
-    border-bottom: 5px solid var(--color-whitebase);
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-best) {
+    border-bottom: 2px solid var(--color-whitebase);
   }
 } */
