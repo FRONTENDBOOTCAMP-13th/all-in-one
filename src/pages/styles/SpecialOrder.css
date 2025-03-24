@@ -1,9 +1,15 @@
 @import '/src/components/styles/specialOrderComponent.css';
 @import '/src/components/styles/header.css';
+.current-page-so {
+  border-bottom: 5px solid var(--color-blackbase);
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
+}
 
 .item-introduce {
   text-align: center;
-  padding-block: 40px 72px;
+  padding-block: var(--spacing-40) var(--spacing-72);
 }
 
 br {
@@ -11,6 +17,7 @@ br {
 }
 
 @media (max-width: 541px) {
+  .bar-black,
   .balloon-wrap,
   .progress-container,
   .item-day-3::before {
@@ -23,101 +30,108 @@ br {
   .page-title {
     display: block;
     all: unset;
-    font-size: 20px;
-    font-weight: 800;
-    font-weight: 900;
+    font-size: var(--text-20);
+    font-weight: var(--weight-800);
   }
 
   h3 {
-    padding-top: 30px;
-    font-weight: 600;
+    padding-top: var(--spacing-30);
+    font-weight: var(--weight-600);
   }
 
   .item-introduce {
-    padding-block: 18px 40px;
+    padding-block: var(--spacing-18) var(--spaicng-40);
     line-height: 30px;
   }
 
   .item-introduce h3 {
-    font-size: 16px;
+    font-size: var(--text-16);
   }
 
   main ul {
     display: grid;
     grid-template-columns: 1fr;
     padding-inline: 0;
-    gap: 15px;
-    line-height: 30px;
+    gap: var(--spacing-15);
+    line-height: var(--specialOrder-line-height);
   }
 
   main h4,
   main p {
-    padding-left: 20px;
+    padding-left: var(--spacing-20);
   }
 
   main figcaption .item-title {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: var(--text-22);
+    font-weight: var(--weight-700);
   }
 
   main figcaption .item-description {
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: var(--spacing-15);
+    font-size: var(--text-16);
   }
 
   main figcaption .item-period {
-    margin-top: 12px;
-    font-size: 14px;
-    font-weight: 900;
+    margin-top: var(--spacing-12);
+    font-size: var(--text-14);
+    font-weight: var(--weight-800);
   }
 }
 
 @media (max-width: 1024px) {
   .item-introduce {
-    padding-block: 30px 50px;
+    padding-block: var(--spacing-30) var(--spacing-50);
   }
 
   .item-introduce h3 {
-    font-size: 16px;
+    font-size: var(--text-16);
   }
 
   figcaption {
-    padding-bottom: 25px;
+    padding-bottom: var(--spacing-25);
   }
 
   figcaption .item-title {
-    margin-top: 12px;
-    font-size: 20px;
+    margin-top: var(--spacing-12);
+    font-size: var(--text-20);
   }
 
   figcaption .item-description {
-    margin-top: 7px;
-    font-size: 13px;
+    margin-top: var(--spacing-7);
+    font-size: var(--text-13);
   }
 
   figcaption .balloon-wrap {
-    margin-top: 50px;
+    margin-top: var(--spacing-50);
   }
 
   figcaption .progress-container {
-    margin-top: 50px;
+    margin-top: var(--spacing-50);
   }
 
   figcaption .item-period {
-    margin-top: 16px;
-    font-size: 13px;
-    font-weight: 900;
+    margin-top: var(--spacing-16);
+    font-size: var(--text-13);
+    font-weight: var(--weight-800);
   }
 
   figcaption .bar-black {
-    margin-top: 60px;
+    margin-top: var(--spacing-60);
   }
 
   .balloon {
-    min-width: 38px;
-    padding: 0 8px;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 25px;
+    min-width: 2.375rem;
+    padding: 0 var(--spacing-8);
+    font-size: var(--text-12);
+    font-weight: var(--weight-800);
+    line-height: 1.5625rem;
+  }
+
+  .balloon-black {
+    min-width: 2.375rem;
+    padding: 0 var(--spacing-7);
+    font-size: var(--text-11);
+    font-weight: var(--weight-800);
+    line-height: 1.5625rem;
   }
 }
