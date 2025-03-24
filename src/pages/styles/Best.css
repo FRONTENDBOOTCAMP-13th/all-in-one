@@ -35,10 +35,11 @@
     --background-color: #121212;
     --text-color: #e0e0e0;
     --secondary-text-color: #a0a0a0;
-    --border-color: #444444;
-    --box-background: #555555;
+    --border-color: #404040;
+    --black-black: #27272a;
+    --box-background: #66666a;
     --box-text: #ffffff;
-    --card-hover-background: #222222;
+    --card-hover-background: #27272a;
     --link-hover-color: #5599ff;
     --highlight-text: #ffffff;
     --badge-background: #555555;
