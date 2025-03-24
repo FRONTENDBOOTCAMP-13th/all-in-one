@@ -149,7 +149,6 @@ a {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
   transition: transform 0.3s;
 }
 
@@ -427,20 +426,5 @@ a {
     .grid-item {
       border-bottom: 1px solid var(--border-color);
     }
-  }
-
-  /* 이미지 밝기 조정 - 다크모드에서 이미지가 너무 밝게 보이지 않도록 */
-  img {
-    filter: brightness(0.85);
-    transition: filter 0.3s ease;
-  }
-
-  img:hover {
-    filter: brightness(1);
-  }
-
-  /* 링크 효과 */
-  a:hover {
-    color: var(--link-hover-color);
   }
 }
