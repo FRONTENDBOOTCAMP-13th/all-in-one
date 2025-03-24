@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="/public/font/pretendardvariable.css" />
     <link rel="stylesheet" href="/src/pages/styles/Magazine.css" />
+    <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <header>
@@ -494,13 +495,28 @@
       </div>
     </div>
 
-    <footer>
-      <object
-        type="text/html"
-        data="/src/components/footer.html"
-        width="100%"
-        height="auto"
-      ></object>
-    </footer>
+    <!-- 푸터가 들어올 영역 -->
+    <footer-component>
+      <img
+        slot="instagram-icon"
+        src="/src/assets/images/footer-images/Link.svg"
+        alt="Instagram"
+      />
+      <img
+        slot="youtube-icon"
+        src="/src/assets/images/footer-images/Link-1.svg"
+        alt="YouTube"
+      />
+      <img
+        slot="apple-icon"
+        src="/src/assets/images/footer-images/Link-2.svg"
+        alt="Apple"
+      />
+      <img
+        slot="google-play-icon"
+        src="/src/assets/images/footer-images/Link-3.svg"
+        alt="Google Play"
+      />
+    </footer-component>
   </body>
 </html>

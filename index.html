@@ -12,69 +12,294 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <style>
+      :root {
+        --primary-color: #111;
+        --secondary-color: #f8f8f8;
+        --accent-color: #f43142;
+        --text-color: #333;
+        --light-gray: #e5e5e5;
+        --medium-gray: #999;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          'Pretendard Variable',
+          -apple-system,
+          BlinkMacSystemFont,
+          system-ui,
+          Roboto,
+          'Helvetica Neue',
+          'Segoe UI',
+          sans-serif;
+      }
+
+      body {
+        background-color: #fff;
+        color: var(--text-color);
+        line-height: 1.6;
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      header {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+        letter-spacing: -0.5px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 30px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--light-gray);
+        color: var(--primary-color);
+      }
+
+      .project-description {
+        font-size: 1.1rem;
+        color: var(--medium-gray);
+        max-width: 700px;
+        margin: 0 auto 30px;
+        text-align: center;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      section {
+        margin-bottom: 60px;
+      }
+
+      .card {
+        background: var(--secondary-color);
+        border-radius: 8px;
+        overflow: hidden;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 15px 20px;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        position: relative;
+      }
+
+      a:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+        color: var(--accent-color);
+      }
+
+      a::after {
+        content: '→';
+        position: absolute;
+        right: 20px;
+        opacity: 0;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      a:hover::after {
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 1px solid var(--light-gray);
+        color: var(--medium-gray);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px 15px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>all-in-one 프로젝트 저장소</h1>
+    <header>
+      <h1>29CM 스타일 프로젝트</h1>
+      <p class="project-description">
+        all-in-one팀(1팀)의 29cm 웹사이트를 모티브로 한 웹 프로젝트입니다.<br />
+        아래 링크를 통해 페이지와 컴포넌트를 확인해보세요.
+      </p>
+    </header>
 
     <section>
       <h2>Page</h2>
-      <ul>
-        <li>
-          <a href="/src/pages/MainPage.html">Main 페이지</a>
-        </li>
-        <li>
-          <a href="/src/pages/SpecialOrder.html">Special-Order 페이지</a>
-        </li>
-        <li>
-          <a href="/src/pages/ShowCase.html">Showcase 페이지</a>
-        </li>
-        <li>
-          <a href="/src/pages/PT.html">PT 페이지</a>
-        </li>
-        <li>
-          <a href="/src/pages/Magazine.html">Magazine 페이지</a>
-        </li>
-        <li>
-          <a href="/src/pages/MagazineDetails.html">Magazine Details 페이지</a>
-        </li>
-        <li>
-          <a href="/src/components/footer.html">footer component</a>
-        </li>
-        <li><a href="/src/pages/Best.html">Best 페이지</a></li>
-      </ul>
+      <div class="container">
+        <div class="card">
+          <div class="card-header">메인</div>
+          <ul>
+            <li>
+              <a href="/src/pages/MainPage.html">Main 페이지</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">쇼핑</div>
+          <ul>
+            <li>
+              <a href="/src/pages/SpecialOrder.html">Special-Order 페이지</a>
+            </li>
+            <li>
+              <a href="/src/pages/ShowCase.html">Showcase 페이지</a>
+            </li>
+            <li>
+              <a href="/src/pages/PT.html">PT 페이지</a>
+            </li>
+            <li><a href="/src/pages/Best.html">Best 페이지</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">콘텐츠</div>
+          <ul>
+            <li>
+              <a href="/src/pages/Magazine.html">Magazine 페이지</a>
+            </li>
+            <li>
+              <a href="/src/pages/MagazineDetails.html"
+                >Magazine Details 페이지</a
+              >
+            </li>
+            <li><a href="/src/pages/LoginPage.html">Login 페이지</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section>
       <h2>Component</h2>
-      <ul>
-        <li>
-          <a href="/src/components/header.html">header 컴포넌트</a>
-        </li>
-        <li>
-          <a href="/src/components/indexCardComponent.html"
-            >인덱스 카드 컴포넌트</a
-          >
-        </li>
-        <li><a href="/src/components/footer.html">footer 컴포넌트</a></li>
-        <li>
-          <a href="/src/components/showCaseComponent.html">showcase 컴포넌트</a>
-        </li>
-        <li>
-          <a href="/src/components/ptComponent.html">pt 컴포넌트</a>
-        </li>
-        <li><a href="/src/components/bestComponent.html">best 컴포넌트</a></li>
-        <li>
-          <a href="/src/components/indexCardComponent.html">index 컴포넌트</a>
-        </li>
-        <li>
-          <a href="/src/components/MagezineDetailsComponent.html"
-          >Magazine Details 컴포넌트</a>
-          <a href="/src/components/indexWelcomingComponent.html"
-            >index welcoming 컴포넌트</a>
-          <a href="/src/components/specialOrderComponent.html"
-            >Special-Order 컴포넌트</a>
-        </li>
-      </ul>
+      <div class="container">
+        <div class="card">
+          <div class="card-header">구조 컴포넌트</div>
+          <ul>
+            <li>
+              <a href="/src/components/header.html">header 컴포넌트</a>
+            </li>
+            <li>
+              <a href="/src/components/indexCardComponent.html"
+                >인덱스 카드 컴포넌트</a
+              >
+            </li>
+            <li><a href="/src/components/footer.html">footer 컴포넌트</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">메인 컴포넌트</div>
+          <ul>
+            <li>
+              <a href="/src/components/indexCardComponent.html"
+                >main 컴포넌트</a
+              >
+            </li>
+            <li>
+              <a href="/src/components/indexWelcomingComponent.html"
+                >main welcoming 컴포넌트</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">상품 컴포넌트</div>
+          <ul>
+            <li>
+              <a href="/src/components/showCaseComponent.html"
+                >showcase 컴포넌트</a
+              >
+            </li>
+            <li>
+              <a href="/src/components/ptComponent.html">pt 컴포넌트</a>
+            </li>
+            <li>
+              <a href="/src/components/bestComponent.html">best 컴포넌트</a>
+            </li>
+            <li>
+              <a href="/src/components/specialOrderComponent.html"
+                >Special-Order 컴포넌트</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">매거진 컴포넌트</div>
+          <ul>
+            <li>
+              <a href="/src/components/MagezineDetailsComponent.html"
+                >Magazine Details 컴포넌트</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">로그인 컴포넌트</div>
+          <ul>
+            <li>
+              <a href="/src/components/loginComponent.html">Login 컴포넌트</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
+    <footer>
+      <p>© 2025 29CM 스타일 프로젝트 | all-in-one 프로젝트 저장소</p>
+    </footer>
   </body>
 </html>

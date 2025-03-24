@@ -1,21 +1,336 @@
-<!doctype html>
-<html lang="ko-KR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>29cm PT</title>
-    <link rel="icon" href="/favicon.ico" />
-    <link
-      rel="preload"
-      as="font"
-      href="/public/font/woff2/PretendardVariable.woff2"
-    />
-    <link rel="stylesheet" href="/public/font/pretendardvariable.css" />
-    <link rel="stylesheet" href="/src/pages/styles/PT.css" />
-  </head>
-  <body>
-    <div class="container-31cm">
-      <aside class="banner-31cm-mobile">
+// header-component.js
+class HeaderComponent extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  render() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        /* 리셋 및 기본 스타일 */
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        ul[role='list'], ol[role='list'] {
+          list-style: none;
+        }
+        html:focus-within {
+          scroll-behavior: smooth;
+        }
+        a:not([class]) {
+          text-decoration-skip-ink: auto;
+        }
+        img, picture, svg, video, canvas {
+          max-width: 100%;
+          height: auto;
+          vertical-align: middle;
+          font-style: italic;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        input, button, textarea, select {
+          font: inherit;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          html:focus-within {
+            scroll-behavior: auto;
+          }
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+            transition: none;
+          }
+        }
+        body, html {
+          height: 100%;
+          scroll-behavior: smooth;
+        }
+        /* 기타 공통 스타일 */
+        fieldset {
+          display: flex;
+          gap: 10px;
+          width: 80%;
+          margin: 30px;
+          padding: 20px;
+        }
+        fieldset legend {
+          text-align: center;
+        }
+        .padding-222 {
+          font-size: 30px;
+          margin-top: 100px;
+          text-align: center;
+          width: 85%;
+        }
+        .header-page-nav-comp {
+          display: flex;
+        }
+        svg {
+          font-style: normal;
+        }
+        body {
+          text-transform: uppercase;
+        }
+        ul, li {
+          list-style-type: none;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+        }
+        /* 헤더 관련 스타일 */
+        .header-31cm-inner {
+          display: flex;
+          justify-content: space-between;
+        }
+        .header-31cm-inner .header-inner-nav ul {
+          display: flex;
+          column-gap: 16px;
+        }
+        .header-31cm-inner .item-heart {
+          margin-top: 2px;
+        }
+        .header-31cm-inner .nav-item {
+          display: flex;
+          font-size: 10px;
+          align-items: center;
+          column-gap: 4px;
+        }
+        @media (max-width: 1024px) {
+          .header-31cm-inner .header-inner-nav svg {
+            width: 15px;
+            height: 15px;
+          }
+          .header-31cm-inner .header-inner-nav .nav-hidden-item {
+            display: inline-block;
+            margin-top: 1px;
+          }
+          .header-31cm-inner .header-inner-nav span {
+            display: none;
+          }
+        }
+        .sub-menu {
+          display: none;
+          overflow: hidden;
+          padding: 1rem;
+          width: 100vw;
+          position: absolute;
+          left: 0;
+          margin-top: 3px;
+        }
+        .top-menu:hover .sub-menu,
+        .top-menu:focus-within .sub-menu {
+          display: block;
+          border-top: 1px solid lightgray;
+          background: white;
+        }
+        .sub-menu > ul:not(:last-child) {
+          margin-right: 1rem;
+        }
+        .header-main-menu {
+          display: flex;
+          column-gap: 20px;
+          list-style-type: none;
+          font-weight: 600;
+          padding-bottom: 30px;
+          font-size: 17px;
+          flex-wrap: wrap;
+        }
+        @media (max-width: 1024px) {
+          .header-main-menu {
+            column-gap: 10px;
+            font-size: 12px;
+          }
+        }
+        .top-menu:hover {
+          border-bottom: 3px solid black;
+        }
+        @media (max-width: 900px) {
+          .top-menu:hover {
+            border-bottom: 2px solid black;
+          }
+        }
+        .drop-down-menu {
+          margin-right: 74px;
+          font-weight: normal;
+          font-size: 13px;
+          padding-block: 5px;
+          padding-inline: 32px;
+        }
+        @media (max-width: 1024px) {
+          .drop-down-menu {
+            font-size: 10px;
+          }
+        }
+        .drop-down-menu.size-up {
+          font-size: inherit;
+          font-weight: inherit;
+        }
+        /* 헤더: 페이지 메뉴 */
+        .header-page-nav {
+          display: flex;
+          justify-content: space-between;
+        }
+        @media (max-width: 1024px) {
+          .header-page-nav svg {
+            width: 30px;
+            height: 30px;
+            display: none;
+          }
+        }
+        .header-page-nav ul {
+          display: flex;
+          column-gap: 20px;
+          font-size: 40px;
+          font-weight: 900;
+          flex-flow: wrap;
+        }
+        @media (max-width: 1024px) {
+          .header-page-nav ul {
+            font-size: 25px;
+            column-gap: 13px;
+          }
+        }
+        .header-page-nav ul a:hover {
+          border-bottom: 5px solid black;
+        }
+        @media (max-width: 1024px) {
+          .header-page-nav ul a:hover {
+            border-bottom: 3px solid black;
+          }
+        }
+        /* 얇고 기울어진 메뉴 */
+        .top-menu-slim {
+          font-weight: 200;
+          font-style: italic;
+        }
+        .top-menu-border {
+          border-left: 1px solid #c4c4c4;
+          padding-top: 4px;
+          padding-left: 20px;
+        }
+        @media (max-width: 1024px) {
+          .top-menu-border {
+            padding-left: 10px;
+            padding-top: 2px;
+          }
+        }
+        /* 최종 반응형 */
+        .header-31cm {
+          display: flex;
+          flex-direction: column;
+          position: sticky;
+          gap: 30px;
+          padding-inline: 50px;
+          padding-top: 30px;
+          z-index: 1;
+          inset-block-start: 0;
+          background: #fff;
+        }
+        @media (max-width: 1024px) {
+          .header-31cm {
+            gap: 10px;
+            padding-top: 20px;
+          }
+        }
+        .logo {}
+        @media (max-width: 1024px) {
+          .logo {
+            width: 65px;
+            height: 20px;
+          }
+        }
+        /* 모바일 */
+        .nav-hidden-item,
+        .header-nav-mobile,
+        .header-31cm-mobile {
+          display: none;
+        }
+        /* 배너 */
+        .banner-31cm-mobile {
+          display: none;
+          justify-content: space-between;
+          align-items: center;
+          padding-block: 11px;
+          width: 100%;
+          background: black;
+          font-size: 13px;
+          padding-inline: 16px 8px;
+          font-weight: 600;
+        }
+        .banner-31cm-mobile a {
+          color: white;
+        }
+        .banner-31cm-mobile p {
+          color: white;
+        }
+        .banner-31cm-mobile span {
+          color: #ff4800;
+          font-size: 12px;
+        }
+        @media (max-width: 541px) {
+          .banner-31cm-mobile {
+            display: flex;
+          }
+        }
+        .banner-item-button {
+          background: #ff4800;
+          font-size: 10px;
+          padding: 6px 12px;
+        }
+        .banner-item-wrap {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+        }
+        @media (max-width: 541px) {
+          .logo {
+            width: 100px;
+            height: 27px;
+          }
+          .header-31cm-inner {
+            padding: 10px 15px;
+          }
+          .header-31cm {
+            padding: 0;
+          }
+          .header-inner-nav,
+          .header-page-nav,
+          .header-main-menu-nav {
+            display: none;
+          }
+          .header-nav-mobile {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+          }
+        }
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip-path: inset(50%);
+          white-space: nowrap;
+          border: 0;
+        }
+      </style>
+      
+      <!-- HTML 마크업 -->
+      <aside class="banner-31cm-mobile" aria-label="31cm 모바일 배너">
         <a href="#" class="banner-item-wrap">
           <svg
             width="28px"
@@ -23,16 +338,7 @@
             viewBox="0 0 28 28"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect
-              width="28"
-              height="28"
-              fill="black"
-              rx="8"
-              ry="8"
-              stroke="white"
-              stroke-width="0.1"
-            />
-
+            <rect width="28" height="28" fill="black" rx="8" ry="8" stroke="white" stroke-width="0.3" />
             <text
               x="50%"
               y="55%"
@@ -50,6 +356,7 @@
         </a>
         <a href="#" class="banner-item-button">앱으로 보기</a>
       </aside>
+      
       <header class="header-31cm">
         <h1 class="sr-only">쇼핑몰 31cm</h1>
         <div class="header-31cm-inner">
@@ -104,23 +411,14 @@
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-                    <path
-                      d="M7.76953 1.4375V0.6875H6.26953V1.4375V5.1875V5.9375H7.76953V5.1875V1.4375Z"
-                      fill="black"
-                    />
-                    <path
-                      d="M13.7695 15.3125H0.269531V7.9994C0.269531 7.47837 0.692524 7.0625 1.20703 7.0625H12.832C13.3498 7.0625 13.7695 7.4822 13.7695 8V15.3125Z"
-                    />
+                    <path d="M7.76953 1.4375V0.6875H6.26953V1.4375V5.1875V5.9375H7.76953V5.1875V1.4375Z" fill="black" />
+                    <path d="M13.7695 15.3125H0.269531V7.9994C0.269531 7.47837 0.692524 7.0625 1.20703 7.0625H12.832C13.3498 7.0625 13.7695 7.4822 13.7695 8V15.3125Z" />
                   </svg>
                   <span aria-hidden="true">MY PAGE</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="nav-item item-heart"
-                  aria-label="나의 좋아요"
-                >
+                <a href="#" class="nav-item item-heart" aria-label="나의 좋아요">
                   <svg
                     width="16"
                     height="14"
@@ -128,9 +426,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-                    <path
-                      d="M8.01961 2.81258C7.41398 1.522 6.13633 0.625 4.64453 0.625C2.56052 0.625 0.894531 2.37622 0.894531 4.504C0.894531 5.34921 1.24055 6.11095 1.56535 6.64382C1.72976 6.91352 1.89394 7.13312 2.01751 7.2859C2.07943 7.3624 2.13151 7.42263 2.16883 7.46447C2.18749 7.4854 2.2025 7.50175 2.21323 7.5133L2.22604 7.52688L2.22991 7.531L2.23117 7.53227L8.01953 13.5405L13.8072 7.53295L13.8079 7.53227L13.8092 7.531L13.813 7.52695L13.8258 7.5133C13.8365 7.50175 13.8515 7.4854 13.8702 7.46447C13.9076 7.42263 13.9596 7.3624 14.0216 7.2859C14.1451 7.13312 14.3093 6.91352 14.4737 6.64382C14.7985 6.11095 15.1445 5.34921 15.1445 4.504C15.1445 2.37546 13.4785 0.625 11.3945 0.625C9.90286 0.625 8.62531 1.52223 8.01961 2.81258Z"
-                    />
+                    <path d="M8.01961 2.81258C7.41398 1.522 6.13633 0.625 4.64453 0.625C2.56052 0.625 0.894531 2.37622 0.894531 4.504C0.894531 5.34921 1.24055 6.11095 1.56535 6.64382C1.72976 6.91352 1.89394 7.13312 2.01751 7.2859C2.07943 7.3624 2.13151 7.42263 2.16883 7.46447C2.18749 7.4854 2.2025 7.50175 2.21323 7.5133L2.22604 7.52688L2.22991 7.531L2.23117 7.53227L8.01953 13.5405L13.8072 7.53295L13.8079 7.53227L13.8092 7.531L13.813 7.52695L13.8258 7.5133C13.8365 7.50175 13.8515 7.4854 13.8702 7.46447C13.9076 7.42263 13.9596 7.3624 14.0216 7.2859C14.1451 7.13312 14.3093 6.91352 14.4737 6.64382C14.7985 6.11095 15.1445 5.34921 15.1445 4.504C15.1445 2.37546 13.4785 0.625 11.3945 0.625C9.90286 0.625 8.62531 1.52223 8.01961 2.81258Z" />
                   </svg>
                   <span aria-hidden="true">MY LIKE</span>
                 </a>
@@ -144,9 +440,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-                    <path
-                      d="M7.01953 0.75C6.02496 0.75 5.07114 1.14508 4.36788 1.84835C3.84409 2.37214 3.49126 3.03492 3.34528 3.75H1.17103C0.664931 3.75 0.269531 4.15819 0.269531 4.65V15.6091L0.269749 15.6182C0.275426 15.8518 0.371344 16.0741 0.537379 16.2385C0.703406 16.4029 0.926651 16.4966 1.16028 16.4999L1.16565 16.5H12.868C13.3741 16.5 13.7695 16.0918 13.7695 15.6V10.875H7.01953V9.375H13.7695V4.65C13.7695 4.165 13.3727 3.75 12.868 3.75H10.6938C10.5478 3.03492 10.195 2.37214 9.67116 1.84835C8.96796 1.14508 8.01411 0.75 7.01953 0.75ZM8.61051 2.90901C8.85006 3.14856 9.03006 3.43657 9.14083 3.75H4.89821C5.00903 3.43657 5.18898 3.14856 5.42854 2.90901C5.85051 2.48705 6.42283 2.25 7.01953 2.25C7.61623 2.25 8.18856 2.48705 8.61051 2.90901Z"
-                    />
+                    <path d="M7.01953 0.75C6.02496 0.75 5.07114 1.14508 4.36788 1.84835C3.84409 2.37214 3.49126 3.03492 3.34528 3.75H1.17103C0.664931 3.75 0.269531 4.15819 0.269531 4.65V15.6091L0.269749 15.6182C0.275426 15.8518 0.371344 16.0741 0.537379 16.2385C0.703406 16.4029 0.926651 16.4966 1.16028 16.4999L1.16565 16.5H12.868C13.3741 16.5 13.7695 16.0918 13.7695 15.6V10.875H7.01953V9.375H13.7695V4.65C13.7695 4.165 13.3727 3.75 12.868 3.75H10.6938C10.5478 3.03492 10.195 2.37214 9.67116 1.84835C8.96796 1.14508 8.01411 0.75 7.01953 0.75ZM8.61051 2.90901C8.85006 3.14856 9.03006 3.43657 9.14083 3.75H4.89821C5.00903 3.43657 5.18898 3.14856 5.42854 2.90901C5.85051 2.48705 6.42283 2.25 7.01953 2.25C7.61623 2.25 8.18856 2.48705 8.61051 2.90901Z" />
                   </svg>
                   <span aria-hidden="true">SHOPPING BAG</span>
                 </a>
@@ -237,9 +531,7 @@
                     <a href="#">가방</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">기타가방</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">캐리어,여행가방</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">캐리어,여행가방</a></li>
                   <li class="drop-down-menu"><a href="#">보스틴백</a></li>
                   <li class="drop-down-menu"><a href="#">웨이스트백</a></li>
                   <li class="drop-down-menu"><a href="#">숄더백</a></li>
@@ -272,10 +564,7 @@
                   <li class="drop-down-menu"><a href="#">뮬</a></li>
                 </ul>
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="액세서리 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="액세서리 전체보기">
                     <a href="#">액세서리</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">넥타이</a></li>
@@ -284,9 +573,7 @@
                   <li class="drop-down-menu"><a href="#">주얼리</a></li>
                   <li class="drop-down-menu"><a href="#">모자</a></li>
                   <li class="drop-down-menu"><a href="#">시계</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">지갑,카드케이스</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">지갑,카드케이스</a></li>
                   <li class="drop-down-menu"><a href="#">아이웨어</a></li>
                   <li class="drop-down-menu"><a href="#">벨트</a></li>
                   <li class="drop-down-menu"><a href="#">양말</a></li>
@@ -321,9 +608,7 @@
                     <a href="#">가방</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">EXCLUSIVE</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">캐리어,여행가방</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">캐리어,여행가방</a></li>
                   <li class="drop-down-menu"><a href="#">보스턴백</a></li>
                   <li class="drop-down-menu"><a href="#">해외브랜드</a></li>
                   <li class="drop-down-menu"><a href="#">크로스백</a></li>
@@ -354,16 +639,11 @@
                   <li class="drop-down-menu"><a href="#">슬리퍼</a></li>
                 </ul>
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="액세러리 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="액세러리 전체보기">
                     <a href="#">액세서리</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">EXCLUSIVE</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">지갑,카드케이스</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">지갑,카드케이스</a></li>
                   <li class="drop-down-menu"><a href="#">해외브랜드</a></li>
                   <li class="drop-down-menu"><a href="#">모자</a></li>
                   <li class="drop-down-menu"><a href="#">시계</a></li>
@@ -371,7 +651,7 @@
                   <li class="drop-down-menu"><a href="#">넥타이</a></li>
                   <li class="drop-down-menu"><a href="#">벨트</a></li>
                   <li class="drop-down-menu"><a href="#">양말</a></li>
-                  <li class="drop-down-menu"><a href="#">스카프</a></li>
+                  <li class="drop-down-menu"><a href="#">스카프,카라</a></li>
                   <li class="drop-down-menu"><a href="#">머플러</a></li>
                   <li class="drop-down-menu"><a href="#">장갑</a></li>
                   <li class="drop-down-menu"><a href="#">쥬얼리</a></li>
@@ -383,10 +663,7 @@
               <a href="/" class="main-menu">INTERIOR</a>
               <div class="sub-menu">
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="가구,인테리어 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="가구,인테리어 전체보기">
                     <a href="#">가구,인테리어</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">EXCLUSIVE</a></li>
@@ -410,10 +687,7 @@
               <a href="/" class="main-menu">KITCHEN</a>
               <div class="sub-menu">
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="주방,생활용품 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="주방,생활용품 전체보기">
                     <a href="#">주방,생활</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">EXCLUSIVE</a></li>
@@ -460,25 +734,16 @@
               <a href="/" class="main-menu">DIGITAL</a>
               <div class="sub-menu">
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="컴퓨터,디지털용품 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="컴퓨터,디지털용품 전체보기">
                     <a href="#">컴퓨터,디지털</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">음향기기</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">모바일,웨어러블</a>
-                  </li>
-                  <li class="drop-down-menu">
-                    <a href="#">모바일 엑세서리</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">모바일,웨어러블</a></li>
+                  <li class="drop-down-menu"><a href="#">모바일 엑세서리</a></li>
                   <li class="drop-down-menu"><a href="#">PC,노트북</a></li>
                   <li class="drop-down-menu"><a href="#">게임</a></li>
                   <li class="drop-down-menu"><a href="#">사진</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">자동차용품,장난감</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">자동차용품,장난감</a></li>
                   <li class="drop-down-menu"><a href="#">스마트모빌리티</a></li>
                 </ul>
               </div>
@@ -487,10 +752,7 @@
               <a href="/" class="main-menu">BEAUTY</a>
               <div class="sub-menu">
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="뷰티용품 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="뷰티용품 전체보기">
                     <a href="#">뷰티</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">선물세트</a></li>
@@ -500,9 +762,7 @@
                   <li class="drop-down-menu"><a href="#">메이크업</a></li>
                   <li class="drop-down-menu"><a href="#">헤어케어</a></li>
                   <li class="drop-down-menu"><a href="#">바디케어</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">네일,디자인타투</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">네일,디자인타투</a></li>
                   <li class="drop-down-menu"><a href="#">프레그런스</a></li>
                   <li class="drop-down-menu"><a href="#">여성용품</a></li>
                   <li class="drop-down-menu"><a href="#">뷰티소품/기기</a></li>
@@ -532,10 +792,7 @@
               <a href="/" class="main-menu">LEISURE</a>
               <div class="sub-menu">
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="레저용품 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="레저용품 전체보기">
                     <a href="#">레저</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">캠핑</a></li>
@@ -554,18 +811,13 @@
               <a href="/" class="main-menu">KIDS</a>
               <div class="sub-menu">
                 <ul>
-                  <li
-                    class="drop-down-menu size-up"
-                    aria-label="유아,아동품 전체보기"
-                  >
+                  <li class="drop-down-menu size-up" aria-label="유아,아동품 전체보기">
                     <a href="#">유아,아동</a>
                   </li>
                   <li class="drop-down-menu"><a href="#">베이비</a></li>
                   <li class="drop-down-menu"><a href="#">유아식,분유</a></li>
                   <li class="drop-down-menu"><a href="#">외출 용품</a></li>
-                  <li class="drop-down-menu">
-                    <a href="#">임산부,태교용품</a>
-                  </li>
+                  <li class="drop-down-menu"><a href="#">임산부,태교용품</a></li>
                   <li class="drop-down-menu"><a href="#">유아 용품</a></li>
                   <li class="drop-down-menu"><a href="#">수유 용품</a></li>
                   <li class="drop-down-menu"><a href="#">남아 의류</a></li>
@@ -604,140 +856,8 @@
           </ul>
         </nav>
       </header>
-      <nav class="pt-nav" aria-label="pt페이지 목록">
-        <h2 class="sr-only page-title">pt</h2>
-        <ul class="pt-pages">
-          <li><a class="pt-bold" href="#" aria-current="page">history</a></li>
-          <li class="pt-virtual-border">
-            <a href="/src/pages/PT.html">now</a>
-          </li>
-          <li><a href="/src/pages/PtComing.html">coming</a></li>
-        </ul>
-      </nav>
-      <main>
-        <section>
-          <h3 class="sr-only">브랜드의 역사</h3>
-          <ul class="pt-history-items">
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-01.webp"
-                  alt="Wilson"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-02.webp"
-                  alt="LowClassic"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-03.webp"
-                  alt="AnotherOffice"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-04.webp"
-                  alt="UnderCover"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-05.webp"
-                  alt="EnzoBlues"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-06.webp"
-                  alt="OffWhite"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-07.webp"
-                  alt="FluffyCitrus"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-08.webp"
-                  alt="Neithers"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-09.webp"
-                  alt="NewBalance"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-10.webp"
-                  alt="RockFishWeatherWear"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-11.webp"
-                  alt="BudhiMudra"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-12.webp"
-                  alt="BrownYard"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-13.webp"
-                  alt="AfterPray"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="/src/assets/images/pt-images/ptHistory-14.webp"
-                  alt="JosLounge"
-                />
-              </a>
-            </li>
-          </ul>
-          <div class="pt-button-wrap">
-            <a href="#" class="pt-button-more" aria-label="브랜드 역사 더보기"
-              >더보기</a
-            >
-          </div>
-        </section>
-      </main>
-    </div>
-  </body>
-</html>
+    `;
+  }
+}
+
+customElements.define('header-component', HeaderComponent);

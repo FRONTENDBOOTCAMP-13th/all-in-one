@@ -1,314 +1,224 @@
 @import '/src/components/styles/bestComponent.css';
+/* 라이트 모드(기본) 변수 */
 :root {
-  /* 라이트 모드 색상 변수 */
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --card-bg-color: #f8f8f8;
-  --border-color: #e0e0e0;
-  --hover-color: #f5f5f5;
-  --link-hover: #0066cc;
-  --sidebar-active: #333333;
-  --price-color: #333333;
-  --discount-color: #e74c3c;
-  --badge-bg: #f0f0f0;
-  --icon-color: #5d5d5d;
-  --header-border: #e0e0e0;
-  --sidebar-hover: #f2f2f2;
-  --card-hover: #f5f5f5; /* 라이트모드 카드 호버 색상 */
+  /* 기존 색상 유지 */
+  --real-black: #000;
+  --medium-black: rgb(29, 29, 29);
+  --pretty-black: rgb(93, 93, 93);
+  --real-white: #fff;
+  --medium-white: rgb(228, 228, 228);
+  --pretty-white: rgb(244, 244, 244);
+  --pretty-gray: #d4d4d4;
+  --light-gray: #e4e4e4;
+  --real-gray: rgb(196, 196, 196);
+  --real-red: rgb(255, 72, 0);
+
+  /* 시맨틱 색상 변수(테마 전환용) */
+  --background-color: var(--real-white);
+  --text-color: var(--real-black);
+  --secondary-text-color: var(--pretty-black);
+  --border-color: var(--pretty-gray);
+  --box-background: var(--real-black);
+  --box-text: var(--real-white);
+  --card-hover-background: #f8f8f8;
+  --link-hover-color: #0066cc;
+  --highlight-text: #ffffff;
+  --badge-background: var(--pretty-white);
+  --badge-text: var(--medium-black);
+  --interaction-text: var(--pretty-black);
 }
 
+/* 다크 모드 변수 */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* 다크 모드 색상 변수 - 카테고리 메뉴 가독성 개선 */
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --card-bg-color: #1e1e1e;
-    --border-color: #3d3d3d;
-    --hover-color: #2a2a2a;
-    --link-hover: #66b3ff;
-    --sidebar-active: #ffffff;
-    --price-color: #ffffff;
-    --discount-color: #ff8080;
-    --badge-bg: #2c2c2c;
-    --icon-color: #e0e0e0;
-    --header-border: #6a6a6a;
-    --sidebar-hover: #3a3a3a; /* 다크모드 사이드바 호버 색상 */
-    --card-hover: #2d2d2d; /* 다크모드 카드 호버 색상 - 예쁜 회색 계열 */
-  }
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-/* 사이드바 크기 조정 - 스크롤 없이 모두 보이게 설정 */
-.best-main .side-bar {
-  position: sticky;
-  top: var(--spacing-40);
-  font-size: 0.9em; /* 글꼴 크기 약간 축소 */
-  padding: 10px;
-}
-
-/* 사이드바 내부 항목 간격 줄이기 */
-.sidebar-list li {
-  margin-bottom: 2px;
-}
-
-.sidebar-list a {
-  padding: 4px 6px;
-}
-
-/* 사이드바 스타일 강화 */
-.sidebar-head {
-  color: var(--text-color);
-  font-weight: 700;
-  border-bottom: 2px solid var(--header-border);
-  padding-bottom: 8px;
-  margin-bottom: 10px;
-}
-
-/* 사이드바 메뉴 아이템 가독성 향상 및 호버 효과 개선 */
-.sidebar-list a {
-  color: var(--text-color);
-  font-weight: 500;
-  display: block; /* 링크를 블록 레벨로 만들어 호버 영역 확장 */
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.sidebar-list a:hover {
-  background-color: var(--sidebar-hover);
-  color: var(--link-hover);
-  transform: translateX(5px); /* 호버 시 약간 오른쪽으로 이동하는 효과 */
-}
-
-.current-side a {
-  color: var(--sidebar-active);
-  font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* 메인 콘텐츠 스타일 */
-.main-head {
-  color: var(--text-color);
-  font-weight: 700;
-}
-
-/* 상단 카테고리 네비게이션(상의, 아우터, 바지 등) 가독성 및 호버 효과 개선 */
-.category {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 12px 0;
-  border-radius: 4px;
-}
-
-.category li {
-  margin: 0; /* 기존 마진 초기화 */
-}
-
-.category a {
-  color: var(--text-color);
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: all 0.25s ease;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-}
-
-/* 호버 효과 강화 */
-.category a:hover {
-  color: var(--link-hover);
-  background-color: var(--sidebar-hover);
-  transform: translateY(-2px); /* 약간 위로 들어올리는 효과 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.current-category a {
-  color: var(--sidebar-active);
-  font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-}
-
-/* 버튼 스타일 */
-.btn {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-}
-
-.current-btn {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-}
-
-/* 상품 카드 호버 효과 개선 - 예쁜 회색 계열로 변경 */
-.product-container {
-  transition: all 0.3s ease;
-  overflow: hidden;
-  border-radius: 4px; /* 약간의 둥근 모서리 추가 */
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: var(--bg-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.product-container:hover {
-  background-color: var(--card-hover); /* 예쁜 회색 계열 호버 색상 사용 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* 약간의 그림자 효과 추가 */
-}
-
-.product-container figure img {
-  transition: transform 0.4s ease;
-}
-
-.product-container:hover figure img {
-  transform: scale(1.08);
-}
-
-.brand a {
-  color: var(--text-color);
-}
-
-.product-name a {
-  color: var(--text-color);
-}
-
-.product-container:hover .product-name a {
-  color: var(--link-hover);
-}
-
-.original-price {
-  color: var(--price-color);
-}
-
-.dc-rate {
-  color: var(--discount-color);
-}
-
-.current-price {
-  color: var(--price-color);
-  font-weight: 600; /* 다크모드에서 가격 가독성 높이기 */
-}
-
-.badge {
-  background-color: var(--badge-bg);
-  color: var(--text-color);
-}
-
-/* 좋아요 및 댓글 아이콘 색상 변경 */
-.like-btn svg path,
-.mention-btn svg path {
-  stroke: var(--icon-color);
-}
-
-/* 순위 박스 스타일 */
-.rank-box {
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-}
-
-/* 다크모드에서 추가 스타일 */
-@media (prefers-color-scheme: dark) {
-  /* 사이드바 호버 효과 강화 */
-  .sidebar-list a:hover {
-    background-color: var(--sidebar-hover);
-    color: #fff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #a0a0a0;
+    --border-color: #404040;
+    --black-black: #27272a;
+    --box-background: #66666a;
+    --box-text: #ffffff;
+    --card-hover-background: #27272a;
+    --link-hover-color: #5599ff;
+    --highlight-text: #ffffff;
+    --badge-background: #555555;
+    --badge-text: #ffffff;
+    --interaction-text: #b0b0b0;
   }
 
-  /* 카테고리 호버 효과 강화 */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  /* 사이드바 스타일 수정 */
+  aside .sidebar-list li {
+    color: var(--secondary-text-color);
+  }
+
+  /* 사이드바 호버 및 현재 선택 항목 */
+  aside .sidebar-list .current-side {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-list .current-side a {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-list li:hover {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-list li:hover a {
+    color: var(--highlight-text);
+  }
+
+  aside .sidebar-head {
+    color: var(--text-color);
+    border-bottom-color: var(--text-color);
+  }
+
+  /* 카테고리 스타일 수정 */
   .category {
-    background-color: rgba(40, 40, 40, 0.5);
+    color: var(--secondary-text-color);
+    border-color: var(--border-color);
   }
 
-  .category a {
-    border: 1px solid transparent; /* 초기 투명 테두리 */
+  .category li {
+    border-left-color: var(--border-color);
   }
 
-  .category a:hover {
-    background-color: #3a3a3a; /* 더 밝은 배경색 */
-    border: 1px solid #5a5a5a; /* 테두리 추가 */
-    color: #ffffff; /* 텍스트 색상 밝게 */
-    box-shadow:
-      0 4px 12px rgba(0, 0, 0, 0.2),
-      0 0 4px rgba(255, 255, 255, 0.1);
+  /* 카테고리 호버 및 현재 선택 항목 */
+  .category .current-category {
+    color: var(--highlight-text);
   }
 
-  /* 현재 선택된 카테고리 더 강조 */
-  .current-category a {
-    background-color: #4a4a4a;
-    border: 1px solid #6a6a6a;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  .category .current-category a {
+    color: var(--highlight-text);
   }
 
-  /* 호버 시 텍스트에 약간의 글로우 효과 추가 */
-  .category a:hover::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 70%
-    );
-    z-index: -1;
-    border-radius: 4px;
+  .category li:hover {
+    color: var(--highlight-text);
   }
 
-  /* 카드 호버 효과 미세 조정 */
-  .product-container:hover {
-    background-color: var(--card-hover);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border: 1px solid #3a3a3a; /* 호버 시 테두리 추가 */
+  .category li:hover a {
+    color: var(--highlight-text);
   }
 
-  /* 호버 시 상품명에 그라데이션 효과 추가 */
-  .product-container:hover .product-name a {
-    background: linear-gradient(90deg, var(--link-hover), #a0cfff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+  /* 버튼 스타일 수정 */
+  .buttons .btn {
+    background-color: var(--background-color);
+    color: var(--secondary-text-color);
+    border-color: var(--border-color);
   }
 
-  /* 순위 박스 배경색 조정 */
-  .rank-box {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--border-color);
+  .buttons .btn.current-btn {
+    background-color: var(--text-color);
+    color: var(--background-color);
   }
 
-  /* 순위 강조 */
-  .rank-box .rank {
-    color: #ffffff;
-    font-weight: 700;
+  .buttons .btn:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
   }
 
-  /* 사이드바와 카테고리 영역에 약간의 배경색 추가 */
-  .side-bar {
-    background-color: rgba(40, 40, 40, 0.5);
-    padding: 15px;
-    border-radius: 5px;
+  /* 랭크 박스 스타일 수정 */
+  .product-container .rank-box {
+    background-color: var(--box-background);
+    color: var(--box-text);
   }
 
-  /* 쿠폰 및 무료배송 배지 스타일 강화 */
-  .badge.coupon-badge,
-  .badge.free-badge,
-  .badge.new-badge {
-    color: #ffffff;
-    background-color: #444444;
+  /* 상품 정보 스타일 수정 */
+  .price .original-price {
+    color: var(--secondary-text-color);
+  }
+
+  .price .current-price {
+    color: var(--text-color);
+  }
+
+  /* 배지 스타일 수정 - 쿠폰 및 배송 뱃지 가시성 개선 */
+  .badge-group .badge {
+    background-color: var(--badge-background);
+    color: var(--badge-text);
     font-weight: 600;
   }
+
+  /* 쿠폰 뱃지 강조 */
+  .badge-group .coupon-badge {
+    background-color: #7a5fff;
+    color: white;
+  }
+
+  /* 무료배송 뱃지 강조 */
+  .badge-group .free-badge {
+    background-color: #ff5f8f;
+    color: white;
+  }
+
+  /* 인터랙션 스타일 수정 - 좋아요/후기 가시성 개선 */
+  .interactions {
+    color: var(--interaction-text);
+  }
+
+  /* SVG 아이콘 색상 수정 */
+  .interactions svg path {
+    stroke: var(--interaction-text);
+  }
+
+  /* 좋아요 카운트와 후기 카운트 가시성 향상 */
+  .like-count,
+  .mention-count {
+    color: var(--interaction-text);
+    font-weight: 500;
+  }
+
+  /* 상품 호버 효과 수정 */
+  .product-container:hover {
+    background-color: var(--card-hover-background);
+  }
+
+  .product-container:hover .product-name a {
+    color: var(--link-hover-color);
+  }
+
+  /* 호버 시 인터랙션 가시성 유지를 위한 코드 수정 */
+  .product-container:hover .interactions {
+    color: var(--interaction-text); /* 호버 시에도 원래 색상 유지 */
+  }
+
+  .product-container:hover .interactions svg path {
+    stroke: var(--interaction-text); /* 호버 시에도 원래 아이콘 색상 유지 */
+  }
+
+  .product-container:hover .like-count,
+  .product-container:hover .mention-count {
+    color: var(--interaction-text); /* 호버 시에도 원래 텍스트 색상 유지 */
+  }
+
+  /* 브랜드 및 상품명 */
+  .product-txt .brand a {
+    color: var(--text-color);
+  }
+
+  .product-txt .product-name a {
+    color: var(--text-color);
+  }
+
+  /* 순위 컨테이너 경계선 수정 */
+  .rank-container > :nth-child(1),
+  .rank-container > :nth-child(2),
+  .rank-container > :nth-child(3) {
+    border-bottom-color: var(--border-color);
+  }
+
+  @media (max-width: 1024px) {
+    .rank-container > :nth-child(1),
+    .rank-container > :nth-child(2) {
+      border-bottom-color: var(--border-color);
+    }
+  }
+>>>>>>> develop
 }
 .best-main {
   padding-inline: var(--spacing-50);
@@ -324,8 +234,12 @@ body {
   .side-bar {
     flex: 0 0 var(--spacing-200);
     position: sticky;
-    top: var(--spacing-40); /* 여기에 top 값을 추가 */
+    top: var(--spacing-265); /* 여기에 top 값을 추가 */
     height: 100vh;
+
+    @media (max-width: 1024px) {
+      top: var(--spacing-180);
+    }
 
     @media (max-width: 561px) {
       display: none;
@@ -374,7 +288,6 @@ body {
   color: #0066cc;
 }
 
-/* 이거 사용할지 말지 팀원들에게 물어보기 */
 .product-container {
   display: grid;
   grid-template-rows: subgrid;
