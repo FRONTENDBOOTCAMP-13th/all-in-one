@@ -198,6 +198,11 @@ a {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
 }
 
+/* 
+ * 다음 속성들은 스크롤바 제어를 위한 WebKit 전용 속성입니다.
+ * W3C 표준은 아니지만 대부분의 주요 브라우저에서 지원됩니다.
+ * 향후 표준으로 대체될 수 있으므로 주의가 필요합니다.
+ */
 .comp4-nav-tabs {
   display: flex;
   justify-content: flex-start;
