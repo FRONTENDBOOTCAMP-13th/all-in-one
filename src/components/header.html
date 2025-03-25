@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="/src/components/styles/header.css" />
   </head>
   <body>
-    <!-- 완성 헤더 수정 4차-->
+    <!-- 완성 헤더 수정 5차 - 링크 연결 -->
+    <!-- 자바스크립트 업데이트 1차 - 4차내용 업데이트된 상태  -->
     <!-- 페이지 별로 보더 바텀 주는 방법 공유하겠습니다. -->
     <aside class="banner-31cm-mobile" aria-label="31cm 모바일 배너">
       <a href="#" class="banner-item-wrap">
@@ -54,9 +55,9 @@
     <header class="header-31cm">
       <h1 class="sr-only">쇼핑몰 31cm</h1>
       <div class="header-31cm-inner">
-        <a href="#">
+        <a href="/src/pages/MainPage.html">
           <img
-            src="/src/assets/images/header-images/31cm_logo_high_res.webp"
+            src="/public/images/logo.webp"
             alt="31cm 쇼핑몰 메인으로 이동"
             class="logo"
             width="90"
@@ -64,7 +65,7 @@
           />
         </a>
         <nav class="header-nav-mobile" aria-label="모바일 헤더 네비게이션">
-          <a href="#" aria-label="장바구니">
+          <a href="/src/pages/LoginPage.html" aria-label="장바구니">
             <svg
               width="30"
               height="25"
@@ -97,7 +98,11 @@
         <nav class="header-inner-nav" aria-label="헤더 네비게이션">
           <ul>
             <li>
-              <a href="#" class="nav-item" aria-label="나의 페이지">
+              <a
+                href="/src/pages/LoginPage.html"
+                class="nav-item"
+                aria-label="나의 페이지"
+              >
                 <svg
                   width="18"
                   height="18"
@@ -117,7 +122,11 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-item item-heart" aria-label="나의 좋아요">
+              <a
+                href="/src/pages/LoginPage.html"
+                class="nav-item item-heart"
+                aria-label="나의 좋아요"
+              >
                 <svg
                   width="16"
                   height="14"
@@ -133,7 +142,11 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-item" aria-label="장바구니">
+              <a
+                href="/src/pages/LoginPage.html"
+                class="nav-item"
+                aria-label="장바구니"
+              >
                 <svg
                   width="14"
                   height="17"
@@ -149,7 +162,11 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-item" aria-label="로그인">
+              <a
+                href="/src/pages/LoginPage.html"
+                class="nav-item"
+                aria-label="로그인"
+              >
                 <svg
                   width="13"
                   height="16"
@@ -185,10 +202,22 @@
       </div>
       <nav class="header-page-nav" aria-label="페이지 메뉴">
         <ul>
-          <li><a href="#" class="current-page-so">Special-Order</a></li>
-          <li><a href="#" class="current-page-sc">Showcase</a></li>
-          <li><a href="#" class="current-page-pt">PT</a></li>
-          <li><a href="#" class="current-page-29">29Magazine</a></li>
+          <li>
+            <a href="/src/pages/SpecialOrder.html" class="current-page-so"
+              >Special-Order</a
+            >
+          </li>
+          <li>
+            <a href="/src/pages/ShowCase.html" class="current-page-sc"
+              >Showcase</a
+            >
+          </li>
+          <li><a href="/src/pages/PT.html" class="current-page-pt">PT</a></li>
+          <li>
+            <a href="/src/pages/Magazine.html" class="current-page-29"
+              >29Magazine</a
+            >
+          </li>
         </ul>
         <a href="#" aria-label="검색">
           <svg
@@ -207,7 +236,9 @@
       <nav class="header-main-menu-nav" aria-label="주 메뉴">
         <ul class="header-main-menu">
           <li class="top-menu">
-            <a href="#" class="main-menu">BEST</a>
+            <a href="/src/pages/Best.html" class="main-menu current-page-best"
+              >BEST</a
+            >
           </li>
           <li class="top-menu">
             <a href="#" class="main-menu">WOMEN</a>
@@ -602,8 +633,6 @@
       </nav>
     </header>
 
-    <!-- 4차하면서 못한 거 아래 컴포넌트 수정 -->
-
     <!-- 컴포넌트  -->
     <div class="padding-222">컴포넌트</div>
 
@@ -612,7 +641,7 @@
       <legend>로고</legend>
       <a href="#">
         <img
-          src="/src/assets/images/header-images/31cm_logo_high_res.webp"
+          src="/src/assets/images/header-images/logo.webp"
           alt="31cm 쇼핑몰 메인으로 이동"
           class="logo"
           width="90"
@@ -742,8 +771,48 @@
       </div>
     </fieldset>
 
-    <!-- 헤더 : 상단 -->
+    <!-- 모바일배너 -->
     <fieldset>
+      <legend>모바일 배너</legend>
+      <aside class="banner-31cm-mobile">
+        <a href="#" class="banner-item-wrap">
+          <svg
+            width="28px"
+            height="28px"
+            viewBox="0 0 28 28"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="28"
+              height="28"
+              fill="black"
+              rx="8"
+              ry="8"
+              stroke="white"
+              stroke-width="0.3"
+            />
+
+            <text
+              x="50%"
+              y="55%"
+              fill="white"
+              font-size="16px"
+              font-family="PretendardVariable"
+              font-weight="400"
+              text-anchor="middle"
+              alignment-baseline="middle"
+            >
+              31
+            </text>
+          </svg>
+          <p>31cm 앱 설치하고 <span>15%</span> 할인 받기</p>
+        </a>
+        <a href="#" class="banner-item-button">앱으로 보기</a>
+      </aside>
+    </fieldset>
+
+    <!-- 헤더 : 상단 -->
+    <fieldset class="header-31cm-inner">
       <legend>이너 네비</legend>
       <nav class="header-nav-mobile" aria-label="모바일 헤더 네비게이션">
         <a href="#" aria-label="장바구니">
@@ -867,37 +936,53 @@
     </fieldset>
 
     <!-- 헤더 : 페이지 메뉴 -->
-    <fieldset>
+    <fieldset class="header-31cm">
       <legend>페이지 메뉴</legend>
-      <nav class="header-page-nav-comp" aria-label="페이지 메뉴">
-        <ul>
-          <li><a href="#" class="current-page-so">Special-Order</a></li>
-          <li><a href="#" class="current-page-sc">Showcase</a></li>
-          <li><a href="#" class="current-page-pt">PT</a></li>
-          <li><a href="#" class="current-page-29">29Magazine</a></li>
-        </ul>
-        <a href="#" aria-label="검색">
-          <svg
-            width="35"
-            height="35"
-            viewBox="0 0 35 35"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M15.983 4.25001C9.50287 4.25001 4.24967 9.50321 4.24967 15.9833C4.24967 22.4634 9.50287 27.7167 15.983 27.7167C19.2163 27.7167 22.141 26.4113 24.2651 24.2946C26.3991 22.1681 27.7163 19.2313 27.7163 15.9833C27.7163 9.50321 22.4631 4.25001 15.983 4.25001ZM0.583008 15.9833C0.583008 7.47816 7.47783 0.583344 15.983 0.583344C24.4882 0.583344 31.383 7.47816 31.383 15.9833C31.383 19.5818 30.147 22.8941 28.0792 25.5154L34.8766 32.2842L32.2894 34.8824L25.483 28.1046C22.8668 30.1574 19.5668 31.3833 15.983 31.3833C7.47783 31.3833 0.583008 24.4885 0.583008 15.9833Z"
-            />
-          </svg>
-        </a>
-      </nav>
+      <div>
+        <nav class="header-page-nav" aria-label="페이지 메뉴">
+          <ul>
+            <li>
+              <a href="/src/pages/SpecialOrder.html" class="current-page-so"
+                >Special-Order</a
+              >
+            </li>
+            <li>
+              <a href="/src/pages/ShowCase.html" class="current-page-sc"
+                >Showcase</a
+              >
+            </li>
+            <li><a href="/src/pages/PT.html" class="current-page-pt">PT</a></li>
+            <li>
+              <a href="/src/pages/Magazine.html" class="current-page-29"
+                >29Magazine</a
+              >
+            </li>
+          </ul>
+          <a href="#" aria-label="검색">
+            <svg
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M15.983 4.25001C9.50287 4.25001 4.24967 9.50321 4.24967 15.9833C4.24967 22.4634 9.50287 27.7167 15.983 27.7167C19.2163 27.7167 22.141 26.4113 24.2651 24.2946C26.3991 22.1681 27.7163 19.2313 27.7163 15.9833C27.7163 9.50321 22.4631 4.25001 15.983 4.25001ZM0.583008 15.9833C0.583008 7.47816 7.47783 0.583344 15.983 0.583344C24.4882 0.583344 31.383 7.47816 31.383 15.9833C31.383 19.5818 30.147 22.8941 28.0792 25.5154L34.8766 32.2842L32.2894 34.8824L25.483 28.1046C22.8668 30.1574 19.5668 31.3833 15.983 31.3833C7.47783 31.3833 0.583008 24.4885 0.583008 15.9833Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
     </fieldset>
     <!-- 헤더 : 주 메뉴 -->
-    <fieldset>
+    <fieldset class="header-31cm">
       <legend>주 메뉴</legend>
-      <nav class="nav-container-2" aria-label="주 메뉴">
-        <ul class="main-header">
+      <nav class="header-main-menu-nav" aria-label="주 메뉴">
+        <ul class="header-main-menu">
           <li class="top-menu">
-            <a href="#" class="main-menu">BEST</a>
+            <a href="/src/pages/Best.html" class="main-menu current-page-best"
+              >BEST</a
+            >
           </li>
           <li class="top-menu">
             <a href="#" class="main-menu">WOMEN</a>
@@ -924,7 +1009,9 @@
                   <a href="#">가방</a>
                 </li>
                 <li class="drop-down-menu"><a href="#">기타가방</a></li>
-                <li class="drop-down-menu"><a href="#">캐리어,여행가방</a></li>
+                <li class="drop-down-menu">
+                  <a href="#">캐리어,여행가방</a>
+                </li>
                 <li class="drop-down-menu"><a href="#">보스틴백</a></li>
                 <li class="drop-down-menu"><a href="#">웨이스트백</a></li>
                 <li class="drop-down-menu"><a href="#">숄더백</a></li>
@@ -969,7 +1056,9 @@
                 <li class="drop-down-menu"><a href="#">주얼리</a></li>
                 <li class="drop-down-menu"><a href="#">모자</a></li>
                 <li class="drop-down-menu"><a href="#">시계</a></li>
-                <li class="drop-down-menu"><a href="#">지갑,카드케이스</a></li>
+                <li class="drop-down-menu">
+                  <a href="#">지갑,카드케이스</a>
+                </li>
                 <li class="drop-down-menu"><a href="#">아이웨어</a></li>
                 <li class="drop-down-menu"><a href="#">벨트</a></li>
                 <li class="drop-down-menu"><a href="#">양말</a></li>
@@ -1004,7 +1093,9 @@
                   <a href="#">가방</a>
                 </li>
                 <li class="drop-down-menu"><a href="#">EXCLUSIVE</a></li>
-                <li class="drop-down-menu"><a href="#">캐리어,여행가방</a></li>
+                <li class="drop-down-menu">
+                  <a href="#">캐리어,여행가방</a>
+                </li>
                 <li class="drop-down-menu"><a href="#">보스턴백</a></li>
                 <li class="drop-down-menu"><a href="#">해외브랜드</a></li>
                 <li class="drop-down-menu"><a href="#">크로스백</a></li>
@@ -1042,7 +1133,9 @@
                   <a href="#">액세서리</a>
                 </li>
                 <li class="drop-down-menu"><a href="#">EXCLUSIVE</a></li>
-                <li class="drop-down-menu"><a href="#">지갑,카드케이스</a></li>
+                <li class="drop-down-menu">
+                  <a href="#">지갑,카드케이스</a>
+                </li>
                 <li class="drop-down-menu"><a href="#">해외브랜드</a></li>
                 <li class="drop-down-menu"><a href="#">모자</a></li>
                 <li class="drop-down-menu"><a href="#">시계</a></li>
@@ -1146,8 +1239,12 @@
                   <a href="#">컴퓨터,디지털</a>
                 </li>
                 <li class="drop-down-menu"><a href="#">음향기기</a></li>
-                <li class="drop-down-menu"><a href="#">모바일,웨어러블</a></li>
-                <li class="drop-down-menu"><a href="#">모바일 엑세서리</a></li>
+                <li class="drop-down-menu">
+                  <a href="#">모바일,웨어러블</a>
+                </li>
+                <li class="drop-down-menu">
+                  <a href="#">모바일 엑세서리</a>
+                </li>
                 <li class="drop-down-menu"><a href="#">PC,노트북</a></li>
                 <li class="drop-down-menu"><a href="#">게임</a></li>
                 <li class="drop-down-menu"><a href="#">사진</a></li>
@@ -1175,7 +1272,9 @@
                 <li class="drop-down-menu"><a href="#">메이크업</a></li>
                 <li class="drop-down-menu"><a href="#">헤어케어</a></li>
                 <li class="drop-down-menu"><a href="#">바디케어</a></li>
-                <li class="drop-down-menu"><a href="#">네일,디자인타투</a></li>
+                <li class="drop-down-menu">
+                  <a href="#">네일,디자인타투</a>
+                </li>
                 <li class="drop-down-menu"><a href="#">프레그런스</a></li>
                 <li class="drop-down-menu"><a href="#">여성용품</a></li>
                 <li class="drop-down-menu"><a href="#">뷰티소품/기기</a></li>
@@ -1236,7 +1335,9 @@
                 <li class="drop-down-menu"><a href="#">베이비</a></li>
                 <li class="drop-down-menu"><a href="#">유아식,분유</a></li>
                 <li class="drop-down-menu"><a href="#">외출 용품</a></li>
-                <li class="drop-down-menu"><a href="#">임산부,태교용품</a></li>
+                <li class="drop-down-menu">
+                  <a href="#">임산부,태교용품</a>
+                </li>
                 <li class="drop-down-menu"><a href="#">유아 용품</a></li>
                 <li class="drop-down-menu"><a href="#">수유 용품</a></li>
                 <li class="drop-down-menu"><a href="#">남아 의류</a></li>
@@ -1266,9 +1367,8 @@
               </ul>
             </div>
           </li>
-          <li class="dif"></li>
           <li class="top-menu-slim">
-            <a href="#">Event</a>
+            <a class="top-menu-border" href="#">Event</a>
           </li>
           <li class="top-menu-slim">
             <a href="">Lookbook</a>

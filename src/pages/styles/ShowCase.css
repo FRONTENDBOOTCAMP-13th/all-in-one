@@ -1,5 +1,145 @@
 @import '/src/components/styles/showCaseComponent.css';
+/* 라이트 모드(기본) 변수 */
+:root {
+  /* 기존 색상 유지 */
+  --real-black: rgb(0, 0, 0);
+  --real-white: #fff;
+  --pretty-white: #f4f4f4;
 
+  /* 시맨틱 색상 변수(테마 전환용) */
+  --bg-main: var(--real-white);
+  --bg-secondary: var(--pretty-white);
+  --text-primary: var(--real-black);
+  --text-secondary: #555555;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --time-text: var(--real-black);
+  --accent-color: #ff3b30;
+}
+
+/* 다크 모드 변수와 스타일 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --card-shadow: rgba(255, 255, 255, 0.1);
+    --time-text: #ffffff;
+    --accent-color: #ff6b6b;
+  }
+
+  /* 기본 요소 스타일 */
+  html {
+    background-color: var(--bg-main);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+
+  /* 래퍼 및 메인 컨테이너 스타일 */
+  .wrapper,
+  .wrapper main {
+    background-color: var(--bg-main);
+  }
+
+  /* 헤드 컨테이너 - 선택자 우선순위 높이기 */
+  html body .wrapper main .head-container {
+    background-color: var(--bg-main);
+  }
+
+  /* 헤드 컨테이너 내 모든 텍스트 요소 */
+  html body .wrapper main .head-container .card-container .card-text .head {
+    color: var(--text-primary);
+  }
+
+  html body .wrapper main .head-container .card-container .card-text .event {
+    color: var(--text-secondary);
+  }
+
+  html
+    body
+    .wrapper
+    main
+    .head-container
+    .card-container
+    .card-text
+    .time-frame {
+    color: var(--time-text);
+  }
+
+  /* 본문 컨테이너 */
+  html body .wrapper main .body-container {
+    background-color: var(--bg-secondary);
+  }
+
+  @media (max-width: 541px) {
+    html body .wrapper main .body-container {
+      background-color: var(--bg-main);
+    }
+  }
+
+  /* 본문 카드 텍스트 */
+  .body-container .card-container .card-text .head {
+    color: var(--text-primary);
+  }
+
+  .body-container .card-container .card-text .event {
+    color: var(--text-secondary);
+  }
+
+  .body-container .card-container .card-text .time-frame {
+    color: var(--time-text);
+  }
+
+  /* D-day 뱃지 색상 수정 */
+  .d-day-badge {
+    color: var(--accent-color);
+  }
+
+  /* 카드 호버 효과 */
+  .card-container:hover {
+    box-shadow: 0 10px 15px var(--card-shadow);
+  }
+
+  /* 이미지 밝기 조정 */
+  .card img {
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+  }
+
+  .card-container:hover img {
+    filter: brightness(1);
+  }
+
+  /* END 표시 강조 */
+  .time-frame span:not(.sr-only):not(.d-day-badge) {
+    color: var(--accent-color);
+    font-weight: 700;
+  }
+
+  /* 추가: head-container 내부 모든 텍스트 요소 선택 */
+  .head-container * {
+    color: var(--text-primary);
+  }
+
+  /* 명시적으로 상단 카드의 글자색 지정 */
+  .head-container li:nth-child(1) .head,
+  .head-container li:nth-child(2) .head {
+    color: var(--text-primary);
+  }
+
+  .head-container li:nth-child(1) .event,
+  .head-container li:nth-child(2) .event {
+    color: var(--text-secondary);
+  }
+
+  .head-container li:nth-child(1) .time-frame,
+  .head-container li:nth-child(2) .time-frame {
+    color: var(--time-text);
+  }
+}
 /* 본문의 내용이 두줄이상 넘어가면 말줄임표로 처리 */
 /* 말줄임표가 발생한 것들은 마우스를 올리면 전체 내용들 볼수 있도록 html파일에서 title태그로 툴팁처리 하였습니다. */
 .head,
@@ -17,4 +157,14 @@
 
 .body-container {
   padding-block-end: var(--spacing-40);
+}
+
+header-component::part(current-page-sc) {
+  border-bottom: 5px solid var(--color-blackbase);
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-sc) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
 }
