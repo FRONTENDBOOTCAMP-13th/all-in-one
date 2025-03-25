@@ -45,11 +45,7 @@
 
 - **03.14 - 03.16**: 프로젝트 셋업
 - **03.17 - 03.23**: 페이지 마크업 및 스타일링
-- **03.24 - 03.25**: 최
-
-## 📷 프로젝트 이미지
-
-///// 완성된 이후 주요 이미지(혹은 gif) 추가 예정 \***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***
+- **03.24 - 03.25**: 최종 디버깅 및 배포
 
 ## 🎨 주요 구현 사항
 
@@ -72,27 +68,28 @@
 - 반응형 보완
 - 버튼 및 링크 태그에 hover 효과 추가
 
-## 🛠️ 설치 및 실행 방법
+## 📷 프로젝트 이미지
+### 주요 포인트
+#### 1. 반응형 구현
+<img src="https://github.com/user-attachments/assets/cbbbb289-aa22-4a7d-9108-eaf1f3741a4a" width="60%">
+<img src="https://github.com/user-attachments/assets/e933dab5-1981-4200-868c-b9e7d3d8846e" width="60%">
 
-```bash
-# 프로젝트 클론
-git clone https://github.com/FRONTENDBOOTCAMP-13th/all-in-one.git
-```
 
-```bash
-# 프로젝트 폴더로 이동
-cd your-repo
-```
+#### 2. 다크 모드 지원
+<img src="https://github.com/user-attachments/assets/7435e37b-558b-4a51-b28f-5a89d76ff576" width="60%">
 
-```bash
-# 패키지 설치
-npm install
-```
+#### 3. 탭 키로 모든 페이지 이동 가능
+<img src="https://github.com/user-attachments/assets/57ff3b19-b260-4794-87c8-83cecb078013" width="60%">
+<img src="https://github.com/user-attachments/assets/49ec0937-98d6-4d09-9da1-438eab256254" width="60%">
 
-```bash
-# 개발 서버 실행
-npm run dev
-```
+
+#### 4. 버튼 및 링크에 마우스 오버(hover) 효과 적용
+<img src="https://github.com/user-attachments/assets/242a4551-9174-478a-a41c-1dcacb9f1e60" width="60%">
+
+
+#### 5. 모달 창을 활용한 정보 전달
+<img src="https://github.com/user-attachments/assets/b8a782fa-14da-4b6d-85cf-e871c9709530" width="60%">
+
 
 ## 🍀 팀 소개
 
@@ -110,41 +107,15 @@ npm run dev
 | **박시운** | 29Magazine, 29Magazine-Details 페이지 및 Footer 컴포넌트 구현 |
 | **정원식** | PT, Special-Order 페이지 및 Header 컴포넌트 구현              |
 | **장아영** | MainPage, 29-Welcoming-Wednesday, Brand-News 페이지 구현      |
-=======
-- **03.14 - 03.16**: 프로젝트 셋업
-- **03.17 - 03.23**: 페이지 마크업 및 스타일링
-- **03.24 - 03.25**: 최종 디버깅 및 배포
 
-## 📷 프로젝트 이미지
 
-///// 완성된 이후 주요 이미지(혹은 gif) 추가 예정 \***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***
 
-## 🎨 주요 구현 사항
-
-### 1. 반응형 웹 디자인
-
-- 모바일, 태블릿, 데스크톱 환경에서 최적화된 UI 제공
-- `@media` 쿼리를 활용한 유연한 레이아웃 설계
-
-### 2. Light/Dark 모드 디자인
-
-- 사용자 환경에 따라 밝은 모드와 어두운 모드 자동 적용
-- prefers-color-scheme 미디어 쿼리를 활용한 테마 전환
-
-### 3. 원본 사이트와의 차이점
-
-- 다크 모드 지원
-- 시맨틱 태그 사용
-- header nav의 tab 접근성 개선
-- 텍스트 및 그리드 정렬 개선
-- header, footer 반응형 보완
-- 버튼 및 링크 태그에 hover 효과 추가
 
 ## 🛠️ 설치 및 실행 방법
 
 ```bash
 # 프로젝트 클론
-git clone https://github.com/your-repo.git
+git clone https://github.com/FRONTENDBOOTCAMP-13th/all-in-one.git
 ```
 
 ```bash
