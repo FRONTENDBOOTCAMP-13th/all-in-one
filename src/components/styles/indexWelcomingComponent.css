@@ -75,31 +75,6 @@ body {
 .product-img-wrap {
   position: relative;
   width: fit-content;
-
-  .like-btn {
-    position: absolute;
-    display: block;
-    top: var(--spacing-5);
-    right: var(--spacing-5);
-    width: 11%;
-
-    img {
-      width: 100%;
-    }
-  }
-}
-
-/* 메인 포스터 컴포넌트 ************* */
-.main-poster {
-  position: relative;
-
-  .title-texts-wrap {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-  }
 }
 
 /* 메인 포스터 꾸밈요소 컴포넌트************ */
@@ -427,6 +402,19 @@ body {
   flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */
   width: 100%;
   transition: all 0.5s;
+  position: relative;
+
+  .like-btn {
+    position: absolute;
+    display: block;
+    top: var(--spacing-5);
+    right: var(--spacing-5);
+    width: 11%;
+
+    img {
+      width: 100%;
+    }
+  }
 
   .brand {
     font-size: var(--text-12);
