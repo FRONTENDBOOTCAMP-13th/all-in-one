@@ -16,8 +16,13 @@
     sans-serif;
 }
 
+/* 전체 페이지 스크롤바 제거 */
+html,
 body {
-  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 전체 페이지 스크롤바 제거 */
 }
 
 a {
@@ -25,9 +30,12 @@ a {
   color: inherit;
 }
 
+/* main-container 스크롤바 제거 */
 .main-container {
   margin: 0 auto;
   background-color: #fff;
+  height: 100%;
+  overflow: hidden; /* 메인 컨테이너 스크롤바 제거 */
 }
 
 /* Hero Section */
@@ -51,6 +59,10 @@ a {
   overflow-y: auto; /* 개별 배너 스크롤 활성화 */
   overflow-x: hidden; /* 가로 스크롤 방지 */
   overscroll-behavior: contain; /* 부모 스크롤로 전달 방지 */
+
+  /* WebKit 기반 브라우저용 스크롤바 스타일링 */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Firefox */
 }
 
 .hero-part {
@@ -176,6 +188,33 @@ a {
   position: relative; /* 컨테이너에 position 설정*/
   overflow-y: auto; /* 개별 배너 스크롤 활성화 */
   overscroll-behavior: contain; /* 부모 스크롤로 전달 방지 */
+
+  /* WebKit 기반 브라우저용 스크롤바 스타일링 */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Firefox */
+}
+
+/* WebKit 기반 브라우저(Chrome, Safari 등)용 스크롤바 스타일링 */
+.hero-banner::-webkit-scrollbar,
+.right-banner::-webkit-scrollbar {
+  width: 6px; /* 스크롤바 너비 */
+}
+
+.hero-banner::-webkit-scrollbar-track,
+.right-banner::-webkit-scrollbar-track {
+  background: transparent; /* 스크롤바 트랙 배경색 */
+}
+
+.hero-banner::-webkit-scrollbar-thumb,
+.right-banner::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* 스크롤바 색상 */
+  border-radius: 3px; /* 스크롤바 모서리 둥글게 */
+}
+
+/* 호버 시 스크롤바 스타일 변경 */
+.hero-banner::-webkit-scrollbar-thumb:hover,
+.right-banner::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4); /* 호버 시 더 진한 색상 */
 }
 
 .product-grid {
@@ -198,6 +237,11 @@ a {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
 }
 
+/* 
+ * 다음 속성들은 스크롤바 제어를 위한 WebKit 전용 속성입니다.
+ * W3C 표준은 아니지만 대부분의 주요 브라우저에서 지원됩니다.
+ * 향후 표준으로 대체될 수 있으므로 주의가 필요합니다.
+ */
 .comp4-nav-tabs {
   display: flex;
   justify-content: flex-start;
@@ -245,6 +289,15 @@ a {
   background-color: #fff;
 
   position: relative;
+  /* 이미지 밝기 조정 - 호버가 없는 부분도 시각적으로 마우스 위치를 알 수 있게 */
+  img {
+    filter: brightness(1);
+    transition: filter 0.3s ease;
+  }
+
+  img:hover {
+    filter: brightness(0.85);
+  }
 }
 
 .comp1-product-image {
@@ -302,6 +355,12 @@ a {
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    height: auto;
+    overflow: auto; /* 모바일에서는 전체 스크롤 허용 */
+  }
+
   .hero-section {
     flex-direction: column;
     height: auto;
