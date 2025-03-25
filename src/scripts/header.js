@@ -807,7 +807,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">MEN</a>
+            <a href="#" class="main-menu">MEN</a>
             <div class="sub-menu">
               <ul>
                 <li class="drop-down-menu size-up" aria-label="의류 전체보기">
@@ -888,7 +888,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">INTERIOR</a>
+            <a href="#" class="main-menu">INTERIOR</a>
             <div class="sub-menu">
               <ul>
                 <li
@@ -915,7 +915,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">KITCHEN</a>
+            <a href="#" class="main-menu">KITCHEN</a>
             <div class="sub-menu">
               <ul>
                 <li
@@ -946,7 +946,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">ELECTRONICS</a>
+            <a href="#" class="main-menu">ELECTRONICS</a>
             <div class="sub-menu">
               <ul>
                 <li class="drop-down-menu size-up" aria-label="가전 전체보기">
@@ -965,7 +965,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">DIGITAL</a>
+            <a href="#" class="main-menu">DIGITAL</a>
             <div class="sub-menu">
               <ul>
                 <li
@@ -992,7 +992,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">BEAUTY</a>
+            <a href="#" class="main-menu">BEAUTY</a>
             <div class="sub-menu">
               <ul>
                 <li
@@ -1022,7 +1022,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">FOOD</a>
+            <a href="#" class="main-menu">FOOD</a>
             <div class="sub-menu">
               <ul>
                 <li class="drop-down-menu size-up" aria-label="푸드 전체보기">
@@ -1037,7 +1037,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">LEISURE</a>
+            <a href="#" class="main-menu">LEISURE</a>
             <div class="sub-menu">
               <ul>
                 <li
@@ -1059,7 +1059,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">KIDS</a>
+            <a href="#" class="main-menu">KIDS</a>
             <div class="sub-menu">
               <ul>
                 <li
@@ -1093,7 +1093,7 @@ a {
             </div>
           </li>
           <li class="top-menu">
-            <a href="/" class="main-menu">CULTURE</a>
+            <a href="#" class="main-menu">CULTURE</a>
             <div class="sub-menu">
               <ul>
                 <li class="drop-down-menu size-up" aria-label="컬쳐 전체보기">
@@ -1107,7 +1107,7 @@ a {
             <a class="top-menu-border" href="#">Event</a>
           </li>
           <li class="top-menu-slim">
-            <a href="">Lookbook</a>
+            <a href="#">Lookbook</a>
           </li>
         </ul>
       </nav>
