@@ -11,7 +11,7 @@ section {
   align-items: center;
   background: #f4f4f4;
   padding-inline: var(--brand-inline-padding);
-  padding-block: 4.375rem;
+  padding-block: var(--spacing-72);
 
   @media (min-width: 541px) {
     padding-inline: var(--brand-inline-padding-desk);
@@ -19,7 +19,7 @@ section {
 
   .mini-ad-wrap {
     width: 100%;
-    padding-bottom: 2.5rem;
+    padding-bottom: var(--spacing-40);
   }
 
   .coupon-btn-wrap {
@@ -29,39 +29,39 @@ section {
 }
 
 .brand-sec {
-  padding-bottom: 60px;
+  padding-bottom: var(--spacing-60);
 
   @media (min-width: 541px) {
     padding-bottom: 80px;
   }
 
   .title-category {
-    padding-top: 60px;
+    padding-top: var(--spacing-60);
     width: 100%;
-    font-size: 60px;
+    font-size: var(--text-60);
     text-align: center;
 
     @media (min-width: 541px) {
-      font-size: 80px;
-      padding-top: 80px;
+      font-size: var(--text-80);
+      padding-top: var(--text-80);
     }
   }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: #000;
-    color: #fff;
+    background: var(--background-color);
+    color: var(--badge-text);
   }
   .coupon-sec {
-    background: #27272a;
-    color: #27272a;
+    background: var(--black-black);
+    color: var(--black-black);
 
     .mini-ad-card {
-      background: #66666a;
+      background: var(--box-background);
     }
     .round {
-      background: #27272a;
+      background: var(--black-black);
     }
   }
 }

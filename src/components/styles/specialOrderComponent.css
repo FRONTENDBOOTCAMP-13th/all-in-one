@@ -1,5 +1,29 @@
 @import '/src/common/best-reset.css';
 @import '/src/common/theme.css';
+@media (prefers-color-scheme: dark) {
+  /* 페이지 기본 배경 및 텍스트 */
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  a {
+    color: #e0e0e0;
+  }
+
+  /* item-introduce 및 텍스트 */
+  .item-introduce,
+  .item-introduce h3 {
+    color: #e0e0e0;
+  }
+
+  /* figcaption 내 텍스트들 */
+  figcaption,
+  figcaption .item-title,
+  figcaption .item-description,
+  figcaption .item-period {
+    color: #e0e0e0;
+  }
+}
 
 ul,
 li {

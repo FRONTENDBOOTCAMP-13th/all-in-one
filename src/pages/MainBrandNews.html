@@ -12,8 +12,10 @@
     />
     <link rel="stylesheet" href="/public/font/pretendardvariable.css" />
     <link rel="stylesheet" href="/src/pages/styles/MainBrandNews.css" />
+    <script type="module" src="/src/main.js"></script>
   </head>
   <body>
+    <header-component></header-component>
     <main>
       <section class="brand-news-sec">
         <div class="brand-news-card">
@@ -65,7 +67,12 @@
             <p class="description">
               호와스의 두번째 스프링 컬렉션을 만나 보세요.
             </p>
-            <p class="period">3. 20. Thu - 3. 26. Wed</p>
+            <p class="period" aria-hidden="true">
+              <span class="sr-only"
+                >3월 20일 화요일부터 3월 26일 수요일까지</span
+              >
+              3. 20. Thu - 3. 26. Wed
+            </p>
           </div>
 
           <img
@@ -630,5 +637,28 @@
         </div>
       </section>
     </main>
+
+    <footer-component>
+      <img
+        slot="instagram-icon"
+        src="/src/assets/images/footer-images/Link.svg"
+        alt="Instagram"
+      />
+      <img
+        slot="youtube-icon"
+        src="/src/assets/images/footer-images/Link-1.svg"
+        alt="YouTube"
+      />
+      <img
+        slot="apple-icon"
+        src="/src/assets/images/footer-images/Link-2.svg"
+        alt="Apple"
+      />
+      <img
+        slot="google-play-icon"
+        src="/src/assets/images/footer-images/Link-3.svg"
+        alt="Google Play"
+      />
+    </footer-component>
   </body>
 </html>

@@ -19,36 +19,36 @@
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: #000;
-    color: #fff;
+    background: var(--background-color);
+    color: var(--box-text);
   }
   .brand-news-sec {
-    background: #27272a;
+    background: var(--black-black);
 
     .sec-header {
       .brand-sale {
-        border-color: #ffffff;
+        border-color: var(--box-text);
       }
       .bar {
-        color: #fff;
+        color: var(--box-text);
       }
     }
 
     .brand-home-a {
-      border-color: #fff;
+      border-color: var(--box-text);
       path {
-        stroke: #fff;
+        stroke: var(--box-text);
       }
     }
     .brand-home-a:hover {
-      background: #fff;
+      background: var(--box-text);
 
       span {
-        color: #000;
+        color: var(--background-color);
       }
 
       path {
-        stroke: #000;
+        stroke: var(--background-color);
       }
     }
   }

@@ -428,3 +428,13 @@ a {
     }
   }
 }
+
+header-component::part(current-page-29) {
+  border-bottom: 5px solid var(--color-blackbase);
+}
+
+@media (prefers-color-scheme: dark) {
+  header-component::part(current-page-29) {
+    border-bottom: 5px solid var(--color-whitebase);
+  }
+}
