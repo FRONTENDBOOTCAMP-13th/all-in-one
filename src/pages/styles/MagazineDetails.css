@@ -289,6 +289,15 @@ a {
   background-color: #fff;
 
   position: relative;
+  /* 이미지 밝기 조정 - 호버가 없는 부분도 시각적으로 마우스 위치를 알 수 있게 */
+  img {
+    filter: brightness(1);
+    transition: filter 0.3s ease;
+  }
+
+  img:hover {
+    filter: brightness(0.85);
+  }
 }
 
 .comp1-product-image {
