@@ -2,6 +2,23 @@
 @import '/src/common/a11y.css';
 @import '/src/common/best-reset.css';
 
+:root {
+  /* 라이트 모드 기본 변수 */
+  --background-color: #ffffff;
+  --text-color: #333;
+  --secondary-text-color: #666;
+  --border-color: #d4d4d4;
+  --black-black: #000000;
+  --box-background: #f5f5f5;
+  --box-text: #333333;
+  --card-hover-background: #f9f9f9;
+  --link-hover-color: #0066cc;
+  --highlight-text: #000000;
+  --badge-background: #eeeeee;
+  --badge-text: #333333;
+  --interaction-text: #555555;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -78,6 +95,16 @@ header {
   flex-direction: column;
   width: 100%;
   height: auto;
+
+  /* 이미지 밝기 조정 - 호버가 없는 부분도 시각적으로 마우스 위치를 알 수 있게 */
+  img {
+    filter: brightness(1);
+    transition: filter 0.3s ease;
+  }
+
+  img:hover {
+    filter: brightness(0.85);
+  }
 }
 
 .featured-item img {
@@ -149,7 +176,6 @@ a {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
   transition: transform 0.3s;
 }
 
@@ -196,13 +222,18 @@ a {
   padding: 15px 0;
 }
 
+/* 
+ * 다음 속성들은 텍스트 줄 제한을 위한 WebKit 전용 속성입니다.
+ * W3C 표준은 아니지만 대부분의 주요 브라우저에서 지원됩니다.
+ * 향후 표준으로 대체될 수 있으므로 주의가 필요합니다.
+ */
 .caption p {
   display: -webkit-box;
   -webkit-line-clamp: 3; /* 최대 3줄 */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  word-break: break-word;
+  deprecated: break-word; /* word-break에서 deprecated - 'overflow-wrap: break-word'로 변경 권장 */
   line-height: 1.6;
   max-height: calc(1.6em * 3); /* 줄 간격 * 3줄 */
 }
@@ -428,23 +459,13 @@ a {
       border-bottom: 1px solid var(--border-color);
     }
   }
-
-  /* 이미지 밝기 조정 - 다크모드에서 이미지가 너무 밝게 보이지 않도록 */
-  img {
-    filter: brightness(0.85);
-    transition: filter 0.3s ease;
-  }
-
-  img:hover {
-    filter: brightness(1);
-  }
-
-  /* 링크 효과 */
-  a:hover {
-    color: var(--link-hover-color);
-  }
 }
 
+/* 
+ * 헤더 컴포넌트의 Shadow DOM 부분 스타일링
+ * 이 부분은 웹 컴포넌트의 일부분을 외부에서 스타일링하기 위한 ::part() 선택자를 사용합니다.
+ * 모든 브라우저에서 지원되지 않을 수 있으므로 폴백 스타일을 고려해야 합니다.
+ */
 header-component::part(current-page-29) {
   border-bottom: 5px solid var(--color-blackbase);
 }

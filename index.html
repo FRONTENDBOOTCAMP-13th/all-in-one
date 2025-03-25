@@ -310,7 +310,7 @@
         font-size: 1.1rem;
         color: var(--medium-gray);
         max-width: 700px;
-        margin: 0 auto 30px;
+        margin: 70px auto 30px;
         text-align: center;
       }
 
@@ -455,6 +455,18 @@
       footer {
         padding: 50px;
       }
+      .current-page-introduce,
+      .current-page-page,
+      .current-page-component,
+      .current-page-struc {
+        border-bottom: 1px solid red;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .current-page-struc {
+          border-bottom: 5px solid var(--color-whitebase);
+        }
+      }
 
       /* 다크 모드 지원 */
       @media (prefers-color-scheme: dark) {
@@ -507,14 +519,14 @@
           .current-page-introduce,
           .current-page-page,
           .current-page-component,
-          .current-page-structure {
+          .current-page-struc {
             border-bottom-color: var(--accent-color);
             color: var(--accent-color);
           }
         }
 
         /* Structure 페이지 메뉴 스타일만 추가 */
-        .current-page-structure {
+        .current-page-struc {
           border-bottom: 2px solid var(--color-blackbase);
         }
 
@@ -526,17 +538,17 @@
         }
 
         /* Structure 메뉴 항목 호버 시 스타일 */
-        a.current-page-structure:hover {
+        a.current-page-struc:hover {
           border-bottom-width: 5px;
         }
 
         /* 다크 모드 대응 */
         @media (prefers-color-scheme: dark) {
-          .current-page-structure {
+          .current-page-struc {
             border-bottom: 2px solid rgb(255, 255, 255);
           }
 
-          a.current-page-structure:hover {
+          a.current-page-struc:hover {
             border-bottom-width: 5px;
           }
         }
@@ -757,7 +769,7 @@
               <a href="#component" class="current-page-component">Component</a>
             </li>
             <li class="index-nav">
-              <a href="#structure" class="current-page-structure">Structure</a>
+              <a href="#struc" class="current-page-struc">Structure</a>
             </li>
           </ul>
           <a href="#" aria-label="검색">
@@ -779,10 +791,10 @@
         <h2>ALL-IN-ONE 프로젝트 소개</h2>
         <p class="project-description">
           연호, 원식, 아영, 시운 4명의 팀원이 함께한 이번 프로젝트는 패션 커머스
-          플랫폼인 '29CM'을 클론하여 제작했습니다. <br />
-          특히 모든 사용자가 쉽고 편리하게 서비스를 이용할 수 있도록 웹 접근성에
-          초점을 맞췄으며, 시맨틱 마크업, 키보드 탐색 지원, 스크린 리더 호환성
-          등 접근성 표준을 준수했습니다. <br />
+          플랫폼인 '29CM'을 클론하여 제작했습니다. 특히 모든 사용자가 쉽고
+          편리하게 서비스를 이용할 수 있도록 웹 접근성에 초점을 맞췄으며, 시맨틱
+          마크업, 키보드 탐색 지원, 스크린 리더 호환성 등 접근성 표준을
+          준수했습니다. <br />
           이를 통해 다양한 사용 환경에서도 쾌적한 사용자 경험을 제공할 수 있도록
           노력했습니다.
         </p>
@@ -1078,6 +1090,11 @@
                     >main welcoming 컴포넌트</a
                   >
                 </li>
+                <li>
+                  <a href="/src/components/indexBrandNewsComponents.html"
+                    >main brand news 컴포넌트</a
+                  >
+                </li>
               </ul>
             </div>
             <div class="card">
@@ -1123,7 +1140,7 @@
             </div>
           </div>
         </section>
-        <section id="structure">
+        <section id="struc">
           <h2>Project Folder Structure</h2>
           <img
             src="/src/assets/images/index-images/mermaid-diagram-allinone.svg"

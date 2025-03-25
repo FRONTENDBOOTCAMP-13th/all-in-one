@@ -134,7 +134,7 @@
   }
 
   .price .current-price {
-    color: var(--text-color);
+    color: var(--pretty-gray);
   }
 
   /* 배지 스타일 수정 - 쿠폰 및 배송 뱃지 가시성 개선 */
@@ -284,7 +284,11 @@
 }
 
 .product-container:hover .product-name a {
-  color: #0066cc;
+  color: var(--link-hover-color);
+}
+
+.product-container:hover .price .current-price {
+  color: var(--link-hover-color); /* 호버 시에도 밝은 색상 유지 */
 }
 
 .product-container {
